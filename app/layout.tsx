@@ -36,9 +36,9 @@ export const metadata: Metadata = {
     address: false,
     telephone: true,
   },
-  metadataBase: new URL("https://jay-r-and-jennifer-wedding-invitation.vercel.app/"),
+  metadataBase: new URL("https://jay-r-and-jennifer-wedding-invitati.vercel.app/"),
   alternates: {
-    canonical: "https://jay-r-and-jennifer-wedding-invitation.vercel.app/",
+    canonical: "https://jay-r-and-jennifer-wedding-invitati.vercel.app/",
   },
   icons: {
     icon: [
@@ -63,13 +63,13 @@ export const metadata: Metadata = {
     title: "Jay-R & Jennifer Wedding | January 24, 2026",
     description:
       "Celebrate the union of Jay-R & Jennifer on January 24, 2026 at Diocesan Shrine & Parish of Our Lady of the Abandoned and The Grand Cobo Events Place. Discover our love story, RSVP, view the gallery, and leave your wishes!",
-    url: "https://jay-r-and-jennifer-wedding-invitation.vercel.app/",
+    url: "https://jay-r-and-jennifer-wedding-invitati.vercel.app/",
     siteName: "Jay-R and Jennifer Wedding",
     locale: "en_PH",
     type: "website",
     images: [
       {
-        url: "https://jay-r-and-jennifer-wedding-invitation.vercel.app/Details/image.png",
+        url: "https://jay-r-and-jennifer-wedding-invitati.vercel.app/Details/image.png",
         width: 1200,
         height: 630,
         alt: "Jay-R & Jennifer Wedding Invitation - January 24, 2026",
@@ -81,7 +81,7 @@ export const metadata: Metadata = {
     title: "Jay-R & Jennifer Wedding Invitation",
     description:
       "You're invited to the wedding of Jay-R & Jennifer! January 24, 2026. RSVP, view our gallery, and leave a message! #Jay-RAndJenniferWedding",
-    images: ["https://jay-r-and-jennifer-wedding-invitation.vercel.app/Details/image.png"],
+    images: ["https://jay-r-and-jennifer-wedding-invitati.vercel.app/Details/image.png"],
     creator: "@jay-r-and-jennifer",
   },
   robots: {
@@ -133,7 +133,7 @@ export const metadata: Metadata = {
           },
         },
       ],
-      image: ["https://jay-r-and-jennifer-wedding-invitation.vercel.app/Details/image.png"],
+      image: ["https://jay-r-and-jennifer-wedding-invitati.vercel.app/Details/image.png"],
       description:
         "You're invited to the wedding of Jay-R & Jennifer! Join us on January 24, 2026 at Diocesan Shrine & Parish of Our Lady of the Abandoned, Valenzuela City and The Grand Cobo Events Place, Dumaguete City. RSVP, read our love story, view our gallery, and leave a message for the couple.",
       organizer: {
@@ -142,7 +142,7 @@ export const metadata: Metadata = {
       },
       offers: {
         "@type": "Offer",
-        url: "https://jay-r-and-jennifer-wedding-invitation.vercel.app/",
+        url: "https://jay-r-and-jennifer-wedding-invitati.vercel.app/",
         availability: "https://schema.org/InStock",
         price: "0",
         priceCurrency: "PHP",
