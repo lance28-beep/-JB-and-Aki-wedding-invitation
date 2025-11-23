@@ -77,8 +77,8 @@ export function Footer() {
     { label: "Countdown", href: "#countdown" },
     { label: "Messages", href: "#messages" },
     { label: "Details", href: "#details" },
-    // { label: "Entourage", href: "#entourage" },
-    // { label: "Sponsors", href: "#sponsors" },
+    { label: "Entourage", href: "#entourage" },
+    { label: "Sponsors", href: "#sponsors" },
     { label: "RSVP", href: "#guest-list" },
     { label: "Registry", href: "#registry" },
     { label: "FAQ", href: "#faq" },
@@ -86,7 +86,7 @@ export function Footer() {
   ] as const;
 
   return (
-    <footer className="relative z-20 mt-16 overflow-hidden bg-[#D5BBAE]">
+    <footer className="relative z-20 mt-16 overflow-hidden bg-[#688277]">
       <div className="relative max-w-7xl mx-auto px-4 md:px-8 py-16">
         {/* Wedding date presentation */}
         <motion.div
@@ -101,84 +101,87 @@ export function Footer() {
                 <div className="relative w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32">
                   <Image
                     src="/monogram/image.png"
-                    alt="Steven & Renee Monogram"
+                    alt="Jay-R & Jen Monogram"
                     fill
                     className="object-contain drop-shadow-lg"
+                    style={{ 
+                      filter: 'brightness(0) saturate(100%) invert(8%) sepia(94%) saturate(1352%) hue-rotate(120deg) brightness(95%) contrast(85%)'
+                    }}
                     priority
                   />
                 </div>
               </div>
 
-              {/* Top decorative line with gold accent */}
+              {/* Top decorative line with earth tone accent */}
               <div className="flex items-center justify-center gap-3 sm:gap-4 mb-4 sm:mb-6">
-                <div className="h-px w-12 sm:w-16 md:w-20 bg-gradient-to-r from-transparent via-[#C9A55F] to-[#C9A55F]" />
-                <div className="w-2 h-2 bg-gradient-to-br from-[#D4AF7A] to-[#C9A55F] rounded-full shadow-md" />
-                <div className="h-px w-12 sm:w-16 md:w-20 bg-gradient-to-r from-[#C9A55F] via-[#C9A55F] to-transparent" />
+                <div className="h-px w-12 sm:w-16 md:w-20 bg-gradient-to-r from-transparent via-[#9F8650] to-[#9F8650]" />
+                <div className="w-2 h-2 bg-gradient-to-br from-[#688277] to-[#9F8650] rounded-full shadow-md" />
+                <div className="h-px w-12 sm:w-16 md:w-20 bg-gradient-to-r from-[#9F8650] via-[#9F8650] to-transparent" />
               </div>
 
               {/* Save The Date text with elegant color */}
-              <p className="text-sm sm:text-base md:text-lg font-[family-name:var(--font-crimson)] font-semibold text-[#1A1A1A] uppercase tracking-[0.25em] sm:tracking-[0.3em] mb-4 sm:mb-6">
+              <p className="text-sm sm:text-base md:text-lg font-[family-name:var(--font-crimson)] font-semibold text-[#F9F8F4] uppercase tracking-[0.25em] sm:tracking-[0.3em] mb-4 sm:mb-6">
                 Save The Date
               </p>
 
-              {/* Bottom decorative line with gold accent */}
+              {/* Bottom decorative line with earth tone accent */}
               <div className="flex items-center justify-center gap-3 sm:gap-4">
-                <div className="h-px w-12 sm:w-16 md:w-20 bg-gradient-to-r from-transparent via-[#C9A55F] to-[#C9A55F]" />
-                <div className="w-2 h-2 bg-gradient-to-br from-[#D4AF7A] to-[#C9A55F] rounded-full shadow-md" />
-                <div className="h-px w-12 sm:w-16 md:w-20 bg-gradient-to-r from-[#C9A55F] via-[#C9A55F] to-transparent" />
+                <div className="h-px w-12 sm:w-16 md:w-20 bg-gradient-to-r from-transparent via-[#9F8650] to-[#9F8650]" />
+                <div className="w-2 h-2 bg-gradient-to-br from-[#688277] to-[#9F8650] rounded-full shadow-md" />
+                <div className="h-px w-12 sm:w-16 md:w-20 bg-gradient-to-r from-[#9F8650] via-[#9F8650] to-transparent" />
               </div>
             </div>
 
             {/* Date Section - Elegant Layout */}
             <div className="text-center mb-8 sm:mb-10 md:mb-12">
-              {/* Month - Elegant script style with gold gradient */}
+              {/* Month - Elegant script style with earth tones */}
               <div className="mb-4 sm:mb-5 md:mb-6">
-                <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-[family-name:var(--font-ephesis)] text-[#1A1A1A leading-none drop-shadow-lg font-semibold">
-                  March
+                <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-[family-name:var(--font-ephesis)] text-[#F9F8F4 leading-none drop-shadow-lg font-semibold">
+                  January
                 </p>
               </div>
 
               {/* Day and Year - Horizontal layout with divider */}
               <div className="flex items-center justify-center gap-3 sm:gap-4 md:gap-6 mb-6 sm:mb-8">
                 {/* Day - Large and bold focal point with elegant color */}
-                <p className="text-7xl sm:text-8xl md:text-9xl lg:text-[10rem] xl:text-[12rem] font-[family-name:var(--font-crimson)] font-bold text-[#1A1A1A] leading-none drop-shadow-lg">
-                  21
+                <p className="text-7xl sm:text-8xl md:text-9xl lg:text-[10rem] xl:text-[12rem] font-[family-name:var(--font-crimson)] font-bold text-[#F9F8F4] leading-none drop-shadow-lg">
+                  24
                 </p>
 
-                {/* Vertical divider with gold gradient */}
-                <div className="h-16 sm:h-20 md:h-24 lg:h-28 w-px bg-gradient-to-b from-transparent via-[#C9A55F] to-transparent" />
+                {/* Vertical divider with earth tone gradient */}
+                <div className="h-16 sm:h-20 md:h-24 lg:h-28 w-px bg-gradient-to-b from-transparent via-[#9F8650] to-transparent" />
 
                 {/* Year - Elegant and refined */}
-                <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-[family-name:var(--font-crimson)] font-light text-[#1A1A1A] leading-none drop-shadow-sm">
+                <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-[family-name:var(--font-crimson)] font-light text-[#F9F8F4] leading-none drop-shadow-sm">
                   2026
                 </p>
               </div>
 
               {/* Day of Week */}
-              <p className="text-lg sm:text-xl md:text-2xl font-[family-name:var(--font-crimson)] font-medium text-[#1A1A1A] mb-6 sm:mb-8 tracking-wider">
+              <p className="text-lg sm:text-xl md:text-2xl font-[family-name:var(--font-crimson)] font-medium text-[#F9F8F4] mb-6 sm:mb-8 tracking-wider">
                 Saturday
               </p>
             </div>
 
             {/* Time Section */}
             <div className="text-center">
-              {/* Top decorative line with gold accent */}
+              {/* Top decorative line with earth tone accent */}
               <div className="flex items-center justify-center gap-3 sm:gap-4 mb-4 sm:mb-5">
-                <div className="h-px w-12 sm:w-16 md:w-20 bg-gradient-to-r from-transparent via-[#C9A55F] to-[#C9A55F]" />
-                <div className="w-2 h-2 bg-gradient-to-br from-[#D4AF7A] to-[#C9A55F] rounded-full shadow-md" />
-                <div className="h-px w-12 sm:w-16 md:w-20 bg-gradient-to-r from-[#C9A55F] via-[#C9A55F] to-transparent" />
+                <div className="h-px w-12 sm:w-16 md:w-20 bg-gradient-to-r from-transparent via-[#9F8650] to-[#9F8650]" />
+                <div className="w-2 h-2 bg-gradient-to-br from-[#688277] to-[#9F8650] rounded-full shadow-md" />
+                <div className="h-px w-12 sm:w-16 md:w-20 bg-gradient-to-r from-[#9F8650] via-[#9F8650] to-transparent" />
               </div>
 
               {/* Time with elegant styling */}
-              <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-[family-name:var(--font-crimson)] font-semibold text-[#1A1A1A] tracking-wider mb-4 sm:mb-5">
-                3:00 PM
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-[family-name:var(--font-crimson)] font-semibold text-[#F9F8F4] tracking-wider mb-4 sm:mb-5">
+                9:30 AM
               </p>
 
-              {/* Bottom decorative line with gold accent */}
+              {/* Bottom decorative line with earth tone accent */}
               <div className="flex items-center justify-center gap-3 sm:gap-4">
-                <div className="h-px w-12 sm:w-16 md:w-20 bg-gradient-to-r from-transparent via-[#C9A55F] to-[#C9A55F]" />
-                <div className="w-2 h-2 bg-gradient-to-br from-[#D4AF7A] to-[#C9A55F] rounded-full shadow-md" />
-                <div className="h-px w-12 sm:w-16 md:w-20 bg-gradient-to-r from-[#C9A55F] via-[#C9A55F] to-transparent" />
+                <div className="h-px w-12 sm:w-16 md:w-20 bg-gradient-to-r from-transparent via-[#9F8650] to-[#9F8650]" />
+                <div className="w-2 h-2 bg-gradient-to-br from-[#688277] to-[#9F8650] rounded-full shadow-md" />
+                <div className="h-px w-12 sm:w-16 md:w-20 bg-gradient-to-r from-[#9F8650] via-[#9F8650] to-transparent" />
               </div>
             </div>
           </div>
@@ -194,41 +197,50 @@ export function Footer() {
           <motion.div className="lg:col-span-2" variants={fadeInUp}>
             <div className="mb-8">
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 bg-gradient-to-br from-[#C9A55F] to-[#D4AF7A] rounded-full flex items-center justify-center shadow-lg">
-                  <Heart className="w-6 h-6 text-white" />
+                <div className="relative w-12 h-12 sm:w-14 sm:h-14 flex-shrink-0">
+                  <Image
+                    src="/monogram/image.png"
+                    alt="Jay-R & Jen Monogram"
+                    fill
+                    className="object-contain"
+                    style={{ 
+                      filter: 'brightness(0) saturate(100%) invert(8%) sepia(94%) saturate(1352%) hue-rotate(120deg) brightness(95%) contrast(85%)'
+                    }}
+                    priority
+                  />
                 </div>
-                <h3 className="text-2xl sm:text-3xl md:text-4xl font-[family-name:var(--font-crimson)] font-semibold text-[#1A1A1A] uppercase tracking-[0.15em] sm:tracking-[0.2em]">
-                  Steven & Renee
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-[family-name:var(--font-crimson)] font-semibold text-[#F9F8F4] uppercase tracking-[0.15em] sm:tracking-[0.2em]">
+                  Jay-R & Jen
                 </h3>
               </div>
               <div className="space-y-4">
-                <div className="flex items-center gap-3 font-[family-name:var(--font-crimson)] text-[#1A1A1A] font-medium">
-                  <Calendar className="w-5 h-5 text-[#C9A55F]" />
-                  <span className="text-base sm:text-lg">March 21, 2026 • Saturday</span>
+                <div className="flex items-center gap-3 font-[family-name:var(--font-crimson)] text-[#F9F8F4] font-medium">
+                  <Calendar className="w-5 h-5 text-[#0A3629]" />
+                  <span className="text-base sm:text-lg">January 24, 2026 • Saturday</span>
                 </div>
-                <div className="flex items-center gap-3 font-[family-name:var(--font-crimson)] text-[#1A1A1A] font-medium">
-                  <MapPin className="w-5 h-5 text-[#C9A55F]" />
-                  <span className="text-sm sm:text-base">Santa Clara Chapel & The Ruins, Talisay, Negros Occidental</span>
+                <div className="flex items-center gap-3 font-[family-name:var(--font-crimson)] text-[#F9F8F4] font-medium">
+                  <MapPin className="w-5 h-5 text-[#0A3629]" />
+                  <span className="text-sm sm:text-base">Diocesan Shrine & Parish of Our Lady of the Abandoned & The Grand Cobo Events Place</span>
                 </div>
               </div>
             </div>
 
             <motion.div
-              className="bg-white/90 backdrop-blur-md rounded-2xl p-6 border border-[#C9A55F]/30 shadow-lg hover:shadow-xl transition-all duration-300"
+              className="bg-white/90 backdrop-blur-md rounded-2xl p-6 border border-[#9F8650]/30 shadow-lg hover:shadow-xl transition-all duration-300"
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3 }}
             >
-              <blockquote className="font-[family-name:var(--font-crimson)] text-[#1A1A1A] font-medium italic text-base sm:text-lg leading-relaxed min-h-[80px]">
+              <blockquote className="font-[family-name:var(--font-crimson)] text-[#0A3629] font-medium italic text-base sm:text-lg leading-relaxed min-h-[80px]">
                 "{displayedText}
-                <span className="inline-block w-0.5 h-6 bg-gradient-to-b from-[#C9A55F] to-[#D4AF7A] ml-1 animate-pulse">
+                <span className="inline-block w-0.5 h-6 bg-gradient-to-b from-[#9F8650] to-[#688277] ml-1 animate-pulse">
                   |
                 </span>
                 "
               </blockquote>
               <div className="flex items-center gap-2 mt-4">
-                <div className="w-2 h-2 bg-gradient-to-br from-[#C9A55F] to-[#D4AF7A] rounded-full shadow-sm" />
-                <div className="w-2 h-2 bg-gradient-to-br from-[#D4AF7A] to-[#C9A55F] rounded-full shadow-sm" />
-                <div className="w-2 h-2 bg-gradient-to-br from-[#C9A55F] to-[#D4AF7A] rounded-full shadow-sm" />
+                <div className="w-2 h-2 bg-gradient-to-br from-[#9F8650] to-[#688277] rounded-full shadow-sm" />
+                <div className="w-2 h-2 bg-gradient-to-br from-[#688277] to-[#9F8650] rounded-full shadow-sm" />
+                <div className="w-2 h-2 bg-gradient-to-br from-[#9F8650] to-[#688277] rounded-full shadow-sm" />
               </div>
             </motion.div>
           </motion.div>
@@ -236,49 +248,49 @@ export function Footer() {
           {/* Event Details quick tiles */}
           <motion.div className="space-y-6" variants={fadeInUp}>
             <motion.div
-              className="bg-white/95 backdrop-blur-md rounded-2xl p-6 border border-[#C9A55F]/30 hover:border-[#C9A55F]/60 shadow-lg hover:shadow-xl transition-all duration-300"
+              className="bg-white/95 backdrop-blur-md rounded-2xl p-6 border border-[#9F8650]/30 hover:border-[#9F8650]/60 shadow-lg hover:shadow-xl transition-all duration-300"
               whileHover={{ y: -5 }}
             >
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 bg-gradient-to-br from-[#C9A55F] to-[#D4AF7A] rounded-full flex items-center justify-center shadow-md">
+                <div className="w-10 h-10 bg-[#0A3629] rounded-full flex items-center justify-center shadow-md">
                   <Clock className="w-5 h-5 text-white" />
                 </div>
-                <h4 className="font-[family-name:var(--font-crimson)] font-bold text-lg sm:text-xl text-[#1A1A1A]">
+                <h4 className="font-[family-name:var(--font-crimson)] font-bold text-lg sm:text-xl text-[#0A3629]">
                   Ceremony
                 </h4>
               </div>
-              <div className="space-y-3 font-[family-name:var(--font-crimson)] text-[#1A1A1A] font-medium text-sm sm:text-base">
+              <div className="space-y-3 font-[family-name:var(--font-crimson)] text-[#0A3629] font-medium text-sm sm:text-base">
                 <div className="flex items-center gap-3">
-                  <MapPin className="w-4 h-4 text-[#C9A55F]" />
-                  <span>Santa Clara Chapel</span>
+                  <MapPin className="w-4 h-4 text-[#0A3629]" />
+                  <span>Diocesan Shrine & Parish</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Clock className="w-4 h-4 text-[#C9A55F]" />
-                  <span>3:00 PM</span>
+                  <Clock className="w-4 h-4 text-[#0A3629]" />
+                  <span>9:30 AM</span>
                 </div>
               </div>
             </motion.div>
 
             <motion.div
-              className="bg-white/90 backdrop-blur-md rounded-2xl p-6 border border-[#C9A55F]/30 hover:border-[#C9A55F]/60 shadow-lg hover:shadow-xl transition-all duration-300"
+              className="bg-white/90 backdrop-blur-md rounded-2xl p-6 border border-[#9F8650]/30 hover:border-[#9F8650]/60 shadow-lg hover:shadow-xl transition-all duration-300"
               whileHover={{ y: -5 }}
             >
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 bg-gradient-to-br from-[#D4AF7A] to-[#C9A55F] rounded-full flex items-center justify-center shadow-md">
+                <div className="w-10 h-10 bg-[#0A3629] rounded-full flex items-center justify-center shadow-md">
                   <Heart className="w-5 h-5 text-white" />
                 </div>
-                <h4 className="font-[family-name:var(--font-crimson)] font-bold text-lg sm:text-xl text-[#1A1A1A]">
+                <h4 className="font-[family-name:var(--font-crimson)] font-bold text-lg sm:text-xl text-[#0A3629]">
                   Reception
                 </h4>
               </div>
-              <div className="space-y-3 font-[family-name:var(--font-crimson)] text-[#1A1A1A] font-medium text-sm sm:text-base">
+              <div className="space-y-3 font-[family-name:var(--font-crimson)] text-[#0A3629] font-medium text-sm sm:text-base">
                 <div className="flex items-center gap-3">
-                  <MapPin className="w-4 h-4 text-[#C9A55F]" />
-                  <span>The Ruins, Talisay</span>
+                  <MapPin className="w-4 h-4 text-[#0A3629]" />
+                  <span>The Grand Cobo Events Place</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Clock className="w-4 h-4 text-[#C9A55F]" />
-                  <span>4:30 PM</span>
+                  <Clock className="w-4 h-4 text-[#0A3629]" />
+                  <span>11:00 AM</span>
                 </div>
               </div>
             </motion.div>
@@ -287,8 +299,8 @@ export function Footer() {
           {/* Contact + Quick Links */}
           <motion.div className="space-y-8" variants={fadeInUp}>
             <div>
-              <h4 className="font-[family-name:var(--font-crimson)] font-bold text-lg sm:text-xl mb-6 flex items-center gap-3 text-[#1A1A1A]">
-                <div className="w-2 h-8 bg-gradient-to-b from-[#C9A55F] to-[#D4AF7A] rounded-full" /> Follow
+              <h4 className="font-[family-name:var(--font-crimson)] font-bold text-lg sm:text-xl mb-6 flex items-center gap-3 text-[#F9F8F4]">
+                <div className="w-2 h-8 bg-gradient-to-b from-[#9F8650] to-[#688277] rounded-full" /> Follow
                 Us
               </h4>
               <div className="flex items-center gap-3 flex-wrap">
@@ -296,43 +308,43 @@ export function Footer() {
                   href="https://www.facebook.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center h-11 w-11 rounded-full bg-white/90 border border-[#C9A55F]/30 hover:border-[#C9A55F]/60 hover:bg-white transition-all hover:scale-110 shadow-md hover:shadow-lg"
+                  className="inline-flex items-center justify-center h-11 w-11 rounded-full bg-white/90 border border-[#9F8650]/30 hover:border-[#9F8650]/60 hover:bg-white transition-all hover:scale-110 shadow-md hover:shadow-lg"
                   aria-label="Facebook"
                 >
-                  <Facebook className="w-5 h-5 text-[#1A1A1A]" />
+                  <Facebook className="w-5 h-5 text-[#0A3629]" />
                 </a>
                 <a
                   href="https://www.instagram.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center h-11 w-11 rounded-full bg-white/90 border border-[#C9A55F]/30 hover:border-[#C9A55F]/60 hover:bg-white transition-all hover:scale-110 shadow-md hover:shadow-lg"
+                  className="inline-flex items-center justify-center h-11 w-11 rounded-full bg-white/90 border border-[#9F8650]/30 hover:border-[#9F8650]/60 hover:bg-white transition-all hover:scale-110 shadow-md hover:shadow-lg"
                   aria-label="Instagram"
                 >
-                  <Instagram className="w-5 h-5 text-[#1A1A1A]" />
+                  <Instagram className="w-5 h-5 text-[#0A3629]" />
                 </a>
                 <a
                   href="https://www.tiktok.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center h-11 w-11 rounded-full bg-white/90 border border-[#C9A55F]/30 hover:border-[#C9A55F]/60 hover:bg-white transition-all hover:scale-110 shadow-md hover:shadow-lg"
+                  className="inline-flex items-center justify-center h-11 w-11 rounded-full bg-white/90 border border-[#9F8650]/30 hover:border-[#9F8650]/60 hover:bg-white transition-all hover:scale-110 shadow-md hover:shadow-lg"
                   aria-label="TikTok"
                 >
-                  <Music2 className="w-5 h-5 text-[#1A1A1A]" />
+                  <Music2 className="w-5 h-5 text-[#0A3629]" />
                 </a>
                 <a
                   href="https://www.twitter.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center h-11 w-11 rounded-full bg-white/90 border border-[#C9A55F]/30 hover:border-[#C9A55F]/60 hover:bg-white transition-all hover:scale-110 shadow-md hover:shadow-lg"
+                  className="inline-flex items-center justify-center h-11 w-11 rounded-full bg-white/90 border border-[#9F8650]/30 hover:border-[#9F8650]/60 hover:bg-white transition-all hover:scale-110 shadow-md hover:shadow-lg"
                   aria-label="Twitter"
                 >
-                  <Twitter className="w-5 h-5 text-[#1A1A1A]" />
+                  <Twitter className="w-5 h-5 text-[#0A3629]" />
                 </a>
               </div>
             </div>
 
             <div>
-              <h5 className="font-[family-name:var(--font-crimson)] font-bold text-base sm:text-lg mb-4 text-[#1A1A1A]">
+              <h5 className="font-[family-name:var(--font-crimson)] font-bold text-base sm:text-lg mb-4 text-[#F9F8F4]">
                 Quick Links
               </h5>
               <div className="space-y-2">
@@ -340,7 +352,7 @@ export function Footer() {
                   <a
                     key={item.href}
                     href={item.href}
-                    className="block text-[#1A1A1A] font-medium hover:text-[#C9A55F] transition-colors duration-200 font-[family-name:var(--font-crimson)] text-sm sm:text-base hover:pl-2"
+                    className="block text-[#F9F8F4] font-medium hover:text-[#9F8650] transition-colors duration-200 font-[family-name:var(--font-crimson)] text-sm sm:text-base hover:pl-2"
                   >
                     {item.label}
                   </a>
@@ -352,38 +364,38 @@ export function Footer() {
 
         {/* Bottom Row */}
         <motion.div
-          className="border-t border-[#C9A55F]/40 pt-8"
+          className="border-t border-[#9F8650]/40 pt-8"
           variants={fadeInUp}
         >
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-center md:text-left">
-              <p className="text-[#1A1A1A] font-[family-name:var(--font-crimson)] text-sm sm:text-base font-semibold">
-                © {year} Steven & Renee. All rights reserved.
+              <p className="text-[#F9F8F4] font-[family-name:var(--font-crimson)] text-sm sm:text-base font-semibold">
+                © {year} Jay-R & Jen. All rights reserved.
               </p>
-              <p className="text-[#1A1A1A] font-[family-name:var(--font-crimson)] text-sm sm:text-base mt-1 font-medium">
+              <p className="text-[#F9F8F4] font-[family-name:var(--font-crimson)] text-sm sm:text-base mt-1 font-medium">
                 Made with 💕 for our special day
               </p>
             </div>
 
             <div className="text-center md:text-right space-y-1">
-              <p className="text-[#1A1A1A] font-[family-name:var(--font-crimson)] text-xs sm:text-sm font-medium">
+              <p className="text-[#F9F8F4] font-[family-name:var(--font-crimson)] text-xs sm:text-sm font-medium">
                 Developed by{" "}
                 <a
                   href="https://lance28-beep.github.io/portfolio-website/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#C9A55F] hover:text-[#D4AF7A] transition-colors duration-200 underline decoration-[#C9A55F]/40 hover:decoration-[#D4AF7A]/70 font-semibold"
+                  className="text-[#9F8650] hover:text-[#688277] transition-colors duration-200 underline decoration-[#9F8650]/40 hover:decoration-[#688277]/70 font-semibold"
                 >
                   Lance Valle
                 </a>
               </p>
-              <p className="text-[#1A1A1A] font-[family-name:var(--font-crimson)] text-xs sm:text-sm font-medium">
+              <p className="text-[#F9F8F4] font-[family-name:var(--font-crimson)] text-xs sm:text-sm font-medium">
                 Want a website like this? Visit{" "}
                 <a
                   href="https://www.facebook.com/WeddingInvitationNaga"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#C9A55F] hover:text-[#D4AF7A] transition-colors duration-200 underline decoration-[#C9A55F]/40 hover:decoration-[#D4AF7A]/70 font-semibold"
+                  className="text-[#9F8650] hover:text-[#688277] transition-colors duration-200 underline decoration-[#9F8650]/40 hover:decoration-[#688277]/70 font-semibold"
                 >
                   Wedding Invitation Naga
                 </a>

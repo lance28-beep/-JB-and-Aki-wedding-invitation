@@ -5,44 +5,44 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Elegant Wedding Palette - Blush, Champagne, and Muted Gold */
-  --background: #FAF7F4;
-  --foreground: #4A4442;
+  /* Elegant Wedding Palette - Earth Tones & Natural Elegance */
+  --background: #F9F8F4;
+  --foreground: #0A3629;
   --card: #FFFFFF;
-  --card-foreground: #4A4442;
+  --card-foreground: #0A3629;
   --popover: #FFFFFF;
-  --popover-foreground: #4A4442;
-  /* Primary: soft blush nude */
-  --primary: #E8D5D0;
-  --primary-foreground: #4A4442;
-  /* Secondary: champagne */
-  --secondary: #F0E5D3;
-  --secondary-foreground: #4A4442;
-  /* Muted gold accent */
-  --muted: #D4AF7A;
-  --muted-foreground: #4A4442;
-  /* Accent: refined gold */
-  --accent: #C9A55F;
-  --accent-foreground: #FFFFFF;
+  --popover-foreground: #0A3629;
+  /* Primary: deep forest green */
+  --primary: #0A3629;
+  --primary-foreground: #F9F8F4;
+  /* Secondary: medium sage green */
+  --secondary: #126555;
+  --secondary-foreground: #F9F8F4;
+  /* Muted sage accent */
+  --muted: #688277;
+  --muted-foreground: #0A3629;
+  /* Accent: warm gold */
+  --accent: #9F8650;
+  --accent-foreground: #F9F8F4;
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: #E8D5D0;
-  --input: #F0E5D3;
-  --ring: #C9A55F;
+  --border: #688277;
+  --input: #F9F8F4;
+  --ring: #9F8650;
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
   --radius: 0.5rem;
-  --sidebar: #FAF7F4;
-  --sidebar-foreground: #4A4442;
-  --sidebar-primary: #E8D5D0;
-  --sidebar-primary-foreground: #4A4442;
-  --sidebar-accent: #C9A55F;
-  --sidebar-accent-foreground: #FFFFFF;
-  --sidebar-border: #E8D5D0;
-  --sidebar-ring: #C9A55F;
+  --sidebar: #F9F8F4;
+  --sidebar-foreground: #0A3629;
+  --sidebar-primary: #0A3629;
+  --sidebar-primary-foreground: #F9F8F4;
+  --sidebar-accent: #9F8650;
+  --sidebar-accent-foreground: #F9F8F4;
+  --sidebar-border: #688277;
+  --sidebar-ring: #9F8650;
 }
 
 .dark {
@@ -52,21 +52,21 @@
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.145 0 0);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: #0A3428;
+  --primary: #0A3629;
   --primary-foreground: oklch(0.985 0 0);
-  --secondary: #106552;
+  --secondary: #126555;
   --secondary-foreground: oklch(0.985 0 0);
   /* Sage for dark mode */
-  --sage: #106552;
-  --muted: #C3A161;
-  --muted-foreground: #0A3428;
-  --accent: #751A2C;
+  --sage: #126555;
+  --muted: #9F8650;
+  --muted-foreground: #0A3629;
+  --accent: #688277;
   --accent-foreground: oklch(0.985 0 0);
   --destructive: oklch(0.396 0.141 25.723);
   --destructive-foreground: oklch(0.637 0.237 25.331);
   --border: oklch(0.269 0 0);
   --input: oklch(0.269 0 0);
-  --ring: #0A3428;
+  --ring: #0A3629;
   --chart-1: oklch(0.488 0.243 264.376);
   --chart-2: oklch(0.696 0.17 162.48);
   --chart-3: oklch(0.769 0.188 70.08);
@@ -74,12 +74,12 @@
   --chart-5: oklch(0.645 0.246 16.439);
   --sidebar: oklch(0.205 0 0);
   --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: #0A3428;
+  --sidebar-primary: #0A3629;
   --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: #106552;
+  --sidebar-accent: #126555;
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(0.269 0 0);
-  --sidebar-ring: #0A3428;
+  --sidebar-ring: #0A3629;
 }
 
 @theme inline {
@@ -145,22 +145,22 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Scrollbar styling - Elegant gold */
+/* Scrollbar styling - Earth tones */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #FAF7F4;
+  background: #F9F8F4;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #D4AF7A 0%, #C9A55F 100%);
+  background: linear-gradient(180deg, #688277 0%, #126555 100%);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #C9A55F 0%, #B8944E 100%);
+  background: linear-gradient(180deg, #126555 0%, #0A3629 100%);
 }
 
 /* Shimmer animation for countdown cards */
@@ -228,16 +228,16 @@ html {
   font-style: normal;
 }
 
-/* Elegant Wedding Design Utilities */
+/* Elegant Wedding Design Utilities - Earth Tones */
 .elegant-gradient-bg {
-  background: linear-gradient(135deg, #FAF7F4 0%, #F0E5D3 50%, #E8D5D0 100%);
+  background: linear-gradient(135deg, #F9F8F4 0%, #688277 50%, #126555 100%);
 }
 
 .elegant-card {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(201, 165, 95, 0.2);
-  box-shadow: 0 4px 24px rgba(201, 165, 95, 0.08);
+  border: 1px solid rgba(159, 134, 80, 0.2);
+  box-shadow: 0 4px 24px rgba(10, 54, 41, 0.08);
 }
 
 .gold-accent-border {
@@ -248,19 +248,19 @@ html {
   content: '';
   position: absolute;
   inset: -1px;
-  background: linear-gradient(135deg, #D4AF7A 0%, #C9A55F 50%, #D4AF7A 100%);
+  background: linear-gradient(135deg, #9F8650 0%, #688277 50%, #9F8650 100%);
   border-radius: inherit;
   opacity: 0.3;
   z-index: -1;
 }
 
 .elegant-text-shadow {
-  text-shadow: 0 2px 8px rgba(201, 165, 95, 0.15);
+  text-shadow: 0 2px 8px rgba(10, 54, 41, 0.15);
 }
 
 .premium-shadow {
-  box-shadow: 0 8px 32px rgba(74, 68, 66, 0.08), 
-              0 2px 8px rgba(201, 165, 95, 0.12);
+  box-shadow: 0 8px 32px rgba(10, 54, 41, 0.12), 
+              0 2px 8px rgba(159, 134, 80, 0.12);
 }
 
 /* Subtle shimmer effect for gold elements */
@@ -276,11 +276,11 @@ html {
 .elegant-shimmer {
   background: linear-gradient(
     90deg,
-    #C9A55F 0%,
-    #D4AF7A 25%,
-    #E8D5D0 50%,
-    #D4AF7A 75%,
-    #C9A55F 100%
+    #9F8650 0%,
+    #688277 25%,
+    #126555 50%,
+    #688277 75%,
+    #9F8650 100%
   );
   background-size: 200% auto;
   animation: elegant-shimmer 3s linear infinite;

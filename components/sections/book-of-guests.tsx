@@ -9,6 +9,7 @@ import {
   Sparkles,
   User,
 } from "lucide-react";
+import { Section } from "@/components/section";
 
 interface Guest {
   Name: string;
@@ -87,10 +88,10 @@ export function BookOfGuests() {
   }, []);
 
   return (
-    <div
-      id="guests"
-      className="relative z-[55] isolate bg-[#E8DCC8]/80 py-8 sm:py-12 md:py-16 lg:py-20 overflow-hidden"
-    >
+    <Section id="guests" className="relative py-16 sm:py-20 md:py-24 lg:py-28">
+      {/* Semi-transparent overlay for better text readability */}
+      <div className="absolute inset-0 bg-gradient-to-b from-white/60 via-[#688277]/40 to-white/60 backdrop-blur-sm pointer-events-none" />
+      
       {/* Section Header */}
       <div className="relative z-10 text-center mb-8 sm:mb-12 md:mb-16 px-4 sm:px-6">
         <h2
@@ -125,7 +126,7 @@ export function BookOfGuests() {
               {/* Content */}
               <div className="relative z-10">
                 <div className="flex items-center justify-center gap-2.5 sm:gap-3 md:gap-4 mb-3 sm:mb-4 md:mb-5">
-                  <div className="bg-[#D5BBAE] p-1.5 sm:p-2 md:p-2.5 rounded-full shadow-lg">
+                  <div className="bg-gradient-to-r from-[#0A3629] to-[#126555] p-1.5 sm:p-2 md:p-2.5 rounded-full shadow-lg">
                     <Heart className="text-white h-3.5 w-3.5 sm:h-4 sm:w-4 md:h-5 md:w-5" />
                   </div>
                   <div className="flex flex-col items-center">
@@ -157,7 +158,7 @@ export function BookOfGuests() {
               {isLoading ? (
                 <div className="flex items-center justify-center py-16 sm:py-20 md:py-24">
                   <div className="flex flex-col items-center gap-3 sm:gap-4">
-                    <Loader2 className="h-10 w-10 sm:h-12 sm:w-12 animate-spin text-[#D5BBAE]" />
+                    <Loader2 className="h-10 w-10 sm:h-12 sm:w-12 animate-spin text-[#0A3629]" />
                     <span className="text-[#1A1A1A] font-[family-name:var(--font-crimson)] text-sm sm:text-base md:text-lg">
                       Loading guests...
                     </span>
@@ -175,7 +176,7 @@ export function BookOfGuests() {
               ) : guests.length === 0 ? (
                 <div className="flex items-center justify-center py-16 sm:py-20 md:py-24">
                   <div className="text-center">
-                    <div className="bg-[#D5BBAE] w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                    <div className="bg-gradient-to-r from-[#0A3629] to-[#126555] w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
                       <Heart className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 text-white" />
                     </div>
                     <h3 className="text-lg sm:text-xl md:text-2xl font-[family-name:var(--font-crimson)] font-semibold text-[#1A1A1A] mb-2">
@@ -196,7 +197,7 @@ export function BookOfGuests() {
                       <div className="flex flex-col sm:flex-row gap-2.5 sm:gap-3 md:gap-4">
                         {/* Avatar */}
                         <div className="relative h-9 w-9 sm:h-11 sm:w-11 md:h-12 md:w-12 flex-shrink-0">
-                          <div className="h-full w-full rounded-full bg-[#D5BBAE] text-white flex items-center justify-center font-[family-name:var(--font-crimson)] font-semibold shadow-md ring-2 ring-white text-xs sm:text-sm md:text-base">
+                          <div className="h-full w-full rounded-full bg-gradient-to-r from-[#0A3629] to-[#126555] text-white flex items-center justify-center font-[family-name:var(--font-crimson)] font-semibold shadow-md ring-2 ring-white text-xs sm:text-sm md:text-base">
                             {getInitials(guest.Name)}
                           </div>
                         </div>
@@ -210,7 +211,7 @@ export function BookOfGuests() {
                               </h4>
                               {guest.Email && guest.Email !== "Pending" && (
                                 <div className="flex items-center text-[10px] sm:text-xs md:text-sm text-[#1A1A1A]/70">
-                                  <Mail className="h-2.5 w-2.5 sm:h-3 sm:w-3 md:h-4 md:w-4 mr-1 sm:mr-1.5 text-[#D5BBAE] flex-shrink-0" />
+                                  <Mail className="h-2.5 w-2.5 sm:h-3 sm:w-3 md:h-4 md:w-4 mr-1 sm:mr-1.5 text-[#0A3629] flex-shrink-0" />
                                   <span className="font-[family-name:var(--font-crimson)] break-all">
                                     {guest.Email}
                                   </span>
@@ -219,8 +220,8 @@ export function BookOfGuests() {
                             </div>
                             {/* Guest count badge */}
                             <div className="absolute right-2.5 top-2.5 sm:static sm:right-auto sm:top-auto flex items-center gap-1 sm:gap-1.5">
-                              <User className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-[#D5BBAE] flex-shrink-0" />
-                              <span className="inline-flex items-center justify-center px-2 sm:px-2.5 md:px-3 py-0.5 sm:py-1 bg-[#D5BBAE]/10 text-[#1A1A1A] rounded-full text-[10px] sm:text-xs md:text-sm font-[family-name:var(--font-crimson)] font-semibold border border-[#D5BBAE]/30">
+                              <User className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-[#0A3629] flex-shrink-0" />
+                              <span className="inline-flex items-center justify-center px-2 sm:px-2.5 md:px-3 py-0.5 sm:py-1 bg-[#0A3629]/10 text-[#1A1A1A] rounded-full text-[10px] sm:text-xs md:text-sm font-[family-name:var(--font-crimson)] font-semibold border border-[#0A3629]/30">
                                 {guest.Guest
                                   ? parseInt(String(guest.Guest)) || 1
                                   : 1}{" "}
@@ -235,7 +236,7 @@ export function BookOfGuests() {
                           {guest.Message && (
                             <div className="mt-2.5 sm:mt-3 md:mt-4 pt-2.5 sm:pt-3 md:pt-4 border-t border-[#1A1A1A]/20">
                               <div className="flex items-start gap-2 sm:gap-2.5 md:gap-3">
-                                <MessageSquare className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-[#D5BBAE] flex-shrink-0 mt-0.5" />
+                                <MessageSquare className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-[#0A3629] flex-shrink-0 mt-0.5" />
                                 <p className="text-[10px] sm:text-xs md:text-sm text-[#1A1A1A]/80 font-[family-name:var(--font-crimson)] leading-relaxed italic flex-1">
                                   "{guest.Message}"
                                 </p>
@@ -252,6 +253,6 @@ export function BookOfGuests() {
           </div>
         </div>
       </div>
-    </div>
+    </Section>
   );
 }

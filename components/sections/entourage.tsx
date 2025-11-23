@@ -98,7 +98,7 @@ export function Entourage() {
           : "text-center";
     return (
       <h3
-        className={`text-base sm:text-lg md:text-xl font-[family-name:var(--font-crimson)] font-semibold uppercase text-[#1A1A1A] mb-3 sm:mb-4 md:mb-5 tracking-[0.12em] ${textAlign} ${className}`}
+        className={`text-xs sm:text-sm md:text-base lg:text-lg font-[family-name:var(--font-crimson)] font-semibold uppercase text-[#1A1A1A] mb-2 sm:mb-3 md:mb-4 tracking-[0.1em] sm:tracking-[0.12em] ${textAlign} ${className}`}
       >
         {children}
       </h3>
@@ -129,16 +129,16 @@ export function Entourage() {
           : "text-center";
     return (
       <div
-        className={`flex flex-col ${containerAlign} justify-center py-1.5 sm:py-2 md:py-2.5 leading-relaxed`}
+        className={`flex flex-col ${containerAlign} justify-center py-0.5 sm:py-1 md:py-1.5 leading-tight sm:leading-relaxed`}
       >
         <p
-          className={`text-[#1A1A1A] text-sm sm:text-base md:text-lg font-[family-name:var(--font-crimson)] font-medium ${textAlign}`}
+          className={`text-[#1A1A1A] text-xs sm:text-sm md:text-base font-[family-name:var(--font-crimson)] font-medium ${textAlign}`}
         >
           {member.Name}
         </p>
         {showRole && member.RoleTitle && (
           <p
-            className={`text-[#1A1A1A]/60 text-xs sm:text-sm font-[family-name:var(--font-crimson)] font-normal mt-1 leading-snug ${textAlign}`}
+            className={`text-[#1A1A1A]/60 text-[10px] sm:text-xs md:text-sm font-[family-name:var(--font-crimson)] font-normal mt-0.5 sm:mt-1 leading-tight sm:leading-snug ${textAlign}`}
           >
             {member.RoleTitle}
           </p>
@@ -163,10 +163,10 @@ export function Entourage() {
   }) => {
     if (singleTitle) {
       return (
-        <div className="mb-5 sm:mb-7 md:mb-9 lg:mb-12">
+        <div className="mb-3 sm:mb-5 md:mb-7 lg:mb-9">
           <SectionTitle>{singleTitle}</SectionTitle>
           <div
-            className={`grid grid-cols-1 min-[350px]:grid-cols-2 gap-x-2 sm:gap-x-3 md:gap-x-4 gap-y-1.5 sm:gap-y-2 md:gap-y-3 ${centerContent ? "max-w-2xl mx-auto" : ""}`}
+            className={`grid grid-cols-1 min-[350px]:grid-cols-2 gap-x-1.5 sm:gap-x-2 md:gap-x-3 gap-y-1 sm:gap-y-1.5 md:gap-y-2 ${centerContent ? "max-w-2xl mx-auto" : ""}`}
           >
             {children}
           </div>
@@ -175,21 +175,21 @@ export function Entourage() {
     }
 
     return (
-      <div className="mb-5 sm:mb-7 md:mb-9 lg:mb-12">
-        <div className="grid grid-cols-1 min-[350px]:grid-cols-2 gap-x-2 sm:gap-x-3 md:gap-x-4 mb-2.5 sm:mb-3.5 md:mb-5">
+      <div className="mb-3 sm:mb-5 md:mb-7 lg:mb-9">
+        <div className="grid grid-cols-1 min-[350px]:grid-cols-2 gap-x-1.5 sm:gap-x-2 md:gap-x-3 mb-2 sm:mb-2.5 md:mb-3.5">
           {leftTitle && (
-            <SectionTitle align="right" className="pr-3 sm:pr-4 md:pr-6">
+            <SectionTitle align="right" className="pr-2 sm:pr-3 md:pr-4">
               {leftTitle}
             </SectionTitle>
           )}
           {rightTitle && (
-            <SectionTitle align="left" className="pl-3 sm:pl-4 md:pl-6">
+            <SectionTitle align="left" className="pl-2 sm:pl-3 md:pl-4">
               {rightTitle}
             </SectionTitle>
           )}
         </div>
         <div
-          className={`grid grid-cols-1 min-[350px]:grid-cols-2 gap-x-2 sm:gap-x-3 md:gap-x-4 gap-y-1.5 sm:gap-y-2 md:gap-y-3 ${centerContent ? "max-w-2xl mx-auto" : ""}`}
+          className={`grid grid-cols-1 min-[350px]:grid-cols-2 gap-x-1.5 sm:gap-x-2 md:gap-x-3 gap-y-1 sm:gap-y-1.5 md:gap-y-2 ${centerContent ? "max-w-2xl mx-auto" : ""}`}
         >
           {children}
         </div>
@@ -200,22 +200,22 @@ export function Entourage() {
   return (
     <section
       id="entourage"
-      className="relative min-h-screen py-16 sm:py-20 md:py-24 lg:py-28 overflow-hidden bg-transparent"
+      className="relative py-8 sm:py-12 md:py-16 lg:py-20 overflow-hidden bg-transparent"
     >
 
       {/* Section Header */}
-      <div className="relative z-10 text-center mb-12 sm:mb-16 md:mb-20 px-4 sm:px-6">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-[family-name:var(--font-crimson)] font-normal text-white mb-6 sm:mb-8 uppercase tracking-[0.12em] sm:tracking-[0.15em]" style={{ textShadow: '0 0 20px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.6), 0 2px 4px rgba(0, 0, 0, 0.5)' }}>
+      <div className="relative z-10 text-center mb-6 sm:mb-10 md:mb-12 px-3 sm:px-4 md:px-6">
+        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-[family-name:var(--font-crimson)] font-normal text-white mb-3 sm:mb-4 md:mb-6 uppercase tracking-[0.1em] sm:tracking-[0.12em] md:tracking-[0.15em]" style={{ textShadow: '0 0 20px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.6), 0 2px 4px rgba(0, 0, 0, 0.5)' }}>
           Wedding Entourage
         </h2>
 
-        <p className="text-base sm:text-lg md:text-xl font-[family-name:var(--font-crimson)] text-white font-light max-w-xl mx-auto leading-relaxed tracking-wide px-4" style={{ textShadow: '0 0 15px rgba(0, 0, 0, 0.8), 0 0 30px rgba(0, 0, 0, 0.6), 0 2px 4px rgba(0, 0, 0, 0.5)' }}>
+        <p className="text-sm sm:text-base md:text-lg font-[family-name:var(--font-crimson)] text-white font-light max-w-xl mx-auto leading-relaxed tracking-wide px-2 sm:px-4" style={{ textShadow: '0 0 15px rgba(0, 0, 0, 0.8), 0 0 30px rgba(0, 0, 0, 0.6), 0 2px 4px rgba(0, 0, 0, 0.5)' }}>
           Our cherished family and friends
         </p>
       </div>
 
       {/* Central Card Container */}
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6">
+      <div className="relative z-10 max-w-5xl mx-auto px-3 sm:px-4 md:px-6">
         {/* Main card with elegant styling */}
         <div className="relative group">
           {/* Subtle glow on hover */}
@@ -223,34 +223,34 @@ export function Entourage() {
 
           <div className="relative bg-white backdrop-blur-sm rounded-xl sm:rounded-2xl border-2 border-[#1A1A1A]/40 shadow-xl hover:shadow-2xl transition-all duration-300 hover:border-[#1A1A1A]/60 overflow-hidden">
             {/* Card content */}
-            <div className="relative p-6 sm:p-8 md:p-10 lg:p-12">
+            <div className="relative p-4 sm:p-6 md:p-8 lg:p-10">
               {isLoading ? (
-                <div className="flex items-center justify-center py-24">
-                  <div className="flex flex-col items-center gap-4">
-                    <Loader2 className="h-12 w-12 animate-spin text-[#1A1A1A]" />
-                    <span className="text-[#1A1A1A]/70 font-[family-name:var(--font-crimson)] text-lg">
+                <div className="flex items-center justify-center py-12 sm:py-16 md:py-24">
+                  <div className="flex flex-col items-center gap-3 sm:gap-4">
+                    <Loader2 className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 animate-spin text-[#1A1A1A]" />
+                    <span className="text-[#1A1A1A]/70 font-[family-name:var(--font-crimson)] text-sm sm:text-base md:text-lg">
                       Loading entourage...
                     </span>
                   </div>
                 </div>
               ) : error ? (
-                <div className="flex items-center justify-center py-24">
+                <div className="flex items-center justify-center py-12 sm:py-16 md:py-24">
                   <div className="text-center">
-                    <p className="text-red-600 font-[family-name:var(--font-crimson)] text-lg mb-4">
+                    <p className="text-red-600 font-[family-name:var(--font-crimson)] text-sm sm:text-base md:text-lg mb-3 sm:mb-4">
                       {error}
                     </p>
                     <button
                       onClick={fetchEntourage}
-                      className="text-[#1A1A1A] hover:text-[#1A1A1A]/70 font-[family-name:var(--font-crimson)] underline transition-colors duration-300"
+                      className="text-[#1A1A1A] hover:text-[#1A1A1A]/70 font-[family-name:var(--font-crimson)] underline transition-colors duration-300 text-sm sm:text-base"
                     >
                       Try again
                     </button>
                   </div>
                 </div>
               ) : entourage.length === 0 ? (
-                <div className="text-center py-24">
-                  <Users className="h-16 w-16 text-[#1A1A1A]/30 mx-auto mb-4" />
-                  <p className="text-[#1A1A1A]/70 font-[family-name:var(--font-crimson)] text-lg">
+                <div className="text-center py-12 sm:py-16 md:py-24">
+                  <Users className="h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16 text-[#1A1A1A]/30 mx-auto mb-3 sm:mb-4" />
+                  <p className="text-[#1A1A1A]/70 font-[family-name:var(--font-crimson)] text-sm sm:text-base md:text-lg">
                     No entourage members yet
                   </p>
                 </div>
@@ -283,12 +283,12 @@ export function Entourage() {
                             singleTitle="The Couple"
                             centerContent={true}
                           >
-                            <div className="px-3 sm:px-4 md:px-6">
+                            <div className="px-2 sm:px-3 md:px-4">
                               {groom && (
                                 <NameItem member={groom} align="right" />
                               )}
                             </div>
-                            <div className="px-3 sm:px-4 md:px-6">
+                            <div className="px-2 sm:px-3 md:px-4">
                               {bride && (
                                 <NameItem member={bride} align="left" />
                               )}
@@ -356,7 +356,7 @@ export function Entourage() {
                                     <React.Fragment key={`parents-row-${i}`}>
                                       <div
                                         key={`parent-groom-${i}`}
-                                        className="px-3 sm:px-4 md:px-6"
+                                        className="px-2 sm:px-3 md:px-4"
                                       >
                                         {left ? (
                                           <NameItem
@@ -364,12 +364,12 @@ export function Entourage() {
                                             align="right"
                                           />
                                         ) : (
-                                          <div className="py-1 sm:py-1.5 md:py-2" />
+                                          <div className="py-0.5 sm:py-1 md:py-1.5" />
                                         )}
                                       </div>
                                       <div
                                         key={`parent-bride-${i}`}
-                                        className="px-3 sm:px-4 md:px-6"
+                                        className="px-2 sm:px-3 md:px-4"
                                       >
                                         {right ? (
                                           <NameItem
@@ -377,7 +377,7 @@ export function Entourage() {
                                             align="left"
                                           />
                                         ) : (
-                                          <div className="py-1 sm:py-1.5 md:py-2" />
+                                          <div className="py-0.5 sm:py-1 md:py-1.5" />
                                         )}
                                       </div>
                                     </React.Fragment>,
@@ -430,7 +430,7 @@ export function Entourage() {
                                     <React.Fragment key={`honor-row-${i}`}>
                                       <div
                                         key={`bestman-cell-${i}`}
-                                        className="px-3 sm:px-4 md:px-6"
+                                        className="px-2 sm:px-3 md:px-4"
                                       >
                                         {left ? (
                                           <NameItem
@@ -438,12 +438,12 @@ export function Entourage() {
                                             align="right"
                                           />
                                         ) : (
-                                          <div className="py-1 sm:py-1.5 md:py-2" />
+                                          <div className="py-0.5 sm:py-1 md:py-1.5" />
                                         )}
                                       </div>
                                       <div
                                         key={`maid-cell-${i}`}
-                                        className="px-3 sm:px-4 md:px-6"
+                                        className="px-2 sm:px-3 md:px-4"
                                       >
                                         {right ? (
                                           <NameItem
@@ -451,7 +451,7 @@ export function Entourage() {
                                             align="left"
                                           />
                                         ) : (
-                                          <div className="py-1 sm:py-1.5 md:py-2" />
+                                          <div className="py-0.5 sm:py-1 md:py-1.5" />
                                         )}
                                       </div>
                                     </React.Fragment>,
@@ -504,7 +504,7 @@ export function Entourage() {
                                     <React.Fragment key={`bridal-row-${i}`}>
                                       <div
                                         key={`groomsman-cell-${i}`}
-                                        className="px-3 sm:px-4 md:px-6"
+                                        className="px-2 sm:px-3 md:px-4"
                                       >
                                         {groomsman ? (
                                           <NameItem
@@ -512,12 +512,12 @@ export function Entourage() {
                                             align="right"
                                           />
                                         ) : (
-                                          <div className="py-1 sm:py-1.5 md:py-2" />
+                                          <div className="py-0.5 sm:py-1 md:py-1.5" />
                                         )}
                                       </div>
                                       <div
                                         key={`bridesmaid-cell-${i}`}
-                                        className="px-3 sm:px-4 md:px-6"
+                                        className="px-2 sm:px-3 md:px-4"
                                       >
                                         {bridesmaid ? (
                                           <NameItem
@@ -525,7 +525,7 @@ export function Entourage() {
                                             align="left"
                                           />
                                         ) : (
-                                          <div className="py-1 sm:py-1.5 md:py-2" />
+                                          <div className="py-0.5 sm:py-1 md:py-1.5" />
                                         )}
                                       </div>
                                     </React.Fragment>,
@@ -578,7 +578,7 @@ export function Entourage() {
                                     <React.Fragment key={`sponsors-row-${i}`}>
                                       <div
                                         key={`candle-cell-${i}`}
-                                        className="px-3 sm:px-4 md:px-6"
+                                        className="px-2 sm:px-3 md:px-4"
                                       >
                                         {left ? (
                                           <NameItem
@@ -586,12 +586,12 @@ export function Entourage() {
                                             align="right"
                                           />
                                         ) : (
-                                          <div className="py-1 sm:py-1.5 md:py-2" />
+                                          <div className="py-0.5 sm:py-1 md:py-1.5" />
                                         )}
                                       </div>
                                       <div
                                         key={`veil-cell-${i}`}
-                                        className="px-3 sm:px-4 md:px-6"
+                                        className="px-2 sm:px-3 md:px-4"
                                       >
                                         {right ? (
                                           <NameItem
@@ -599,7 +599,7 @@ export function Entourage() {
                                             align="left"
                                           />
                                         ) : (
-                                          <div className="py-1 sm:py-1.5 md:py-2" />
+                                          <div className="py-0.5 sm:py-1 md:py-1.5" />
                                         )}
                                       </div>
                                     </React.Fragment>,
@@ -619,10 +619,10 @@ export function Entourage() {
                     return (
                       <div key={category}>
                         {categoryIndex > 0 && (
-                          <div className="flex items-center justify-center gap-3 sm:gap-4 py-4 sm:py-5 mb-6 sm:mb-7 md:mb-9">
-                            <div className="h-px w-12 sm:w-16 md:w-20 bg-[#1A1A1A]/40" />
-                            <div className="w-1.5 h-1.5 bg-[#1A1A1A]/50 rounded-full" />
-                            <div className="h-px w-12 sm:w-16 md:w-20 bg-[#1A1A1A]/40" />
+                          <div className="flex items-center justify-center gap-2 sm:gap-3 md:gap-4 py-2 sm:py-3 md:py-4 mb-3 sm:mb-5 md:mb-7">
+                            <div className="h-px w-8 sm:w-12 md:w-16 bg-[#1A1A1A]/40" />
+                            <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 bg-[#1A1A1A]/50 rounded-full" />
+                            <div className="h-px w-8 sm:w-12 md:w-16 bg-[#1A1A1A]/40" />
                           </div>
                         )}
                         <TwoColumnLayout
@@ -647,10 +647,10 @@ export function Entourage() {
                               const right = members[1];
                               return (
                                 <>
-                                  <div className="px-3 sm:px-4 md:px-6">
+                                  <div className="px-2 sm:px-3 md:px-4">
                                     <NameItem member={left} align="right" />
                                   </div>
-                                  <div className="px-3 sm:px-4 md:px-6">
+                                  <div className="px-2 sm:px-3 md:px-4">
                                     <NameItem member={right} align="left" />
                                   </div>
                                 </>
@@ -662,7 +662,7 @@ export function Entourage() {
                             ) {
                               return (
                                 <div className="col-span-full">
-                                  <div className="max-w-sm mx-auto flex flex-col items-center gap-2 sm:gap-2.5">
+                                  <div className="max-w-sm mx-auto flex flex-col items-center gap-1 sm:gap-1.5 md:gap-2">
                                     {members.map((member, idx) => (
                                       <NameItem
                                         key={`${category}-${idx}-${member.Name}`}
@@ -687,22 +687,22 @@ export function Entourage() {
                                 <React.Fragment key={`${category}-row-${i}`}>
                                   <div
                                     key={`${category}-cell-left-${i}`}
-                                    className="px-3 sm:px-4 md:px-6"
+                                    className="px-2 sm:px-3 md:px-4"
                                   >
                                     {l ? (
                                       <NameItem member={l} align="right" />
                                     ) : (
-                                      <div className="py-1 sm:py-1.5 md:py-2" />
+                                      <div className="py-0.5 sm:py-1 md:py-1.5" />
                                     )}
                                   </div>
                                   <div
                                     key={`${category}-cell-right-${i}`}
-                                    className="px-3 sm:px-4 md:px-6"
+                                    className="px-2 sm:px-3 md:px-4"
                                   >
                                     {r ? (
                                       <NameItem member={r} align="left" />
                                     ) : (
-                                      <div className="py-1 sm:py-1.5 md:py-2" />
+                                      <div className="py-0.5 sm:py-1 md:py-1.5" />
                                     )}
                                   </div>
                                 </React.Fragment>,
@@ -735,7 +735,7 @@ export function Entourage() {
                               if (members.length <= 2) {
                                 return (
                                   <div className="col-span-full">
-                                    <div className="max-w-sm mx-auto flex flex-col items-center gap-2 sm:gap-2.5">
+                                    <div className="max-w-sm mx-auto flex flex-col items-center gap-1 sm:gap-1.5 md:gap-2">
                                       {members.map((member, idx) => (
                                         <NameItem
                                           key={`${category}-${idx}-${member.Name}`}
@@ -763,22 +763,22 @@ export function Entourage() {
                                   <React.Fragment key={`${category}-row-${i}`}>
                                     <div
                                       key={`${category}-cell-left-${i}`}
-                                      className="px-3 sm:px-4 md:px-6"
+                                      className="px-2 sm:px-3 md:px-4"
                                     >
                                       {l ? (
                                         <NameItem member={l} align="right" />
                                       ) : (
-                                        <div className="py-1 sm:py-1.5 md:py-2" />
+                                        <div className="py-0.5 sm:py-1 md:py-1.5" />
                                       )}
                                     </div>
                                     <div
                                       key={`${category}-cell-right-${i}`}
-                                      className="px-3 sm:px-4 md:px-6"
+                                      className="px-2 sm:px-3 md:px-4"
                                     >
                                       {r ? (
                                         <NameItem member={r} align="left" />
                                       ) : (
-                                        <div className="py-1 sm:py-1.5 md:py-2" />
+                                        <div className="py-0.5 sm:py-1 md:py-1.5" />
                                       )}
                                     </div>
                                   </React.Fragment>,

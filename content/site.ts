@@ -1,23 +1,23 @@
 export const siteConfig = {
   couple: {
-    bride: "Renee Rose Torres",
-    brideNickname: "Renee",
-    groom: "Steven Paul Moraña",
-    groomNickname: "Steven",
+    bride: "Jay-R Valenzuela",
+    brideNickname: "Jay-R",
+    groom: "Jennifer Bartolome",
+    groomNickname: "Jen",
   },
   wedding: {
-    date: "March 21, 2026",
-    time: "3:00 PM",
-    venue: "Santa Clara Chapel (Barangay Sang Birhen Parish Church)",
+    date: "January 24, 2026",
+    time: "9:30 AM",
+    venue: "Diocesan Shrine & Parish of Our Lady of the Abandoned",
     tagline: "are getting married!",
     theme: "Elegant Wedding ✨",
-    motif: "Champagne Gold & Neutral",
+    motif: "Earth Tones & Natural Elegance",
   },
   details: {
     rsvp: {
-      deadline: "March 10, 2026",
-      contacts: "+639271655509 | +639665949009",
-      names: "Renee & Steven"
+      deadline: "January 10, 2026",
+      contacts: "+639XXXXXXXXX | +639XXXXXXXXX",
+      names: "Jay-R & Jen"
     },
     policies: {
       attendance: "As we celebrate this moment with our closest loved ones, we kindly ask that attendance be limited to those named on the invitation",
@@ -27,44 +27,44 @@ export const siteConfig = {
     }
   },
   ceremony: {
-    location: "Santa Clara Chapel (Barangay Sang Birhen Parish Church)",
-    venue: "Santa Clara Chapel (Barangay Sang Birhen Parish Church)",
-    address: "Santo Domingo Ave, Santa Clara Subdivision, Bacolod City, Negros Occidental",
-    date: "March 21, 2026",
+    location: "Diocesan Shrine & Parish of Our Lady of the Abandoned",
+    venue: "Diocesan Shrine & Parish of Our Lady of the Abandoned",
+    address: "#3 Mt. Kennedy St., Mountainview Village, San Roque, Marikina City",
+    date: "January 24, 2026",
     day: "Saturday",
-    time: "3:00 PM",
-    entourageTime: "2:00 PM",
-    guestsTime: "2:30 PM",
+    time: "9:30 AM",
+    entourageTime: "8:30 AM",
+    guestsTime: "9:00 AM",
   },
   reception: {
-    location: "The Ruins, Talisay",
-    venue: "The Ruins, Talisay",
-    address: "Don Mariano L. Lacson Highway, Brgy. Zone 15, Talisay, Negros Occidental 6100",
-    date: "March 21, 2026",
-    time: "4:30 PM",
+    location: "The Grand Cobo Events Place",
+    venue: "The Grand Cobo Events Place",
+    address: "#3 Mt. Kennedy St., Mountainview Village, San Roque, Marikina City",
+    date: "January 24, 2026",
+    time: "11:00 AM",
   },
   dressCode: {
     theme: "Elegant Wedding ✨",
-    colors: ["#D4AF37", "#F5F5DC", "#C9B037", "#E8DCC4"],
-    description: "Barong Tagalog or Any Formal Attire and Long Gown in shades of Champagne Gold or Neutral Colors",
+    colors: ["#0A3629", "#126555", "#688277", "#9F8650", "#F9F8F4"],
+    description: "Earth tones, long gowns for ladies. Barong & black slacks or formal wear for gentlemen. No prints, please.",
     sponsors: {
-      ladies: "Long gown in champagne gold or neutral colors",
-      gentlemen: "Barong Tagalog or formal attire"
+      ladies: "Champagne or Gold long gowns",
+      gentlemen: "Barong Tagalog & Black Slacks"
     },
     guests: {
-      ladies: "Long gown in champagne gold or neutral colors",
-      gentlemen: "Barong Tagalog or formal attire"
+      ladies: "Earth tones long gowns (no prints)",
+      gentlemen: "Barong & black slacks or formal wear"
     },
-    note: "Dress code: Barong Tagalog or Any Formal Attire and Long Gown in shades of Champagne Gold or Neutral Colors"
+    note: "Dress code: Earth tones, long gowns for ladies. Barong & black slacks or formal wear for gentlemen. No prints, please."
   },
-  narrative: `Two hearts, one love story. Renee Rose and Steven Paul are ready to begin their forever together. \n
+  narrative: `Two hearts, one love story. Jay-R and Jennifer are ready to begin their forever together. \n
 
 Join us as we celebrate their love and commitment to each other on this special day. \n
 
 Together with their families, they invite you to witness the beginning of their beautiful journey as husband and wife. ❤️`,
   colors: {
-    primary: "#D4AF37",
-    secondary: "#C9B037",
+    primary: "#0A3629",
+    secondary: "#126555",
   },
 }
 

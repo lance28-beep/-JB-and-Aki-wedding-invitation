@@ -6,8 +6,8 @@ import { Hero } from "@/components/sections/hero"
 import { Countdown } from "@/components/sections/countdown"
 import { Messages } from "@/components/sections/messages"
 import { Details } from "@/components/sections/details"
-// import { Entourage } from "@/components/sections/entourage"
-// import { PrincipalSponsors } from "@/components/sections/principal-sponsors"
+import { Entourage } from "@/components/sections/entourage"
+import { PrincipalSponsors } from "@/components/sections/principal-sponsors"
 import { BookOfGuests } from "@/components/sections/book-of-guests"
 import { Registry } from "@/components/sections/registry"
 import { FAQ } from "@/components/sections/faq"
@@ -28,7 +28,7 @@ export default function Home() {
       {enableDecor && (
         <div className="fixed inset-0 z-0 pointer-events-none">
           <Suspense fallback={<div className="w-full h-full elegant-gradient-bg" />}>
-            <Silk speed={2.5} scale={1.5} color="#E8D5D0" noiseIntensity={0.3} rotation={0.15} />
+            <Silk speed={2.5} scale={1.5} color="#688277" noiseIntensity={0.3} rotation={0.15} />
           </Suspense>
         </div>
       )}
@@ -39,8 +39,8 @@ export default function Home() {
         <Countdown />
         <Messages />
         <Details />
-        {/* <Entourage /> */}
-        {/* <PrincipalSponsors /> */}
+        <Entourage />
+        <PrincipalSponsors />
         <GuestList />
         <BookOfGuests />
         <Registry />

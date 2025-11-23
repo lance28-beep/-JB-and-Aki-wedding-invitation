@@ -12,8 +12,8 @@ const navLinks = [
   { href: "#countdown", label: "Countdown" },
   { href: "#messages", label: "Messages" },
   { href: "#details", label: "Details" },
-  // { href: "#entourage", label: "Entourage" },
-  // { href: "#sponsors", label: "Sponsors" },
+  { href: "#entourage", label: "Entourage" },
+  { href: "#sponsors", label: "Sponsors" },
   { href: "#guest-list", label: "RSVP" },
   { href: "#registry", label: "Registry" },
   { href: "#faq", label: "FAQ" },
@@ -88,8 +88,8 @@ export function Navbar() {
     <nav
       className={`sticky top-0 z-50 transition-all duration-500 ease-out ${
         isScrolled
-          ? "bg-white/90 backdrop-blur-xl shadow-sm border-b border-[#C9A55F]/20 premium-shadow"
-          : "bg-white/70 backdrop-blur-lg border-b border-[#C9A55F]/15"
+          ? "bg-[#F9F8F4]/95 backdrop-blur-xl shadow-sm border-b border-[#126555]/30 premium-shadow"
+          : "bg-[#F9F8F4]/85 backdrop-blur-lg border-b border-[#126555]/20"
       }`}
     >
       <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 relative">
@@ -103,12 +103,15 @@ export function Navbar() {
                   alt="Steven & Renee Monogram"
                   fill
                   className="object-contain"
+                  style={{ 
+                    filter: 'brightness(0) saturate(100%) invert(8%) sepia(94%) saturate(1352%) hue-rotate(120deg) brightness(95%) contrast(85%)'
+                  }}
                   priority
                 />
               </div>
 
-              {/* Names with gold gradient on hover */}
-              <div className="text-xs sm:text-base md:text-lg font-[family-name:var(--font-crimson)] font-semibold group-hover:text-[#C9A55F] transition-all duration-300 tracking-[0.15em] sm:tracking-[0.2em] text-[#4A4442] uppercase">
+              {/* Names with accent color on hover */}
+              <div className="text-xs sm:text-base md:text-lg font-[family-name:var(--font-crimson)] font-semibold group-hover:text-[#9F8650] transition-all duration-300 tracking-[0.15em] sm:tracking-[0.2em] text-[#0A3629] uppercase">
                 {siteConfig.couple.groomNickname} &{" "}
                 {siteConfig.couple.brideNickname}
               </div>
@@ -124,13 +127,13 @@ export function Navbar() {
                   href={link.href}
                   className={`px-3 lg:px-4 py-1.5 text-xs lg:text-sm font-[family-name:var(--font-crimson)] font-normal tracking-wide transition-all duration-300 relative group ${
                     isActive
-                      ? "text-[#C9A55F]"
-                      : "text-[#4A4442]/70 hover:text-[#C9A55F]"
+                      ? "text-[#9F8650]"
+                      : "text-[#0A3629]/80 hover:text-[#9F8650]"
                   }`}
                 >
                   {link.label}
                   <span
-                    className={`absolute bottom-0 left-0 h-[1.5px] bg-gradient-to-r from-[#C9A55F] to-[#D4AF7A] transition-all duration-300 ${
+                    className={`absolute bottom-0 left-0 h-[1.5px] bg-gradient-to-r from-[#9F8650] to-[#688277] transition-all duration-300 ${
                       isActive ? "w-full" : "w-0 group-hover:w-full"
                     }`}
                   />
@@ -146,11 +149,11 @@ export function Navbar() {
               socialItems={[]}
               displaySocials={false}
               displayItemNumbering={true}
-              menuButtonColor="#4A4442"
-              openMenuButtonColor="#C9A55F"
+              menuButtonColor="#0A3629"
+              openMenuButtonColor="#9F8650"
               changeMenuColorOnOpen={true}
-              colors={["#FAF7F4", "#F0E5D3", "#E8D5D0", "#C9A55F", "#4A4442"]}
-              accentColor="#C9A55F"
+              colors={["#F9F8F4", "#688277", "#126555", "#F9F8F4", "#9F8650"]}
+              accentColor="#F9F8F4"
               isFixed={true}
               onMenuOpen={() => {}}
               onMenuClose={() => {}}

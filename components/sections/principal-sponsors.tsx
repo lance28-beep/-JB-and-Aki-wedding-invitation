@@ -3,6 +3,7 @@
 import React from "react"
 import { useEffect, useMemo, useState } from "react"
 import { Section } from "@/components/section"
+import { Loader2, Users } from "lucide-react"
 
 interface PrincipalSponsor {
   MalePrincipalSponsor: string
@@ -23,7 +24,7 @@ export function PrincipalSponsors() {
     const textAlign =
       align === "right" ? "text-right" : align === "left" ? "text-left" : "text-center"
     return (
-      <h3 className={`text-base sm:text-lg md:text-xl font-[family-name:var(--font-crimson)] font-semibold uppercase text-[#1A1A1A] mb-3 sm:mb-4 md:mb-5 tracking-[0.12em] ${textAlign} ${className}`}>
+      <h3 className={`text-xs sm:text-sm md:text-base lg:text-lg font-[family-name:var(--font-crimson)] font-semibold uppercase text-[#0A3629] mb-2 sm:mb-3 md:mb-4 tracking-[0.1em] sm:tracking-[0.12em] ${textAlign} ${className}`}>
         {children}
       </h3>
     )
@@ -36,8 +37,8 @@ export function PrincipalSponsors() {
     const textAlign =
       align === "right" ? "text-right" : align === "left" ? "text-left" : "text-center"
     return (
-      <div className={`flex flex-col ${containerAlign} justify-center py-1.5 sm:py-2 md:py-2.5 w-full`}>
-        <p className={`text-[#1A1A1A] text-sm sm:text-base md:text-lg font-[family-name:var(--font-crimson)] font-medium leading-snug break-words ${textAlign}`}>{name}</p>
+      <div className={`flex flex-col ${containerAlign} justify-center py-0.5 sm:py-1 md:py-1.5 w-full`}>
+        <p className={`text-[#0A3629] text-xs sm:text-sm md:text-base font-[family-name:var(--font-crimson)] font-medium leading-tight sm:leading-snug break-words ${textAlign}`}>{name}</p>
       </div>
     )
   }
@@ -64,6 +65,19 @@ export function PrincipalSponsors() {
 
   useEffect(() => {
     fetchSponsors()
+
+    // Set up auto-refresh listener for dashboard updates
+    const handleSponsorsUpdate = () => {
+      setTimeout(() => {
+        fetchSponsors()
+      }, 1000)
+    }
+
+    window.addEventListener("sponsorsUpdated", handleSponsorsUpdate)
+
+    return () => {
+      window.removeEventListener("sponsorsUpdated", handleSponsorsUpdate)
+    }
   }, [])
 
   // Keep sponsors as pairs to ensure alignment
@@ -75,76 +89,89 @@ export function PrincipalSponsors() {
   return (
     <Section
       id="sponsors"
-      className="relative min-h-screen py-16 sm:py-20 md:py-24 lg:py-28 overflow-hidden bg-[#E8DCC8]/80"
+      className="relative py-8 sm:py-12 md:py-16 lg:py-20"
     >
-      {/* Section Header */}
-      <div className="relative z-10 text-center mb-12 sm:mb-16 md:mb-20 px-4 sm:px-6">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-[family-name:var(--font-crimson)] font-normal text-[#1A1A1A] mb-6 sm:mb-8 uppercase tracking-[0.12em] sm:tracking-[0.15em] drop-shadow-sm">
+      {/* Semi-transparent overlay for better text readability */}
+      <div className="absolute inset-0 bg-gradient-to-b from-white/60 via-[#688277]/40 to-white/60 backdrop-blur-sm pointer-events-none" />
+
+      {/* Header */}
+      <div className="relative z-10 text-center mb-6 sm:mb-10 md:mb-12 px-3 sm:px-4 md:px-6">
+        <div className="flex items-center justify-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+          <div className="h-[1px] w-12 sm:w-16 md:w-24 bg-gradient-to-r from-transparent via-[#9F8650] to-transparent" />
+        </div>
+        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-[family-name:var(--font-crimson)] font-normal text-[#0A3629] mb-3 sm:mb-4 md:mb-6 uppercase tracking-[0.1em] sm:tracking-[0.12em] md:tracking-[0.15em] elegant-text-shadow">
           Principal Sponsors
         </h2>
-
-        <p className="text-base sm:text-lg md:text-xl font-[family-name:var(--font-crimson)] text-[#1A1A1A] font-light max-w-xl mx-auto leading-relaxed tracking-wide px-4 drop-shadow-sm">
+        <div className="flex items-center justify-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+          <div className="h-[1px] w-12 sm:w-16 md:w-24 bg-gradient-to-r from-transparent via-[#9F8650] to-transparent" />
+        </div>
+        <p className="text-sm sm:text-base md:text-lg font-[family-name:var(--font-crimson)] text-[#0A3629]/80 font-light max-w-xl mx-auto leading-relaxed tracking-wide px-2 sm:px-4">
           Our Beloved Godparents
         </p>
       </div>
 
       {/* Central Card Container */}
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6">
+      <div className="relative z-10 max-w-5xl mx-auto px-3 sm:px-4 md:px-6">
         {/* Main card with elegant styling */}
         <div className="relative group">
-          {/* Subtle glow on hover */}
-          <div className="absolute -inset-1 bg-gradient-to-br from-[#1A1A1A]/20 to-[#1A1A1A]/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-lg" />
+          {/* Subtle earth tone glow on hover */}
+          <div className="absolute -inset-1 bg-gradient-to-br from-[#9F8650]/20 to-[#688277]/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-lg" />
           
-          <div className="relative bg-white backdrop-blur-sm rounded-xl sm:rounded-2xl border-2 border-[#1A1A1A]/40 shadow-xl hover:shadow-2xl transition-all duration-300 hover:border-[#1A1A1A]/60 overflow-hidden">
+          <div className="relative elegant-card rounded-xl sm:rounded-2xl overflow-hidden border border-[#9F8650]/30 premium-shadow hover:border-[#9F8650]/50 transition-all duration-300">
             {/* Card content */}
-            <div className="relative p-6 sm:p-8 md:p-10 lg:p-12">
+            <div className="relative p-4 sm:p-6 md:p-8 lg:p-10">
               {isLoading ? (
-                <div className="flex items-center justify-center py-24">
-                  <div className="flex flex-col items-center gap-4">
-                    <div className="w-12 h-12 border-4 border-[#1A1A1A]/30 border-t-[#1A1A1A] rounded-full animate-spin" />
-                    <span className="text-[#1A1A1A]/70 font-[family-name:var(--font-crimson)] text-lg">Loading sponsors...</span>
+                <div className="flex items-center justify-center py-12 sm:py-16 md:py-24">
+                  <div className="flex flex-col items-center gap-3 sm:gap-4">
+                    <Loader2 className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 animate-spin text-[#9F8650]" />
+                    <span className="text-[#0A3629]/70 font-[family-name:var(--font-crimson)] text-sm sm:text-base md:text-lg">
+                      Loading sponsors...
+                    </span>
                   </div>
                 </div>
               ) : error ? (
-                <div className="flex items-center justify-center py-24">
+                <div className="flex items-center justify-center py-12 sm:py-16 md:py-24">
                   <div className="text-center">
-                    <p className="text-red-600 font-[family-name:var(--font-crimson)] text-lg mb-4">{error}</p>
+                    <p className="text-red-600 font-[family-name:var(--font-crimson)] text-sm sm:text-base md:text-lg mb-3 sm:mb-4">{error}</p>
                     <button
                       onClick={fetchSponsors}
-                      className="text-[#1A1A1A] hover:text-[#1A1A1A]/70 font-[family-name:var(--font-crimson)] underline transition-colors duration-300"
+                      className="text-[#0A3629] hover:text-[#0A3629]/70 font-[family-name:var(--font-crimson)] underline transition-colors duration-300 text-sm sm:text-base"
                     >
                       Try again
                     </button>
                   </div>
                 </div>
               ) : sponsorPairs.length === 0 ? (
-                <div className="text-center py-24">
-                  <p className="text-[#1A1A1A]/70 font-[family-name:var(--font-crimson)] text-lg">No sponsors yet</p>
+                <div className="text-center py-12 sm:py-16 md:py-24">
+                  <Users className="h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16 text-[#0A3629]/30 mx-auto mb-3 sm:mb-4" />
+                  <p className="text-[#0A3629]/70 font-[family-name:var(--font-crimson)] text-sm sm:text-base md:text-lg">
+                    No sponsors yet
+                  </p>
                 </div>
               ) : (
-                <div className="mb-5 sm:mb-7 md:mb-9 lg:mb-12">
-                  <div className="grid grid-cols-1 min-[350px]:grid-cols-2 gap-x-2 sm:gap-x-3 md:gap-x-4 mb-2.5 sm:mb-3.5 md:mb-5">
-                    <SectionTitle align="right" className="pr-3 sm:pr-4 md:pr-6">Male Principal Sponsors</SectionTitle>
-                    <SectionTitle align="left" className="pl-3 sm:pl-4 md:pl-6">Female Principal Sponsors</SectionTitle>
+                <div className="mb-3 sm:mb-5 md:mb-7 lg:mb-9">
+                  <div className="grid grid-cols-1 min-[350px]:grid-cols-2 gap-x-1.5 sm:gap-x-2 md:gap-x-3 mb-2 sm:mb-2.5 md:mb-3.5">
+                    <SectionTitle align="right" className="pr-2 sm:pr-3 md:pr-4">Male Principal Sponsors</SectionTitle>
+                    <SectionTitle align="left" className="pl-2 sm:pl-3 md:pl-4">Female Principal Sponsors</SectionTitle>
                   </div>
-                  <div className="grid grid-cols-1 min-[350px]:grid-cols-2 gap-x-2 sm:gap-x-3 md:gap-x-4 gap-y-1.5 sm:gap-y-2 md:gap-y-3 items-stretch">
+                  <div className="grid grid-cols-1 min-[350px]:grid-cols-2 gap-x-1.5 sm:gap-x-2 md:gap-x-3 gap-y-1 sm:gap-y-1.5 md:gap-y-2 items-stretch">
                     {sponsorPairs.map((pair, idx) => (
-                      <>
-                        <div key={`male-${idx}-${pair.MalePrincipalSponsor || 'empty'}`} className="px-3 sm:px-4 md:px-6">
+                      <React.Fragment key={`sponsor-pair-${idx}`}>
+                        <div key={`male-${idx}-${pair.MalePrincipalSponsor || 'empty'}`} className="px-2 sm:px-3 md:px-4">
                           {pair.MalePrincipalSponsor ? (
                             <NameItem name={pair.MalePrincipalSponsor} align="right" />
                           ) : (
-                            <div className="py-1 sm:py-1.5 md:py-2" />
+                            <div className="py-0.5 sm:py-1 md:py-1.5" />
                           )}
                         </div>
-                        <div key={`female-${idx}-${pair.FemalePrincipalSponsor || 'empty'}`} className="px-3 sm:px-4 md:px-6">
+                        <div key={`female-${idx}-${pair.FemalePrincipalSponsor || 'empty'}`} className="px-2 sm:px-3 md:px-4">
                           {pair.FemalePrincipalSponsor ? (
                             <NameItem name={pair.FemalePrincipalSponsor} align="left" />
                           ) : (
-                            <div className="py-1 sm:py-1.5 md:py-2" />
+                            <div className="py-0.5 sm:py-1 md:py-1.5" />
                           )}
                         </div>
-                      </>
+                      </React.Fragment>
                     ))}
                   </div>
                 </div>

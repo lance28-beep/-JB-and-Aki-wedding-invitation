@@ -20,25 +20,25 @@ const ephesis = Ephesis({
 })
 
 export const metadata: Metadata = {
-  title: "Steven & Renee - Wedding Invitation",
+  title: "Jay-R & Jennifer - Wedding Invitation",
   description:
-    "You're invited to the wedding of Steven & Renee! Join us on March 21, 2026 at Santa Clara Chapel and The Ruins, Talisay. RSVP, read our love story, view our gallery, and leave a message for the couple.",
+    "You're invited to the wedding of Jay-R & Jennifer! Join us on January 24, 2026 at Diocesan Shrine & Parish of Our Lady of the Abandoned and The Grand Cobo Events Place. RSVP, read our love story, view our gallery, and leave a message for the couple.",
   keywords:
-    "Steven & Renee wedding, Filipino wedding, RSVP, wedding gallery, wedding message wall, wedding invitation, 2026 weddings, love story, guestbook, wedding registry, wedding details, wedding venues Santa Clara Chapel, The Ruins Talisay, #StevenAndReneeWedding",
+    "Jay-R & Jennifer wedding, Filipino wedding, RSVP, wedding gallery, wedding message wall, wedding invitation, 2026 weddings, love story, guestbook, wedding registry, wedding details, wedding venues Diocesan Shrine & Parish of Our Lady of the Abandoned, #Jay-RAndJenniferWedding",
   authors: [
-    { name: "Steven" },
-    { name: "Renee" },
+    { name: "Jay-R" },
+    { name: "Jennifer" },
   ],
-  creator: "Steven & Renee",
-  publisher: "Steven & Renee",
+  creator: "Jay-R & Jennifer",
+  publisher: "Jay-R & Jennifer",
   formatDetection: {
     email: false,
     address: false,
     telephone: true,
   },
-  metadataBase: new URL("https://renee-rose-and-steven-paul-invitati.vercel.app/"),
+  metadataBase: new URL("https://jay-r-and-jennifer-wedding-invitation.vercel.app/"),
   alternates: {
-    canonical: "https://renee-rose-and-steven-paul-invitati.vercel.app/",
+    canonical: "https://jay-r-and-jennifer-wedding-invitation.vercel.app/",
   },
   icons: {
     icon: [
@@ -60,29 +60,29 @@ export const metadata: Metadata = {
   },
   manifest: "/favicon_io/site.webmanifest",
   openGraph: {
-    title: "Steven & Renee Wedding | March 21, 2026",
+    title: "Jay-R & Jennifer Wedding | January 24, 2026",
     description:
-      "Celebrate the union of Steven & Renee on March 21, 2026 at Santa Clara Chapel and The Ruins, Talisay. Discover our love story, RSVP, view the gallery, and leave your wishes!",
-    url: "https://renee-rose-and-steven-paul-invitati.vercel.app/",
-    siteName: "Steven and Renee Wedding",
+      "Celebrate the union of Jay-R & Jennifer on January 24, 2026 at Diocesan Shrine & Parish of Our Lady of the Abandoned and The Grand Cobo Events Place. Discover our love story, RSVP, view the gallery, and leave your wishes!",
+    url: "https://jay-r-and-jennifer-wedding-invitation.vercel.app/",
+    siteName: "Jay-R and Jennifer Wedding",
     locale: "en_PH",
     type: "website",
     images: [
       {
-        url: "https://renee-rose-and-steven-paul-invitati.vercel.app/LoveStory/image.png",
+        url: "https://jay-r-and-jennifer-wedding-invitation.vercel.app/Details/image.png",
         width: 1200,
         height: 630,
-        alt: "Steven & Renee Wedding Invitation - March 21, 2026",
+        alt: "Jay-R & Jennifer Wedding Invitation - January 24, 2026",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Steven & Renee Wedding Invitation",
+    title: "Jay-R & Jennifer Wedding Invitation",
     description:
-      "You're invited to the wedding of Steven & Renee! March 21, 2026. RSVP, view our gallery, and leave a message! #StevenAndReneeWedding",
-    images: ["https://renee-rose-and-steven-paul-invitati.vercel.app/LoveStory/image.png"],
-    creator: "@stevenandrenee",
+      "You're invited to the wedding of Jay-R & Jennifer! January 24, 2026. RSVP, view our gallery, and leave a message! #Jay-RAndJenniferWedding",
+    images: ["https://jay-r-and-jennifer-wedding-invitation.vercel.app/Details/image.png"],
+    creator: "@jay-r-and-jennifer",
   },
   robots: {
     index: true,
@@ -102,52 +102,52 @@ export const metadata: Metadata = {
     "application/ld+json": JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Event",
-      name: "Steven & Renee Wedding",
-      startDate: "2026-03-21T15:00:00+08:00",
-      endDate: "2026-03-21T23:00:00+08:00",
+      name: "Jay-R & Jennifer Wedding",
+      startDate: "2026-01-24T09:30:00+08:00",
+      endDate: "2026-01-24T11:00:00+08:00",
       eventStatus: "https://schema.org/EventScheduled",
       eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
       location: [
         {
           "@type": "Place",
-          name: "Santa Clara Chapel",
+          name: "Diocesan Shrine & Parish of Our Lady of the Abandoned, Valenzuela City",
           address: {
             "@type": "PostalAddress",
-            streetAddress: "Santo Domingo Ave, Santa Clara Subdivision",
-            addressLocality: "Bacolod City",
-            addressRegion: "Negros Occidental",
-            postalCode: "6100",
+            streetAddress: "#24 San Juan St., Brgy. Poblacion, Valenzuela City",
+            addressLocality: "Valenzuela City",
+            addressRegion: "Valenzuela City",
+            postalCode: "1440",
             addressCountry: "PH",
           },
         },
         {
           "@type": "Place",
-          name: "The Ruins, Talisay",
+          name: "The Grand Cobo Events Place, Dumaguete City",
           address: {
             "@type": "PostalAddress",
-            streetAddress: "Don Mariano L. Lacson Highway, Brgy. Zone 15",
-            addressLocality: "Talisay",
-            addressRegion: "Negros Occidental",
-            postalCode: "6100",
+            streetAddress: "#24 San Juan St., Brgy. Poblacion, Valenzuela City",
+            addressLocality: "Valenzuela City",
+            addressRegion: "Valenzuela City",
+            postalCode: "6200",
             addressCountry: "PH",
           },
         },
       ],
-      image: ["https://renee-rose-and-steven-paul-invitati.vercel.app/LoveStory/image.png"],
+      image: ["https://jay-r-and-jennifer-wedding-invitation.vercel.app/Details/image.png"],
       description:
-        "You're invited to the wedding of Steven & Renee! Join us on March 21, 2026 at Santa Clara Chapel and The Ruins, Talisay. RSVP, read our love story, view our gallery, and leave a message for the couple.",
+        "You're invited to the wedding of Jay-R & Jennifer! Join us on January 24, 2026 at Diocesan Shrine & Parish of Our Lady of the Abandoned, Valenzuela City and The Grand Cobo Events Place, Dumaguete City. RSVP, read our love story, view our gallery, and leave a message for the couple.",
       organizer: {
         "@type": "Person",
-        name: "Steven & Renee",
+        name: "Jay-R & Jennifer",
       },
       offers: {
         "@type": "Offer",
-        url: "https://renee-rose-and-steven-paul-invitati.vercel.app/",
+        url: "https://jay-r-and-jennifer-wedding-invitation.vercel.app/",
         availability: "https://schema.org/InStock",
         price: "0",
         priceCurrency: "PHP",
       },
-        eventHashtag: "#StevenAndReneeForever #StevenAndRenee2026",
+        eventHashtag: "#Jay-RAndJenniferForever #Jay-RAndJennifer2026",
     }),
   },
 }

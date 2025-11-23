@@ -2,6 +2,7 @@
 
 import { Section } from "@/components/section";
 import { Heart } from "lucide-react";
+import Image from "next/image";
 
 export function Registry() {
   return (
@@ -42,9 +43,9 @@ export function Registry() {
             <div className="flex flex-col items-center space-y-8 sm:space-y-10 md:space-y-12">
               {/* Heart icon */}
               <div className="relative inline-flex items-center justify-center">
-                <div className="absolute inset-0 bg-[#1A1A1A]/10 rounded-full blur-xl scale-150 animate-pulse"></div>
-                <div className="relative w-14 h-14 sm:w-16 sm:h-16 bg-[#1A1A1A] rounded-full flex items-center justify-center shadow-lg">
-                  <Heart className="h-7 w-7 sm:h-8 sm:w-8 text-[#E8DCC8]" />
+                <div className="absolute inset-0 bg-[#0A3629]/10 rounded-full blur-xl scale-150 animate-pulse"></div>
+                <div className="relative w-14 h-14 sm:w-16 sm:h-16 bg-[#F9F8F4] rounded-full flex items-center justify-center shadow-lg border-2 border-[#0A3629]/20">
+                  <Heart className="h-7 w-7 sm:h-8 sm:w-8 text-[#0A3629]" />
                 </div>
               </div>
 
@@ -54,9 +55,9 @@ export function Registry() {
                 <div className="relative">
                   {/* Decorative top line */}
                   <div className="flex items-center justify-center gap-3 sm:gap-4 mb-6 sm:mb-8">
-                    <div className="h-px w-12 sm:w-16 md:w-20 bg-[#1A1A1A]/50" />
-                    <div className="w-1.5 h-1.5 bg-[#1A1A1A]/60 rounded-full" />
-                    <div className="h-px w-12 sm:w-16 md:w-20 bg-[#1A1A1A]/50" />
+                    <div className="h-px w-12 sm:w-16 md:w-20 bg-[#0A3629]/50" />
+                    <div className="w-1.5 h-1.5 bg-[#0A3629]/60 rounded-full" />
+                    <div className="h-px w-12 sm:w-16 md:w-20 bg-[#0A3629]/50" />
                   </div>
 
                   <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-[family-name:var(--font-crimson)] font-light text-[#1A1A1A] leading-relaxed tracking-wide">
@@ -72,9 +73,31 @@ export function Registry() {
 
                   {/* Decorative bottom line */}
                   <div className="flex items-center justify-center gap-3 sm:gap-4 mt-6 sm:mt-8">
-                    <div className="h-px w-12 sm:w-16 md:w-20 bg-[#1A1A1A]/50" />
-                    <div className="w-1.5 h-1.5 bg-[#1A1A1A]/60 rounded-full" />
-                    <div className="h-px w-12 sm:w-16 md:w-20 bg-[#1A1A1A]/50" />
+                    <div className="h-px w-12 sm:w-16 md:w-20 bg-[#0A3629]/50" />
+                    <div className="w-1.5 h-1.5 bg-[#0A3629]/60 rounded-full" />
+                    <div className="h-px w-12 sm:w-16 md:w-20 bg-[#0A3629]/50" />
+                  </div>
+                </div>
+
+                {/* GCash QR Code */}
+                <div className="relative mt-8 sm:mt-10 md:mt-12">
+                  <div className="flex flex-col items-center space-y-4 sm:space-y-5">
+                    <div className="text-center">
+                      <p className="text-sm sm:text-base md:text-lg font-[family-name:var(--font-crimson)] font-semibold text-[#0A3629] mb-2 sm:mb-3 uppercase tracking-wider">
+                        GCash
+                      </p>
+                      <p className="text-xs sm:text-sm text-[#1A1A1A]/70 font-[family-name:var(--font-crimson)]">
+                        Scan to send monetary gift
+                      </p>
+                    </div>
+                    <div className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 bg-white rounded-xl p-3 sm:p-4 shadow-lg border-2 border-[#0A3629]/20">
+                      <Image
+                        src="/QR/Gcash.png"
+                        alt="GCash QR Code"
+                        fill
+                        className="object-contain rounded-lg"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>

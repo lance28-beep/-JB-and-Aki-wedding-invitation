@@ -24,8 +24,8 @@ export function SnapShare() {
     typeof window !== "undefined"
       ? window.location.href
       : "https://example.com";
-  const hashtags = ["#ReneeAndSteven2025","#StevenAndReneeTieTheKnot" ];  
-  const shareText = `Join us in celebrating Kenneth & Angel's special day! Check out their wedding website: ${websiteUrl} ${hashtags.join(" ")} 💕`;
+  const hashtags = ["#JayRHeartsJen", "#JenLovesJayR"];  
+  const shareText = `Join us in celebrating Jay-R & Jen's special day! Check out their wedding website: ${websiteUrl} ${hashtags.join(" ")} 💕`;
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -142,14 +142,14 @@ export function SnapShare() {
             whileHover={{ y: -2 }}
             transition={{ duration: 0.3 }}
           >
-            <div className="absolute -inset-1 bg-gradient-to-br from-[#1A1A1A]/20 to-[#1A1A1A]/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-lg" />
+            <div className="absolute -inset-1 bg-gradient-to-br from-[#0A3629]/20 to-[#126555]/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-lg" />
 
-            <div className="relative bg-white backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 border-2 border-[#1A1A1A]/40 shadow-xl hover:shadow-2xl transition-all duration-300 hover:border-[#1A1A1A]/60">
+            <div className="relative bg-white backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 border-2 border-[#0A3629]/30 shadow-xl hover:shadow-2xl transition-all duration-300 hover:border-[#0A3629]/50">
               <div className="text-center space-y-4 sm:space-y-5 md:space-y-6">
                 {/* Camera Icon */}
                 <div className="relative inline-flex items-center justify-center">
-                  <div className="absolute inset-0 bg-[#D5BBAE]/10 rounded-full blur-xl scale-150 animate-pulse"></div>
-                  <div className="relative w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-[#D5BBAE] rounded-full flex items-center justify-center shadow-lg">
+                  <div className="absolute inset-0 bg-[#0A3629]/10 rounded-full blur-xl scale-150 animate-pulse"></div>
+                  <div className="relative w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-[#0A3629] rounded-full flex items-center justify-center shadow-lg">
                     <Camera className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 text-white" />
                   </div>
                 </div>
@@ -169,20 +169,20 @@ export function SnapShare() {
                   {hashtags.map((hashtag) => (
                     <div
                       key={hashtag}
-                      className="flex items-center justify-center gap-2.5 sm:gap-3 bg-[#E8DCC8]/20 px-3 sm:px-4 md:px-6 py-2.5 sm:py-3 md:py-4 rounded-lg sm:rounded-xl border border-[#1A1A1A]/20 hover:border-[#1A1A1A]/30 transition-all duration-300 hover:shadow-md"
+                      className="flex items-center justify-center gap-2.5 sm:gap-3 bg-[#F9F8F4]/20 px-3 sm:px-4 md:px-6 py-2.5 sm:py-3 md:py-4 rounded-lg sm:rounded-xl border border-[#0A3629]/20 hover:border-[#0A3629]/40 transition-all duration-300 hover:shadow-md"
                     >
                       <span className="text-sm sm:text-base md:text-xl font-[family-name:var(--font-crimson)] font-semibold text-[#1A1A1A] break-all sm:break-normal tracking-wide">
                         {hashtag}
                       </span>
                       <button
                         onClick={() => copyToClipboard(hashtag)}
-                        className="p-1.5 sm:p-2 rounded-full bg-white hover:bg-[#E8DCC8]/50 transition-colors duration-200 shadow-sm flex-shrink-0 border border-[#1A1A1A]/20"
+                        className="p-1.5 sm:p-2 rounded-full bg-white hover:bg-[#0A3629]/10 transition-colors duration-200 shadow-sm flex-shrink-0 border border-[#0A3629]/20"
                         title="Copy hashtag"
                       >
                         {copiedHashtag ? (
                           <Check className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 text-green-600" />
                         ) : (
-                          <Copy className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 text-[#D5BBAE]" />
+                          <Copy className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 text-[#0A3629]" />
                         )}
                       </button>
                     </div>
@@ -203,8 +203,8 @@ export function SnapShare() {
                   Share Our Website
                 </h4>
 
-                <div className="inline-flex flex-col items-center bg-[#E8DCC8]/10 p-3 sm:p-4 md:p-6 rounded-lg sm:rounded-xl border border-[#1A1A1A]/20 mb-3 sm:mb-4">
-                  <div className="mb-3 sm:mb-4 p-2 sm:p-3 rounded-lg sm:rounded-xl bg-white shadow-md border border-[#1A1A1A]/10">
+                <div className="inline-flex flex-col items-center bg-[#F9F8F4]/10 p-3 sm:p-4 md:p-6 rounded-lg sm:rounded-xl border border-[#0A3629]/20 mb-3 sm:mb-4">
+                  <div className="mb-3 sm:mb-4 p-2 sm:p-3 rounded-lg sm:rounded-xl bg-white shadow-md border border-[#0A3629]/10">
                     <QRCodeCanvas
                       id="snapshare-qr"
                       value={websiteUrl}
@@ -215,7 +215,7 @@ export function SnapShare() {
                   </div>
                   <button
                     onClick={downloadQRCode}
-                    className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-3 bg-[#D5BBAE] hover:bg-[#C5AB9E] text-white rounded-lg transition-all duration-200 shadow-md hover:shadow-lg text-[10px] sm:text-xs md:text-sm font-[family-name:var(--font-crimson)] font-semibold"
+                    className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-3 bg-[#0A3629] hover:bg-[#126555] text-white rounded-lg transition-all duration-200 shadow-md hover:shadow-lg text-[10px] sm:text-xs md:text-sm font-[family-name:var(--font-crimson)] font-semibold"
                   >
                     <Download className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white" />
                     <span>Download QR Code</span>
@@ -230,9 +230,9 @@ export function SnapShare() {
 
             {/* Social Media Card */}
             <div className="relative group">
-              <div className="absolute -inset-1 bg-gradient-to-br from-[#1A1A1A]/20 to-[#1A1A1A]/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-lg" />
+              <div className="absolute -inset-1 bg-gradient-to-br from-[#0A3629]/20 to-[#126555]/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-lg" />
 
-              <div className="relative bg-white backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 border-2 border-[#1A1A1A]/40 shadow-xl hover:shadow-2xl transition-all duration-300 hover:border-[#1A1A1A]/60">
+              <div className="relative bg-white backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 border-2 border-[#0A3629]/30 shadow-xl hover:shadow-2xl transition-all duration-300 hover:border-[#0A3629]/50">
                 <h5 className="text-base sm:text-lg md:text-xl font-[family-name:var(--font-crimson)] font-semibold text-[#1A1A1A] mb-4 sm:mb-5 md:mb-6 text-center">
                   Share on Social Media
                 </h5>
@@ -292,9 +292,9 @@ export function SnapShare() {
           transition={{ duration: 0.8, delay: 0.4 }}
         >
           <div className="relative group max-w-3xl mx-auto">
-            <div className="absolute -inset-1 bg-gradient-to-br from-[#1A1A1A]/20 to-[#1A1A1A]/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-lg" />
+            <div className="absolute -inset-1 bg-gradient-to-br from-[#0A3629]/20 to-[#126555]/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-lg" />
 
-            <div className="relative bg-white backdrop-blur-sm rounded-xl sm:rounded-2xl p-5 sm:p-7 md:p-9 lg:p-10 border-2 border-[#1A1A1A]/40 shadow-xl hover:shadow-2xl transition-all duration-300 hover:border-[#1A1A1A]/60">
+            <div className="relative bg-white backdrop-blur-sm rounded-xl sm:rounded-2xl p-5 sm:p-7 md:p-9 lg:p-10 border-2 border-[#0A3629]/30 shadow-xl hover:shadow-2xl transition-all duration-300 hover:border-[#0A3629]/50">
               <p className="text-sm sm:text-base md:text-lg font-[family-name:var(--font-crimson)] text-[#1A1A1A] leading-relaxed mb-4 sm:mb-5 md:mb-6">
                 We are so excited to celebrate our love with you! See you on our
                 special day!
@@ -302,14 +302,14 @@ export function SnapShare() {
 
               {/* Decorative Line */}
               <div className="flex items-center justify-center gap-2.5 sm:gap-3 md:gap-4 my-4 sm:my-5 md:my-6">
-                <div className="h-px w-10 sm:w-12 md:w-16 bg-[#1A1A1A]/50" />
-                <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 bg-[#1A1A1A]/60 rounded-full" />
-                <div className="h-px w-10 sm:w-12 md:w-16 bg-[#1A1A1A]/50" />
+                <div className="h-px w-10 sm:w-12 md:w-16 bg-[#0A3629]/50" />
+                <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 bg-[#0A3629]/60 rounded-full" />
+                <div className="h-px w-10 sm:w-12 md:w-16 bg-[#0A3629]/50" />
               </div>
 
               <div className="text-center">
                 <span className="block text-lg sm:text-xl md:text-2xl lg:text-3xl font-[family-name:var(--font-ephesis)] text-[#1A1A1A] font-normal">
-                  – Kenneth & Angel –
+                  – Jay-R & Jen –
                 </span>
               </div>
             </div>
