@@ -299,26 +299,23 @@ export function GuestList() {
       id="guest-list"
       className="relative z-10 isolate py-10 sm:py-14 md:py-18 lg:py-20 overflow-visible"
     >
-      {/* Warm background overlay to match other sections */}
-      <div className="absolute inset-0 bg-[#EFCA93] backdrop-blur-sm pointer-events-none" />
-
       {/* Section Header */}
       <div className="relative z-10 text-center mb-10 sm:mb-14 md:mb-16 px-4 sm:px-6">
         <div className="flex items-center justify-center gap-2 sm:gap-3 mb-4 sm:mb-5">
-          <div className="h-[1px] w-12 sm:w-16 md:w-24 bg-gradient-to-r from-transparent via-[#9F8650] to-transparent" />
+          <div className="h-[1px] w-12 sm:w-16 md:w-24 bg-gradient-to-r from-transparent via-white to-transparent" />
         </div>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-[family-name:var(--font-crimson)] font-normal text-[#800A06] mb-4 sm:mb-6 uppercase tracking-[0.12em] sm:tracking-[0.15em] elegant-text-shadow">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-[family-name:var(--font-crimson)] font-normal text-white mb-4 sm:mb-6 uppercase tracking-[0.12em] sm:tracking-[0.15em] elegant-text-shadow">
           RSVP
         </h2>
         <div className="flex items-center justify-center gap-2 sm:gap-3 mb-4 sm:mb-5">
-          <div className="h-[1px] w-12 sm:w-16 md:w-24 bg-gradient-to-r from-transparent via-[#9F8650] to-transparent" />
+          <div className="h-[1px] w-12 sm:w-16 md:w-24 bg-gradient-to-r from-transparent via-white to-transparent" />
         </div>
 
         <div className="space-y-3 sm:space-y-4">
-          <p className="text-base sm:text-lg md:text-xl font-[family-name:var(--font-crimson)] text-[#800A06]/90 font-light max-w-xl mx-auto leading-relaxed tracking-wide px-4">
+          <p className="text-base sm:text-lg md:text-xl font-[family-name:var(--font-crimson)] text-white/90 font-light max-w-xl mx-auto leading-relaxed tracking-wide px-4">
             We have reserved special seats just for you. Please help us prepare by confirming your attendance.
           </p>
-          <p className="text-sm sm:text-base md:text-lg font-[family-name:var(--font-crimson)] text-[#800A06] font-medium max-w-xl mx-auto leading-relaxed tracking-wide px-4">
+          <p className="text-sm sm:text-base md:text-lg font-[family-name:var(--font-crimson)] text-white font-medium max-w-xl mx-auto leading-relaxed tracking-wide px-4">
             Kindly confirm your presence on or before{" "}
             <span className="font-semibold">{rsvpDeadline}</span>.
           </p>
