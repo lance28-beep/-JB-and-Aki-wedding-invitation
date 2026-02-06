@@ -1,23 +1,23 @@
 export const siteConfig = {
   couple: {
-    bride: "Diana Grace Villorente",
-    brideNickname: "Diana Grace",
-    groom: "Mark Joey Ulzame",
-    groomNickname: "Mark Joey",
+    bride: "Maria Katrina Panganiban",
+    brideNickname: "Aki",
+    groom: "Jon Bret Bantula",
+    groomNickname: "JB",
   },
   wedding: {
-    date: "February 8, 2026",
+    date: "May 23, 2026",
     time: "1:30 PM",
-    venue: "MATER DOLOROSA Parish in Capas",
+    venue: "San Antonio de Padua Parish, Silang, Cavite",
     tagline: "are getting married!",
     theme: "Elegant Wedding ✨",
     motif: "Autumn Theme",
   },
   details: {
     rsvp: {
-      deadline: "January 25, 2026",
+      deadline: "April 30, 2026",
       contacts: "+639XXXXXXXXX | +639XXXXXXXXX",
-      names: "Mark Joey & Diana Grace"
+      names: "Aki & JB"
     },
     policies: {
       attendance: "As we celebrate this moment with our closest loved ones, we kindly ask that attendance be limited to those named on the invitation",
@@ -57,11 +57,17 @@ export const siteConfig = {
     },
     note: "Dress code: Earth tones, long gowns for ladies. Barong & black slacks or formal wear for gentlemen. No prints, please."
   },
-  narrative: `Two hearts, one love story. Mark Joey and Diana Grace are ready to begin their forever together. \n
+  narrative: `Our story began the moment we met, unplanned, unexpected, yet perfectly timed.
 
-Join us as we celebrate their love and commitment to each other on this special day. \n
+That day, I already had plans with a friend, but at the last minute, those plans changed. My friend decided to join another group instead, the same group he was with. Since I also knew some of the people there, I was invited to come along. Had I not agreed, I would have missed the moment our story quietly began.
 
-Together with their families, they invite you to witness the beginning of their beautiful journey as husband and wife. ❤️`,
+We are very different in many ways. He is loud, outgoing, and full of energy, while I am calm, quiet, and more reserved. Yet those differences became our strength. Where he brings excitement, I bring balance, and together, we complement each other perfectly.
+
+One thing we immediately shared was our love for food. It became our way of connecting, sharing meals, exploring new places, and creating memories through the simplest moments.
+
+And before we knew it, life no longer felt complete without each other. What began as a coincidence slowly turned into something constant and meaningful.
+
+And from there, the rest became history.`,
   colors: {
     primary: "#800A06",
     secondary: "#6A1F08",

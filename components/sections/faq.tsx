@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import { siteConfig } from "@/content/site";
 import { Section } from "@/components/section";
 
 interface FAQItem {
@@ -11,59 +12,34 @@ interface FAQItem {
 
 const faqItems: FAQItem[] = [
   {
-    question: "When and where is the wedding?",
+    question: "What time do I have to be at the church?",
     answer:
-      "The wedding ceremony will be held on Sunday, February 8, 2026, at 1:30 PM at the MATER DOLOROSA Parish in Capas, Capas, Tarlac.\n\nThe reception will follow at 4:00 PM at Cz Ranch, Capas, Tarlac.",
+      "Ceremony starts at 1:30pm, kindly arrive at least 15 minutes before the ceremony.",
   },
   {
-    question: "What is the dress code?",
+    question: "Can I bring a +1?",
     answer:
-      "Guest Attire:\n• Ladies: Long gowns in earth tones (no prints, please)\n• Gentlemen: Barong Tagalog & black slacks or formal wear\n\nPrincipal Sponsors:\n• Ninangs: Long gowns in autumn tones or any color from our palette\n• Ninongs: Barong Tagalog with black slacks, or formal suits in black or palette colors\n\nPlease adhere to the dress code to maintain the elegance of our celebration. We recommend earth tones and natural colors that match our wedding theme.",
-  },
-  {
-    question: "When is the RSVP deadline?",
-    answer:
-      "Please confirm your attendance by January 25, 2026. We have reserved seats for you, and we look forward to celebrating with you! Your response helps us finalize our guest list and seating arrangements.\n\n[RSVP_LINK]Click here to RSVP[/RSVP_LINK]",
-  },
-  {
-    question: "Can I bring a plus one?",
-    answer:
-      "As we celebrate this moment with our closest loved ones, we kindly ask that attendance be limited to those named on the invitation. Thank you for your understanding and cooperation!",
-  },
-  {
-    question: "Are children allowed?",
-    answer:
-      "We love your little ones, but to keep the celebration intimate, we kindly request an adults-only event. Children in our family and the entourage are the exception. We appreciate your understanding!",
-  },
-  {
-    question: "What is your gift policy?",
-    answer:
-      "We kindly ask for no boxed gifts. Monetary gifts are welcome but never expected. Your presence at our wedding is the most precious gift we could ask for! If you wish to send a monetary gift, you can scan the GCash QR code in our Gift Registry section.",
-  },
-  {
-    question: "Can I take photos during the ceremony?",
-    answer:
-      "We'd love for everyone to be fully present. Please avoid posting photos during the celebration or ahead of time—our photographers will take care of the memories. We want everyone to be in the moment with us!",
-  },
-  {
-    question: "What if I have dietary restrictions or allergies?",
-    answer:
-      "Please mention any dietary restrictions, allergies, or special meal requirements in the message field when you submit your RSVP, or contact Mark Joey & Diana Grace directly. We want to ensure everyone is comfortable and well-fed!",
-  },
-  {
-    question: "How do I get to the venue?",
-    answer:
-      "You can use the 'Get Directions' button in the Event Details section to open Google Maps for easy navigation to both the ceremony (MATER DOLOROSA Parish in Capas) and reception (Cz Ranch) venues. Both the ceremony and reception are located in Capas, Tarlac.",
+      "Due to limited capacity, we kindly ask that only guests whose names are listed on the invitation attend. If your invitation includes a plus one, it will be clearly indicated. We truly appreciate your understanding and cooperation.",
   },
   {
     question: "Is there parking available?",
     answer:
-      "Yes! Both the ceremony and reception venues have parking facilities. We recommend arriving 15-20 minutes early to secure a spot and get settled comfortably. For the ceremony, guests should arrive by 1:00 PM.",
+      "Yes, parking will be available at the church and the venue. Additional details will be provided closer to the date.",
   },
   {
-    question: "What should I do if I need to cancel or update my RSVP?",
+    question: "Will the ceremony and reception be held at the same venue?",
     answer:
-      "Please contact Mark Joey & Diana Grace as soon as possible if your plans change. You can also update your RSVP by searching for your name in the RSVP section and submitting a new response. We appreciate your timely communication!",
+      "No, the ceremony and reception will be held at separate venues.",
+  },
+  {
+    question: "How do I confirm my attendance?",
+    answer:
+      `Please confirm your attendance through the RSVP section on this website on or before ${siteConfig.details.rsvp.deadline}.\n\n[RSVP_LINK]Go to RSVP[/RSVP_LINK]`,
+  },
+  {
+    question: "Can I take a picture during ceremony?",
+    answer:
+      "Yes, you may take photos or videos, as long as you do not obstruct the hired photographers and videographers, or interfere with other guests.",
   },
 ];
 

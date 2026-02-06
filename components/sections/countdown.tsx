@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react"
 import { Section } from "@/components/section"
 import Counter from "@/components/counter"
+import { siteConfig } from "@/content/site"
 
 interface TimeLeft {
   days: number
@@ -21,10 +22,10 @@ export function Countdown() {
 
   useEffect(() => {
     const calculateTimeLeft = () => {
-      // Target: February 8, 2026 at 1:30 PM GMT+8
+      // Target: May 23, 2026 at 1:30 PM GMT+8
       // Compute using UTC to avoid timezone parsing inconsistencies across browsers
       // 1:30 PM GMT+8 == 05:30 AM UTC
-      const targetDate = Date.UTC(2026, 1, 8, 5, 30, 0) // February is month 1 (0-indexed)
+      const targetDate = Date.UTC(2026, 4, 23, 5, 30, 0) // May is month 4 (0-indexed)
       const now = new Date().getTime()
       const difference = targetDate - now
 
@@ -150,7 +151,7 @@ export function Countdown() {
               {/* Month - Script style with earth tones, smaller for mobile */}
               <div className="mb-3 sm:mb-4 md:mb-5">
                 <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-[family-name:var(--font-ephesis)] text-[#800A06] leading-none">
-                  February
+                  May
                 </p>
               </div>
               
@@ -158,7 +159,7 @@ export function Countdown() {
               <div className="flex items-center justify-center gap-3 sm:gap-4 md:gap-5 mb-5 sm:mb-6">
                 {/* Day - Large and bold but scaled for mobile */}
                 <p className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-[family-name:var(--font-crimson)] font-normal text-[#800A06] leading-none elegant-text-shadow">
-                  8
+                  23
                 </p>
                 
                 {/* Vertical divider with earth tone gradient - shorter */}
@@ -182,7 +183,7 @@ export function Countdown() {
               
               {/* Time - Better readability */}
               <p className="text-sm sm:text-base md:text-lg lg:text-xl font-[family-name:var(--font-crimson)] font-semibold text-[#800A06] tracking-wide mb-3 sm:mb-4">
-                1:30 PM
+                {siteConfig.ceremony.time}
               </p>
               
               {/* Bottom decorative line */}

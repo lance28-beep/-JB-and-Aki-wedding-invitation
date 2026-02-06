@@ -88,12 +88,12 @@ export function BookOfGuests() {
   }, []);
 
   return (
-    <Section id="guests" className="relative py-8 sm:py-12 md:py-16 lg:py-20">
+    <Section id="guests" className="relative z-0 py-8 sm:py-12 md:py-16 lg:py-20">
       {/* Semi-transparent overlay for better text readability */}
       <div className="absolute inset-0 bg-[#EFCA93] backdrop-blur-sm pointer-events-none" />
 
       {/* Header */}
-      <div className="relative z-10 text-center mb-6 sm:mb-10 md:mb-12 px-3 sm:px-4 md:px-6">
+      <div className="relative z-[1] text-center mb-6 sm:mb-10 md:mb-12 px-3 sm:px-4 md:px-6">
         <div className="flex items-center justify-center gap-2 sm:gap-3 mb-3 sm:mb-4">
           <div className="h-[1px] w-12 sm:w-16 md:w-24 bg-gradient-to-r from-transparent via-[#9F8650] to-transparent" />
         </div>
@@ -109,7 +109,7 @@ export function BookOfGuests() {
       </div>
 
       {/* Guests content */}
-      <div className="relative z-10">
+      <div className="relative z-[1]">
         {/* Stats card */}
         <div className="text-center mb-6 sm:mb-8 md:mb-10 px-3 sm:px-4 md:px-6">
           <div className="relative max-w-3xl mx-auto group">
@@ -143,7 +143,7 @@ export function BookOfGuests() {
         </div>
 
         {/* Guest list container */}
-        <div className="relative z-10 max-w-5xl mx-auto px-3 sm:px-4 md:px-6">
+        <div className="relative z-[1] max-w-5xl mx-auto px-3 sm:px-4 md:px-6">
           <div className="relative group">
             <div className="absolute -inset-1 bg-gradient-to-br from-[#9F8650]/20 to-[#800A06]/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-lg" />
 

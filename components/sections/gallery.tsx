@@ -1,16 +1,29 @@
 "use client"
 
 import { useState, useEffect, useCallback } from "react"
+import Link from "next/link"
 import { X, ChevronLeft, ChevronRight } from "lucide-react"
 import { Section } from "@/components/section"
 // Removed circular gallery in favor of a responsive masonry layout
 
 const galleryItems = [
-  { image: "/gallery/couple (1).jpeg", text: " " },   
-  { image: "/gallery/couple (2).jpeg", text: " " },
-  { image: "/gallery/couple (3).jpeg", text: " " },
-  { image: "/gallery/couple (4).jpeg", text: " " },
-  { image: "/gallery/couple (5).jpeg", text: " " },
+  { image: "/desktop-view/couple (1).webp", text: " " },   
+  { image: "/desktop-view/couple (2).webp", text: " " },
+  { image: "/desktop-view/couple (3).webp", text: " " },
+  { image: "/desktop-view/couple (4).webp", text: " " },
+  { image: "/desktop-view/couple (5).webp", text: " " },
+  { image: "/desktop-view/couple (6).webp", text: " " },
+  { image: "/desktop-view/couple (7).webp", text: " " },
+  { image: "/desktop-view/couple (8).webp", text: " " },
+  { image: "/desktop-view/couple (9).webp", text: " " },
+  { image: "/desktop-view/couple (10).webp", text: " " },
+  { image: "/desktop-view/couple (11).webp", text: " " },
+  { image: "/desktop-view/couple (12).webp", text: " " },
+  { image: "/desktop-view/couple (13).webp", text: " " },
+  { image: "/desktop-view/couple (14).webp", text: " " },
+  { image: "/desktop-view/couple (15).webp", text: " " },
+
+
 ]
 
 export function Gallery() {
@@ -120,42 +133,103 @@ export function Gallery() {
                 <div className="w-12 h-12 border-[3px] border-[#9F8650]/30 border-t-[#9F8650] rounded-full animate-spin" />
               </div>
             ) : (
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4 md:gap-5 lg:gap-6">
-                {galleryItems.map((item, index) => (
-                  <button
-                    key={item.image + index}
-                    type="button"
-                    className="group relative w-full overflow-hidden rounded-lg sm:rounded-xl bg-white/80 backdrop-blur-sm border border-[#9F8650]/30 shadow-lg hover:shadow-xl hover:border-[#9F8650]/50 transition-all duration-300"
-                    onClick={() => {
-                      setSelectedImage(item)
-                      setCurrentIndex(index)
-                    }}
-                    aria-label={`Open image ${index + 1}`}
+              <>
+                {/* Mobile: swipeable sliding gallery (scroll-snap carousel) */}
+                <div className="sm:hidden">
+                  <div
+                    className="flex gap-3 overflow-x-auto px-1 pb-3 snap-x snap-mandatory scroll-px-4 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+                    aria-label="Gallery carousel"
                   >
-                    {/* Subtle glow on hover */}
-                    <div className="absolute -inset-0.5 bg-gradient-to-br from-[#9F8650]/20 to-[#800A06]/10 rounded-lg sm:rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm" />
-                    
-                    <div className="relative aspect-[3/4] md:aspect-square overflow-hidden">
-                      <img
-                        src={item.image}
-                        alt={item.text || `Gallery image ${index + 1}`}
-                        loading="lazy"
-                        decoding="async"
-                        sizes="(min-width: 1024px) 20vw, (min-width: 768px) 33vw, (min-width: 640px) 50vw, 100vw"
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                      />
-                      {/* Gradient overlay on hover */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    </div>
-                    
-                    {/* Image counter badge */}
-                    <div className="absolute top-2 right-2 bg-[#800A06]/60 backdrop-blur-sm rounded-full px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <span className="text-xs font-medium text-white">
-                        {index + 1}/{galleryItems.length}
-                      </span>
-                    </div>
-                  </button>
-                ))}
+                    {galleryItems.map((item, index) => (
+                      <button
+                        key={item.image + index}
+                        type="button"
+                        className="group relative snap-center shrink-0 w-[82%] overflow-hidden rounded-lg bg-white/80 backdrop-blur-sm border border-[#9F8650]/30 shadow-lg active:shadow-xl active:border-[#9F8650]/50 transition-all duration-300"
+                        onClick={() => {
+                          setSelectedImage(item)
+                          setCurrentIndex(index)
+                        }}
+                        aria-label={`Open image ${index + 1}`}
+                      >
+                        {/* Subtle glow on active (mobile) */}
+                        <div className="absolute -inset-0.5 bg-gradient-to-br from-[#9F8650]/20 to-[#800A06]/10 rounded-lg opacity-0 group-active:opacity-100 transition-opacity duration-300 blur-sm" />
+
+                        <div className="relative aspect-[3/4] overflow-hidden">
+                          <img
+                            src={item.image}
+                            alt={item.text || `Gallery image ${index + 1}`}
+                            loading="lazy"
+                            decoding="async"
+                            sizes="90vw"
+                            className="w-full h-full object-cover transition-transform duration-500 group-active:scale-[1.02]"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-active:opacity-100 transition-opacity duration-300" />
+                        </div>
+
+                        <div className="absolute top-2 right-2 bg-[#800A06]/60 backdrop-blur-sm rounded-full px-2 py-1">
+                          <span className="text-xs font-medium text-white">
+                            {index + 1}/{galleryItems.length}
+                          </span>
+                        </div>
+                      </button>
+                    ))}
+                  </div>
+
+                  <p className="mt-2 text-center text-xs font-[family-name:var(--font-crimson)] text-[#800A06]/70 tracking-wide">
+                    Swipe to slide
+                  </p>
+                </div>
+
+                {/* Tablet/Desktop: existing grid */}
+                <div className="hidden sm:grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-5 lg:gap-6">
+                  {galleryItems.map((item, index) => (
+                    <button
+                      key={item.image + index}
+                      type="button"
+                      className="group relative w-full overflow-hidden rounded-xl bg-white/80 backdrop-blur-sm border border-[#9F8650]/30 shadow-lg hover:shadow-xl hover:border-[#9F8650]/50 transition-all duration-300"
+                      onClick={() => {
+                        setSelectedImage(item)
+                        setCurrentIndex(index)
+                      }}
+                      aria-label={`Open image ${index + 1}`}
+                    >
+                      {/* Subtle glow on hover */}
+                      <div className="absolute -inset-0.5 bg-gradient-to-br from-[#9F8650]/20 to-[#800A06]/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm" />
+
+                      <div className="relative aspect-[3/4] md:aspect-square overflow-hidden">
+                        <img
+                          src={item.image}
+                          alt={item.text || `Gallery image ${index + 1}`}
+                          loading="lazy"
+                          decoding="async"
+                          sizes="(min-width: 1024px) 20vw, (min-width: 768px) 33vw, (min-width: 640px) 50vw, 100vw"
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        />
+                        {/* Gradient overlay on hover */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      </div>
+
+                      {/* Image counter badge */}
+                      <div className="absolute top-2 right-2 bg-[#800A06]/60 backdrop-blur-sm rounded-full px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span className="text-xs font-medium text-white">
+                          {index + 1}/{galleryItems.length}
+                        </span>
+                      </div>
+                    </button>
+                  ))}
+                </div>
+              </>
+            )}
+
+            {/* View more */}
+            {!isLoading && (
+              <div className="mt-10 sm:mt-12 flex justify-center">
+                <Link
+                  href="/gallery"
+                  className="inline-flex items-center justify-center rounded-full px-7 py-3 text-sm sm:text-base font-medium tracking-wide bg-white/80 backdrop-blur-sm border border-[#9F8650]/40 text-[#800A06] shadow-md hover:shadow-lg hover:bg-white/90 hover:border-[#9F8650]/60 transition-all duration-200"
+                >
+                  View more
+                </Link>
               </div>
             )}
           </div>

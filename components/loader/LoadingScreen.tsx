@@ -1,64 +1,283 @@
-import React, { useEffect, useState } from 'react';
+'use client';
+
+import React, { useEffect, useState, useMemo } from 'react';
 import Image from 'next/image';
+import { siteConfig } from '@/content/site';
 
 interface LoadingScreenProps {
   onComplete: () => void;
 }
 
+// Countdown boxes with color photos - numbers show days, hours, minutes
+const COUNTDOWN_BOXES = [
+  { src: '/desktop-view/couple (18).webp' },
+  { src: '/desktop-view/couple (24).webp' },
+  { src: '/desktop-view/couple (19).webp' },
+];
+
+const MAIN_BW_IMAGE = '/desktop-view/couple (6).webp';
+const STAGGER_DELAY_MS = 4000; // Each image appears every 4 seconds
+const BOX_TRANSITION_MS = 1200; // Slow, smooth transition
+const TOTAL_DURATION_MS = COUNTDOWN_BOXES.length * STAGGER_DELAY_MS + 3000;
+
 export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
   const [fadeOut, setFadeOut] = useState(false);
+  const [progress, setProgress] = useState(0);
+  const [visibleBoxes, setVisibleBoxes] = useState<number[]>([]);
+  const [now, setNow] = useState(() => new Date());
+
+  // Live countdown: days, hours, minutes until wedding
+  const countdown = useMemo(() => {
+    const wedding = new Date('2026-05-23T13:30:00');
+    const diff = wedding.getTime() - now.getTime();
+    if (diff <= 0) return { days: 0, hours: 0, minutes: 0 };
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    return { days, hours, minutes };
+  }, [now]);
+
+  const countdownText = useMemo(() => {
+    const { days } = countdown;
+    if (days === 0) return 'TODAY IS THE DAY';
+    if (days === 1) return 'ONE DAY TO GO';
+    if (days >= 28 && days <= 31) return 'ONE MONTH TO GO';
+    if (days >= 58 && days <= 62) return 'TWO MONTHS TO GO';
+    if (days >= 88 && days <= 93) return 'THREE MONTHS TO GO';
+    if (days >= 118 && days <= 123) return 'FOUR MONTHS TO GO';
+    if (days >= 148 && days <= 153) return 'FIVE MONTHS TO GO';
+    return `${days} DAYS TO GO`;
+  }, [countdown.days]);
+
+  // Wedding date: 05.23.26 (month, day, year)
+  const countdownNumbers = ['05', '23', '26'];
+  const countdownLabels = ['MONTH', 'DAY', 'YEAR'];
 
   useEffect(() => {
-    // Simulate loading time
-    const timer = setTimeout(() => {
-      setFadeOut(true);
-      setTimeout(onComplete, 1000); // Wait for fade out animation
-    }, 2500);
+    const t = setInterval(() => setNow(new Date()), 60000); // update every minute
+    return () => clearInterval(t);
+  }, []);
 
-    return () => clearTimeout(timer);
+  useEffect(() => {
+    const timers: NodeJS.Timeout[] = [];
+    COUNTDOWN_BOXES.forEach((_, i) => {
+      timers.push(
+        setTimeout(() => setVisibleBoxes((prev) => [...prev, i]), i * STAGGER_DELAY_MS)
+      );
+    });
+    return () => timers.forEach(clearTimeout);
+  }, []);
+
+  useEffect(() => {
+    const startTime = Date.now();
+    const progressInterval = setInterval(() => {
+      const elapsed = Date.now() - startTime;
+      const pct = Math.min(100, (elapsed / TOTAL_DURATION_MS) * 100);
+      setProgress(pct);
+    }, 50);
+
+    const timer = setTimeout(() => {
+      setProgress(100);
+      setFadeOut(true);
+      setTimeout(onComplete, 500);
+    }, TOTAL_DURATION_MS);
+
+    return () => {
+      clearTimeout(timer);
+      clearInterval(progressInterval);
+    };
   }, [onComplete]);
+
+  const coupleNames = `${siteConfig.couple.groomNickname} & ${siteConfig.couple.brideNickname}`;
+  const hashtag = `#${siteConfig.couple.groomNickname}And${siteConfig.couple.brideNickname}`;
+  const productionCredit = '';
+
+  // Palette tuned to requested hues
+  const palette = {
+    deep: '#994524',
+    medium: '#C0531C',
+    accent: '#E69A41',
+    cream: '#FFF7ED',
+    soft: '#FBE5D6',
+  };
 
   return (
     <div
-      className={`fixed inset-0 z-[60] flex items-center justify-center overflow-hidden transition-opacity duration-1000 ${
+      className={`fixed inset-0 z-50 flex flex-col overflow-hidden transition-opacity duration-500 ${
         fadeOut ? 'opacity-0 pointer-events-none' : 'opacity-100'
       }`}
     >
-      {/* Background */}
-      <div className="absolute inset-0 bg-[#EFCA93]" />
+      {/* Background image with overlay */}
+      <div className="absolute inset-0">
+        <Image
+          src={MAIN_BW_IMAGE}
+          alt=""
+          fill
+          className="object-cover object-center"
+          sizes="100vw"
+          priority
+        />
+        {/* Gradient overlay for readability and warmth */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background: `linear-gradient(180deg, ${palette.deep}40 0%, transparent 25%, transparent 75%, ${palette.deep}55 100%)`,
+          }}
+        />
+      </div>
 
-      <div className="relative flex flex-col items-center justify-center">
-        <div className="relative flex items-center justify-center">
-          {/* Glow halos */}
-          <div className="absolute w-40 h-40 rounded-full bg-white/25 blur-3xl animate-pulse" />
-          <div className="absolute w-28 h-28 rounded-full bg-[#909E8D]/30 blur-2xl animate-ping" />
-
-          {/* Outer decorative rings */}
-          <div className="absolute w-32 h-32 rounded-full border border-[#525E2C]/70 animate-ping" />
-          <div className="absolute w-26 h-26 rounded-full border border-[#909E8D]/70 animate-[spin_7s_linear_infinite]" />
-          <div className="absolute w-22 h-22 rounded-full border-t-2 border-b-2 border-[#D1AB6D]/80 animate-[spin_12s_linear_infinite_reverse]" />
-
-          {/* Monogram */}
-          <div className="flex flex-col items-center justify-center z-10">
-            <div className="relative w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32">
-              <Image
-                src="/monogram/monogram-new.png"
-                alt="Mark Joey & Diana Grace Monogram"
-                fill
-                className="object-contain"
-                priority
+      <div className="relative flex flex-col flex-1 min-h-0">
+        {/* Top: headline + hashtag + countdown (readable over photo, no container) */}
+        <div className="flex flex-col items-center justify-center w-full pt-12 sm:pt-16 md:pt-24 px-4 sm:px-6 flex-shrink-0">
+          <div className="w-full max-w-lg mx-auto">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-3 sm:mb-4">
+              <span
+                className="hidden sm:block h-px w-12 flex-shrink-0"
+                style={{ backgroundColor: palette.accent }}
+              />
+              <p className="text-center">
+                <span
+                  className="inline-block text-[10px] sm:text-xs tracking-[0.28em] sm:tracking-[0.36em] font-[family-name:var(--font-crimson)] uppercase px-3 py-1.5 rounded-full backdrop-blur-sm border"
+                  style={{
+                    color: '#800A06',
+                    backgroundColor: 'rgba(255, 247, 237, 0.86)',
+                    borderColor: 'rgba(128, 10, 6, 0.18)',
+                    textShadow: '0 1px 0 rgba(255,255,255,0.7)',
+                  }}
+                >
+                  Your invitation is on its way
+                </span>
+              </p>
+              <span
+                className="hidden sm:block h-px w-12 flex-shrink-0"
+                style={{ backgroundColor: palette.accent }}
               />
             </div>
+
+            <p className="text-center mb-4 sm:mb-5">
+              <span
+                className="inline-block text-xs sm:text-sm tracking-[0.2em] sm:tracking-[0.25em] font-[family-name:var(--font-crimson)] px-3 py-1.5 rounded-full backdrop-blur-sm border"
+                style={{
+                  color: '#800A06',
+                  backgroundColor: 'rgba(255, 247, 237, 0.86)',
+                  borderColor: 'rgba(128, 10, 6, 0.18)',
+                  textShadow: '0 1px 0 rgba(255,255,255,0.7)',
+                }}
+              >
+                {hashtag}
+              </span>
+            </p>
+
+            <h2 className="text-center">
+              <span
+                className="inline-block text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-[0.08em] sm:tracking-[0.12em] uppercase max-w-md mx-auto leading-tight px-2"
+                style={{
+                  fontFamily: '"Cinzel", serif',
+                  color: '#FFFFFF',
+                  textShadow:
+                    '0 2px 14px rgba(0,0,0,0.55), 0 0 22px rgba(230,154,65,0.55), 0 0 44px rgba(192,83,28,0.25)',
+                }}
+              >
+                {countdownText}
+              </span>
+            </h2>
           </div>
         </div>
 
-        <div className="mt-8 text-center">
+        {/* Spacer - lets B&W image dominate (upper 2/3) */}
+        <div className="flex-1 min-h-[12vh]" />
+
+        {/* Middle: Three color countdown boxes - staggered reveal */}
+        <div className="flex items-stretch justify-center gap-3 sm:gap-4 md:gap-6 px-3 sm:px-4 py-4 flex-shrink-0">
+          {COUNTDOWN_BOXES.map((item, i) => {
+            const isVisible = visibleBoxes.includes(i);
+            return (
+              <div
+                key={i}
+                className="relative flex-1 max-w-[28vw] sm:max-w-[140px] md:max-w-[160px] aspect-[3/4] overflow-hidden"
+                style={{
+                  opacity: isVisible ? 1 : 0,
+                  transform: isVisible ? 'translateY(0) scale(1)' : 'translateY(24px) scale(0.96)',
+                  transition: `opacity ${BOX_TRANSITION_MS}ms cubic-bezier(0.4, 0, 0.2, 1), transform ${BOX_TRANSITION_MS}ms cubic-bezier(0.4, 0, 0.2, 1)`,
+                }}
+              >
+                <Image
+                  src={item.src}
+                  alt={`${coupleNames}`}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 640px) 28vw, 160px"
+                />
+                {/* Bold wedding date number + label - right corner */}
+                <div className="absolute bottom-2 right-2 sm:bottom-3 sm:right-3 flex flex-col items-end">
+                  <span
+                    className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black select-none leading-none drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]"
+                    style={{
+                      fontFamily: 'var(--font-granika), sans-serif',
+                      color: palette.cream,
+                    }}
+                  >
+                    {countdownNumbers[i]}
+                  </span>
+                  <span
+                    className="text-[8px] sm:text-[9px] tracking-widest uppercase mt-0.5"
+                    style={{ color: palette.soft }}
+                  >
+                    {countdownLabels[i]}
+                  </span>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Bottom: Names + production credit + progress bar */}
+        <div className="flex flex-col items-center justify-center w-full py-6 sm:py-8 px-4 flex-shrink-0">
           <p
-            className="text-xs uppercase tracking-[0.3em] text-[#800A06] animate-pulse drop-shadow"
-            style={{ fontFamily: '"Cinzel", serif', fontWeight: 700 }}
+            className="text-center text-sm sm:text-base tracking-[0.18em] uppercase text-[family-name:var(--font-crimson)] mb-2"
+            style={{ color: palette.soft }}
           >
-            Loading Invitation
+            Almost ready for
           </p>
+          <div
+            className="text-center text-2xl sm:text-3xl md:text-4xl mb-2"
+            style={{
+              fontFamily: 'var(--font-crimson)',
+              color: palette.cream,
+              textShadow: '0 2px 10px rgba(0,0,0,0.35)',
+            }}
+          >
+            {coupleNames}
+          </div>
+          {productionCredit && (
+            <p
+              className="text-[10px] sm:text-xs font-sans tracking-wider"
+              style={{ color: palette.soft }}
+            >
+              {productionCredit}
+            </p>
+          )}
+          {/* Preparing message + progress bar */}
+          <p
+            className="text-xs sm:text-sm tracking-[0.22em] mt-6 mb-3 font-[family-name:var(--font-crimson)] uppercase"
+            style={{ color: palette.accent }}
+          >
+            Crafting your invitation experience
+          </p>
+          <div className="w-full max-w-xs mx-auto">
+            <div
+              className="h-1 rounded-full overflow-hidden"
+              style={{ backgroundColor: `${palette.medium}40` }}
+            >
+              <div
+                className="h-full rounded-full transition-all duration-300 ease-out"
+                style={{
+                  width: `${progress}%`,
+                  backgroundColor: palette.accent,
+                }}
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>

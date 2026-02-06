@@ -5,6 +5,7 @@ import { Shirt, Copy, Check, Navigation, MapPin } from "lucide-react"
 import { useState } from "react"
 import Image from "next/image"
 import { QRCodeSVG } from "qrcode.react"
+import { siteConfig } from "@/content/site"
 
 export function Details() {
   const [copiedItems, setCopiedItems] = useState<Set<string>>(new Set())
@@ -25,16 +26,16 @@ export function Details() {
     }
   }
 
-  // Updated venue information
-  const ceremonyVenueName = "MATER DOLOROSA Parish in Capas"
+  // Venue information from site config
+  const ceremonyVenueName = siteConfig.ceremony.location
   const ceremonyVenueDetail = ""
-  const ceremonyAddress = "Capas, Tarlac"
+  const ceremonyAddress = siteConfig.ceremony.address
   const ceremonyVenue = `${ceremonyVenueName}, ${ceremonyAddress}`
   const ceremonyMapsLink = `https://maps.google.com/?q=${encodeURIComponent(ceremonyVenue)}`
 
-  const receptionVenueName = "Cz Ranch"
+  const receptionVenueName = siteConfig.reception.location
   const receptionVenueDetail = ""
-  const receptionAddress = "Capas, Tarlac"
+  const receptionAddress = siteConfig.reception.address
   const receptionVenue = `${receptionVenueName}, ${receptionAddress}`
   const receptionMapsLink = `https://maps.google.com/?q=${encodeURIComponent(receptionVenue)}`
 
@@ -77,8 +78,8 @@ export function Details() {
             {/* Venue Image */}
             <div className="relative w-full h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80 overflow-hidden">
               <Image
-                src="/Details/MATER%20DOLOROSA%20Parish%20in%20Capas.JPG"
-                alt="MATER DOLOROSA Parish in Capas"
+                src="/Details/San Antonio de Padua Parish, Silang, Cavite.jpg"
+                alt={siteConfig.ceremony.venue}
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 1280px"
@@ -92,10 +93,10 @@ export function Details() {
                   Ceremony
                 </p>
                 <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-[family-name:var(--font-crimson)] font-normal text-white mb-0.5 sm:mb-1 drop-shadow-lg uppercase tracking-[0.1em] leading-tight">
-                  MATER DOLOROSA
+                  {siteConfig.ceremony.venue}
                 </h3>
                 <p className="text-xs sm:text-sm md:text-base font-[family-name:var(--font-crimson)] text-white/95 drop-shadow-md tracking-wide">
-                  Parish in Capas
+                  {siteConfig.ceremony.address}
                 </p>
               </div>
             </div>
@@ -106,20 +107,20 @@ export function Details() {
               <div className="text-center mb-5 sm:mb-8 md:mb-10">
                 {/* Day name */}
                 <p className="text-[10px] sm:text-xs md:text-sm font-[family-name:var(--font-crimson)] font-semibold text-[#800A06] uppercase tracking-[0.2em] mb-2 sm:mb-3">
-                  Sunday
+                  {siteConfig.ceremony.day}
                 </p>
                 
                 {/* Month - Script style with warm gold */}
                 <div className="mb-2 sm:mb-4">
                   <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-[family-name:var(--font-ephesis)] text-[#800A06] leading-none">
-                    February
+                    May
                   </p>
                 </div>
                 
                 {/* Day and Year */}
                 <div className="flex items-center justify-center gap-2 sm:gap-3 md:gap-4 mb-4 sm:mb-6 md:mb-7">
                   <p className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-[family-name:var(--font-crimson)] font-normal text-[#800A06] leading-none elegant-text-shadow">
-                    8
+                    23
                   </p>
                   <div className="h-10 sm:h-12 md:h-16 lg:h-20 w-[2px] bg-gradient-to-b from-[#9F8650] via-[#800A06] to-[#9F8650]" />
                   <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-[family-name:var(--font-crimson)] font-light text-[#800A06] leading-none">
@@ -136,7 +137,7 @@ export function Details() {
 
                 {/* Time */}
                 <p className="text-sm sm:text-base md:text-lg lg:text-xl font-[family-name:var(--font-crimson)] font-semibold text-[#800A06] tracking-wide">
-                  1:30 PM
+                  {siteConfig.ceremony.time}
                 </p>
               </div>
 
@@ -216,8 +217,8 @@ export function Details() {
             {/* Venue Image */}
             <div className="relative w-full h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80 overflow-hidden">
               <Image
-                src="/Details/Cz%20Ranch.jpg"
-                alt="Cz Ranch"
+                src="/Details/The Pulo Events Place, Silang, Cavite.jpg"
+                alt={siteConfig.reception.venue}
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 1280px"
@@ -230,10 +231,10 @@ export function Details() {
                   Reception
                 </p>
                 <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-[family-name:var(--font-crimson)] font-normal text-white mb-0.5 sm:mb-1 drop-shadow-lg uppercase tracking-[0.1em] leading-tight">
-                  Cz Ranch
+                  {siteConfig.reception.venue}
                 </h3>
                 <p className="text-xs sm:text-sm md:text-base font-[family-name:var(--font-crimson)] text-white/95 drop-shadow-md tracking-wide">
-                  Capas, Tarlac
+                  {siteConfig.reception.address}
                 </p>
               </div>
             </div>
@@ -243,10 +244,10 @@ export function Details() {
               {/* Time */}
               <div className="text-center mb-5 sm:mb-8">
                 <p className="text-[10px] sm:text-xs md:text-sm font-[family-name:var(--font-crimson)] font-semibold text-[#800A06] uppercase tracking-[0.2em] mb-2 sm:mb-3">
-                  Starts at
+                  {siteConfig.reception.time === "After ceremony" ? "Starts" : "Starts at"}
                 </p>
                 <p className="text-sm sm:text-base md:text-lg lg:text-xl font-[family-name:var(--font-crimson)] font-semibold text-[#800A06] tracking-wide">
-                  4:00 PM
+                  {siteConfig.reception.time}
                 </p>
               </div>
 
@@ -336,86 +337,99 @@ export function Details() {
 
         {/* Attire Cards */}
         <div className="space-y-5 sm:space-y-6 md:space-y-8">
-          {/* Guest Attire */}
+          {/* Principal Sponsor Attire */}
           <div className="relative group">
-            <div className="absolute -inset-1 bg-gradient-to-br from-[#9F8650]/15 to-[#800A06]/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-lg" />
+            <div className="absolute -inset-1 bg-gradient-to-br from-[#A69E89]/15 to-[#7C745F]/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-lg" />
             
-            <div className="relative bg-white backdrop-blur-sm rounded-xl sm:rounded-2xl p-6 sm:p-7 md:p-9 border-2 border-[#9F8650]/30 shadow-lg hover:shadow-xl transition-all duration-300">
-              <h4 className="text-lg sm:text-xl md:text-2xl font-[family-name:var(--font-crimson)] font-semibold text-[#800A06] mb-6 sm:mb-7 md:mb-8 uppercase tracking-[0.12em] text-center">
-                Guest Attire
+            <div className="relative bg-white backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-7 lg:p-9 border-2 border-[#A69E89]/40 shadow-lg hover:shadow-xl transition-all duration-300">
+              <h4 className="text-base sm:text-lg md:text-xl lg:text-2xl font-[family-name:var(--font-crimson)] font-semibold text-[#7C745F] mb-4 sm:mb-5 md:mb-6 uppercase tracking-[0.12em] text-center px-2">
+                Principal Sponsor Attire
               </h4>
-              
-              {/* Guest Dress Code Text */}
-              <div className="text-center mb-7 sm:mb-8 md:mb-10">
-                <p className="text-base sm:text-lg md:text-xl font-[family-name:var(--font-crimson)] text-[#800A06] leading-relaxed mb-4">
-                  <span className="font-semibold">Ladies:</span> Long gowns in earth tones 
-                </p>
-                <p className="text-base sm:text-lg md:text-xl font-[family-name:var(--font-crimson)] text-[#800A06] leading-relaxed">
-                  <span className="font-semibold">Gentlemen:</span> Barong Tagalog & black slacks or formal wear
-                </p>
+
+              {/* Copy: follow color palette */}
+              <p className="text-center text-xs sm:text-sm md:text-base lg:text-lg font-[family-name:var(--font-crimson)] text-[#7C745F]/90 font-light leading-relaxed mb-4 sm:mb-5 md:mb-6 max-w-xl mx-auto px-3">
+                Please follow the color palette below for your outfit.
+              </p>
+
+              {/* Principal sponsor attire image */}
+              <div className="relative w-full aspect-[4/3] sm:aspect-[3/2] max-w-2xl mx-auto rounded-lg sm:rounded-xl overflow-hidden border border-[#A69E89]/30 mb-4 sm:mb-6 md:mb-8">
+                <Image
+                  src="/Details/Principalsponsor.png"
+                  alt="Principal sponsor attire — follow the color palette"
+                  fill
+                  className="object-contain bg-[#F9F8F4]/50 p-2 sm:p-3"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 672px"
+                />
               </div>
 
-              {/* Decorative divider */}
-              <div className="flex items-center justify-center gap-3 sm:gap-4 mb-6 sm:mb-7">
-                <div className="h-px w-12 sm:w-16 md:w-20 bg-[#9F8650]/40" />
-                <div className="w-1.5 h-1.5 bg-[#9F8650]/50 rounded-full" />
-                <div className="h-px w-12 sm:w-16 md:w-20 bg-[#9F8650]/40" />
+              {/* Color palette for principal sponsors */}
+              <div className="flex justify-center gap-2 sm:gap-3 md:gap-4 flex-wrap mb-5 sm:mb-6 md:mb-7 px-2">
+                {["#9AAB89", "#994524", "#C0531C", "#E69A41", "#D18A62"].map((color) => (
+                  <div
+                    key={color}
+                    className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 rounded-full shadow-md border-2 border-white ring-2 ring-[#A69E89]/30 hover:scale-110 transition-transform duration-300"
+                    style={{ backgroundColor: color }}
+                    title={color}
+                  />
+                ))}
               </div>
               
-              {/* Color Palette - Autumn Theme */}
-              <div className="text-center bg-gradient-to-br from-[#FAAF38]/5 via-transparent to-[#FAAF38]/5 rounded-xl p-5 sm:p-6 md:p-7">
-                <p className="text-xs sm:text-sm md:text-base font-[family-name:var(--font-crimson)] font-semibold text-[#800A06] uppercase tracking-wider mb-4 sm:mb-5">
-                  Color Palette - Autumn Theme
+              {/* Sponsors Dress Code Text */}
+              <div className="text-center pt-3 sm:pt-4 border-t border-[#A69E89]/20 px-3 sm:px-4">
+                <p className="text-sm sm:text-base md:text-lg lg:text-xl font-[family-name:var(--font-crimson)] text-[#7C745F] leading-relaxed mb-3 sm:mb-4">
+                  <span className="font-semibold">Ninangs:</span> Long gowns in autumn tones or any color from our palette
                 </p>
-                <div className="flex justify-center gap-3 sm:gap-4 flex-wrap">
-                  <div className="flex flex-col items-center gap-2 sm:gap-2.5">
-                    <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full shadow-lg border-3 border-white bg-[#800A06] hover:scale-110 hover:shadow-xl transition-all duration-300 ring-2 ring-[#800A06]/20" />
-                    <span className="text-xs sm:text-sm font-[family-name:var(--font-crimson)] font-medium text-[#800A06]/70">Dark Red</span>
-                  </div>
-                  <div className="flex flex-col items-center gap-2 sm:gap-2.5">
-                    <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full shadow-lg border-3 border-white bg-[#6A1F08] hover:scale-110 hover:shadow-xl transition-all duration-300 ring-2 ring-[#6A1F08]/20" />
-                    <span className="text-xs sm:text-sm font-[family-name:var(--font-crimson)] font-medium text-[#800A06]/70">Dark Brown</span>
-                  </div>
-                  <div className="flex flex-col items-center gap-2 sm:gap-2.5">
-                    <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full shadow-lg border-3 border-white bg-[#9B4719] hover:scale-110 hover:shadow-xl transition-all duration-300 ring-2 ring-[#9B4719]/20" />
-                    <span className="text-xs sm:text-sm font-[family-name:var(--font-crimson)] font-medium text-[#800A06]/70">Brown</span>
-                  </div>
-                  <div className="flex flex-col items-center gap-2 sm:gap-2.5">
-                    <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full shadow-lg border-3 border-white bg-[#FAAF38] hover:scale-110 hover:shadow-xl transition-all duration-300 ring-2 ring-[#FAAF38]/20" />
-                    <span className="text-xs sm:text-sm font-[family-name:var(--font-crimson)] font-medium text-[#800A06]/70">Golden</span>
-                  </div>
-                  <div className="flex flex-col items-center gap-2 sm:gap-2.5">
-                    <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full shadow-lg border-3 border-white bg-[#EFCA93] hover:scale-110 hover:shadow-xl transition-all duration-300 ring-2 ring-[#EFCA93]/20" />
-                    <span className="text-xs sm:text-sm font-[family-name:var(--font-crimson)] font-medium text-[#800A06]/70">Beige</span>
-                  </div>
-                  <div className="flex flex-col items-center gap-2 sm:gap-2.5">
-                    <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full shadow-lg border-3 border-white bg-[#EFD2AA] hover:scale-110 hover:shadow-xl transition-all duration-300 ring-2 ring-[#EFD2AA]/20" />
-                    <span className="text-xs sm:text-sm font-[family-name:var(--font-crimson)] font-medium text-[#800A06]/70">Light Beige</span>
-                  </div>
-                </div>
-                <p className="mt-5 text-xs sm:text-sm md:text-base font-[family-name:var(--font-crimson)] text-[#800A06]/80 leading-relaxed">
-                  We kindly request guests to wear autumn tones. 
+                <p className="text-sm sm:text-base md:text-lg lg:text-xl font-[family-name:var(--font-crimson)] text-[#7C745F] leading-relaxed">
+                  <span className="font-semibold">Ninongs:</span> Barong Tagalog with black slacks, or formal suits in black or palette colors
                 </p>
               </div>
             </div>
           </div>
 
-          {/* Principal Sponsors Attire */}
+          {/* Guest Attire */}
           <div className="relative group">
-            <div className="absolute -inset-1 bg-gradient-to-br from-[#9F8650]/15 to-[#800A06]/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-lg" />
+            <div className="absolute -inset-1 bg-gradient-to-br from-[#A69E89]/15 to-[#7C745F]/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-lg" />
             
-            <div className="relative bg-white backdrop-blur-sm rounded-xl sm:rounded-2xl p-6 sm:p-7 md:p-9 border-2 border-[#9F8650]/30 shadow-lg hover:shadow-xl transition-all duration-300">
-              <h4 className="text-lg sm:text-xl md:text-2xl font-[family-name:var(--font-crimson)] font-semibold text-[#800A06] mb-6 sm:mb-7 md:mb-8 uppercase tracking-[0.12em] text-center">
-                Principal Sponsors' Attire
+            <div className="relative bg-white backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-7 lg:p-9 border-2 border-[#A69E89]/40 shadow-lg hover:shadow-xl transition-all duration-300">
+              <h4 className="text-base sm:text-lg md:text-xl lg:text-2xl font-[family-name:var(--font-crimson)] font-semibold text-[#7C745F] mb-4 sm:mb-5 md:mb-6 uppercase tracking-[0.12em] text-center px-2">
+                Guest Attire
               </h4>
+
+              {/* Copy: follow color palette */}
+              <p className="text-center text-xs sm:text-sm md:text-base lg:text-lg font-[family-name:var(--font-crimson)] text-[#7C745F]/90 font-light leading-relaxed mb-4 sm:mb-5 md:mb-6 max-w-xl mx-auto px-3">
+                Please follow the color palette below for your outfit.
+              </p>
+
+              {/* Guest attire image */}
+              <div className="relative w-full aspect-[4/3] sm:aspect-[3/2] max-w-2xl mx-auto rounded-lg sm:rounded-xl overflow-hidden border border-[#A69E89]/30 mb-4 sm:mb-6 md:mb-8">
+                <Image
+                  src="/Details/GuestAttire.png"
+                  alt="Guest attire inspiration — follow the color palette"
+                  fill
+                  className="object-contain bg-[#F9F8F4]/50 p-2 sm:p-3"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 672px"
+                />
+              </div>
+
+              {/* Color palette circles */}
+              <div className="flex justify-center gap-2 sm:gap-3 md:gap-4 flex-wrap mb-5 sm:mb-6 md:mb-7 px-2">
+                {["#7C745F", "#A69E89", "#D4BD91", "#E1D7CB", "#BEA587", "#987964"].map((color) => (
+                  <div
+                    key={color}
+                    className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 rounded-full shadow-md border-2 border-white ring-2 ring-[#A69E89]/30 hover:scale-110 transition-transform duration-300"
+                    style={{ backgroundColor: color }}
+                    title={color}
+                  />
+                ))}
+              </div>
               
-              {/* Sponsors Dress Code Text */}
-              <div className="text-center">
-                <p className="text-base sm:text-lg md:text-xl font-[family-name:var(--font-crimson)] text-[#800A06] leading-relaxed mb-4">
-                  <span className="font-semibold">Ninangs:</span> Long gowns in autumn tones or any color from our palette
+              {/* Guest Dress Code Text */}
+              <div className="text-center pt-3 sm:pt-4 border-t border-[#A69E89]/20 px-3 sm:px-4">
+                <p className="text-sm sm:text-base md:text-lg lg:text-xl font-[family-name:var(--font-crimson)] text-[#7C745F] leading-relaxed mb-3 sm:mb-4">
+                  <span className="font-semibold">Ladies:</span> Formal or Semi-Formal attire in colors from our palette
                 </p>
-                <p className="text-base sm:text-lg md:text-xl font-[family-name:var(--font-crimson)] text-[#800A06] leading-relaxed">
-                  <span className="font-semibold">Ninongs:</span> Barong Tagalog with black slacks, or formal suits in black or palette colors
+                <p className="text-sm sm:text-base md:text-lg lg:text-xl font-[family-name:var(--font-crimson)] text-[#7C745F] leading-relaxed">
+                  <span className="font-semibold">Gentlemen:</span> Formal or Semi-Formal attire in colors from our palette
                 </p>
               </div>
             </div>
@@ -464,7 +478,7 @@ export function Details() {
               {/* RSVP Contact */}
               <div className="bg-gradient-to-br from-[#F9F8F4]/30 via-[#F9F8F4]/20 to-white rounded-xl p-5 sm:p-6 md:p-7 border border-[#9F8650]/20">
                 <p className="text-sm sm:text-base md:text-lg font-[family-name:var(--font-crimson)] text-[#800A06] leading-relaxed">
-                  <span className="font-semibold">RSVP Contact:</span> Please reach out to Mark Joey & Diana Grace (contact information to be updated)
+                  <span className="font-semibold">RSVP Contact:</span> Please reach out to {siteConfig.details.rsvp.names} (contact information to be updated)
                 </p>
               </div>
             </div>

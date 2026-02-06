@@ -2,10 +2,9 @@
 
 import { useState, useEffect, useMemo, useRef } from "react";
 import Link from "next/link";
-import Image from "next/image";
-import { Heart, Sparkles } from "lucide-react";
 import { siteConfig } from "@/content/site";
 import StaggeredMenu from "./StaggeredMenu";
+import { Monogram } from "@/components/Monogram";
 
 const navLinks = [
   { href: "#home", label: "Home" },
@@ -85,78 +84,102 @@ export function Navbar() {
   );
 
   return (
-    <nav
-      className={`sticky top-0 z-50 transition-all duration-500 ease-out ${
-        isScrolled
-          ? "bg-[#FAAF38]/95 backdrop-blur-xl shadow-sm border-b border-[#6A1F08]/30 premium-shadow"
-          : "bg-[#FAAF38]/85 backdrop-blur-lg border-b border-[#6A1F08]/20"
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 relative">
-        <div className="flex justify-between items-center h-16 sm:h-16 md:h-14">
-          <Link href="#home" className="flex-shrink-0 group relative z-10">
-            <div className="flex items-center gap-2 sm:gap-3">
-              {/* Monogram Image */}
-              <div className="relative w-9 h-9 sm:w-10 sm:h-10 flex-shrink-0 group-hover:scale-105 transition-all duration-300">
-                <Image
-                  src="/monogram/monogram-new.png"
-                  alt="Mark Joey & Diana Grace Monogram"
-                  fill
-                  className="object-contain"
-                  priority
-                />
-              </div>
+    <>
+      {/* Spacer for fixed navbar so page content doesn't slide underneath */}
+      <div className="h-16 sm:h-16 md:h-14" aria-hidden="true" />
 
-              {/* Names with accent color on hover */}
-              <div className="text-xs sm:text-sm md:text-base lg:text-lg font-[family-name:var(--font-crimson)] font-semibold group-hover:text-[#6A1F08]/80 transition-all duration-300 tracking-[0.1em] sm:tracking-[0.15em] md:tracking-[0.2em] text-[#6A1F08] uppercase whitespace-nowrap">
-                Mark & Diana
-              </div>
-            </div>
-          </Link>
-
-          <div className="hidden md:flex gap-1 items-center">
-            {navLinks.map((link) => {
-              const isActive = activeSection === link.href;
-              return (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className={`px-3 lg:px-4 py-1.5 text-xs lg:text-sm font-[family-name:var(--font-crimson)] font-normal tracking-wide transition-all duration-300 relative group ${
-                    isActive
-                      ? "text-[#6A1F08]"
-                      : "text-[#6A1F08]/80 hover:text-[#6A1F08]"
-                  }`}
-                >
-                  {link.label}
-                  <span
-                    className={`absolute bottom-0 left-0 h-[1.5px] bg-gradient-to-r from-[#6A1F08] to-[#6A1F08]/80 transition-all duration-300 ${
-                      isActive ? "w-full" : "w-0 group-hover:w-full"
-                    }`}
+      <nav
+        className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ease-out ${
+          isScrolled
+            ? "bg-[#FAAF38]/95 backdrop-blur-xl shadow-sm border-b border-[#6A1F08]/30 premium-shadow"
+            : "bg-[#FAAF38]/85 backdrop-blur-lg border-b border-[#6A1F08]/20"
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 relative">
+          <div className="flex justify-between items-center h-16 sm:h-16 md:h-14">
+            <Link href="#home" className="flex-shrink-0 group relative z-10">
+              <div className="flex items-center gap-2 sm:gap-3">
+                {/* Monogram Image */}
+                <div className="relative w-9 h-9 sm:w-10 sm:h-10 flex-shrink-0 group-hover:scale-105 transition-all duration-300">
+                  <Monogram
+                    className="w-full h-full"
+                    label={`${siteConfig.couple.groomNickname} & ${siteConfig.couple.brideNickname} Monogram`}
                   />
-                </Link>
-              );
-            })}
-          </div>
+                </div>
 
-          <div className="md:hidden relative z-20">
-            <StaggeredMenu
-              position="left"
-              items={menuItems}
-              socialItems={[]}
-              displaySocials={false}
-              displayItemNumbering={true}
-              menuButtonColor="#6A1F08"
-              openMenuButtonColor="#6A1F08"
-              changeMenuColorOnOpen={true}
-              colors={["#F9F8F4", "#800A06", "#6A1F08", "#F9F8F4", "#9F8650"]}
-              accentColor="#F9F8F4"
-              isFixed={true}
-              onMenuOpen={() => {}}
-              onMenuClose={() => {}}
-            />
+                {/* Names with accent color on hover */}
+                <div className="text-xs sm:text-sm md:text-base lg:text-lg font-[family-name:var(--font-crimson)] font-semibold group-hover:text-[#6A1F08]/80 transition-all duration-300 tracking-[0.1em] sm:tracking-[0.15em] md:tracking-[0.2em] text-[#6A1F08] uppercase whitespace-nowrap">
+                  {siteConfig.couple.groomNickname} & {siteConfig.couple.brideNickname}
+                </div>
+              </div>
+            </Link>
+
+            <div className="hidden md:flex gap-1 items-center">
+              {navLinks.map((link) => {
+                const isActive = activeSection === link.href;
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className={`px-3 lg:px-4 py-1.5 text-xs lg:text-sm font-[family-name:var(--font-crimson)] font-normal tracking-wide transition-all duration-300 relative group ${
+                      isActive
+                        ? "text-[#6A1F08]"
+                        : "text-[#6A1F08]/80 hover:text-[#6A1F08]"
+                    }`}
+                  >
+                    {link.label}
+                    <span
+                      className={`absolute bottom-0 left-0 h-[1.5px] bg-gradient-to-r from-[#6A1F08] to-[#6A1F08]/80 transition-all duration-300 ${
+                        isActive ? "w-full" : "w-0 group-hover:w-full"
+                      }`}
+                    />
+                  </Link>
+                );
+              })}
+            </div>
+
+            <div className="md:hidden relative z-20">
+              <StaggeredMenu
+                position="left"
+                items={menuItems}
+                socialItems={[]}
+                displaySocials={false}
+                displayItemNumbering={true}
+                menuButtonColor="#6A1F08"
+                openMenuButtonColor="#6A1F08"
+                changeMenuColorOnOpen={true}
+                colors={["#F9F8F4", "#800A06", "#6A1F08", "#F9F8F4", "#9F8650"]}
+                accentColor="#F9F8F4"
+                isFixed={true}
+                onMenuOpen={() => {}}
+                onMenuClose={() => {}}
+              />
+            </div>
           </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+
+      {/* Fixed RSVP CTA (bottom-right) */}
+      <Link
+        href="#guest-list"
+        aria-label="Go to RSVP section"
+        className={[
+          "fixed bottom-4 right-4 z-[60]",
+          "inline-flex items-center justify-center",
+          "h-12 px-5 rounded-full",
+          "bg-[#800A06] text-[#F9F8F4]",
+          "shadow-lg shadow-black/15",
+          "border border-[#F9F8F4]/20",
+          "text-sm font-[family-name:var(--font-crimson)] tracking-wide",
+          "transition-transform duration-200 ease-out",
+          "hover:scale-[1.03] active:scale-[0.98]",
+          "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6A1F08]/40 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent",
+          // keep above iOS bottom bar / notches
+          "pb-[max(0px,env(safe-area-inset-bottom))]",
+        ].join(" ")}
+      >
+        RSVP
+      </Link>
+    </>
   );
 }

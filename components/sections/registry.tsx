@@ -82,14 +82,14 @@ export function Registry() {
                     </div>
 
                     <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-[family-name:var(--font-crimson)] font-light text-[#800A06] leading-relaxed tracking-wide">
-                      Your presence at our wedding is the most precious gift.
+                      We are truly grateful for your love and support. As we already have what we need, we kindly prefer monetary gifts to help fund our travels and future adventures together.
                     </p>
                   </div>
 
                   {/* Second message */}
                   <div className="relative">
                     <p className="text-base sm:text-lg md:text-xl font-[family-name:var(--font-crimson)] font-light text-[#800A06]/80 leading-relaxed tracking-wide">
-                      We kindly ask for no boxed gifts. Monetary gifts are welcome but never expected.
+                      Most importantly, having you celebrate with us on our special day is what we value the most.
                     </p>
 
                     {/* Decorative bottom line */}
@@ -105,16 +105,16 @@ export function Registry() {
                     <div className="flex flex-col items-center space-y-4 sm:space-y-5">
                       <div className="text-center">
                         <p className="text-sm sm:text-base md:text-lg font-[family-name:var(--font-crimson)] font-semibold text-[#800A06] mb-2 sm:mb-3 uppercase tracking-wider">
-                          GCash
+                          QR Code
                         </p>
                         <p className="text-xs sm:text-sm text-[#800A06]/70 font-[family-name:var(--font-crimson)]">
-                          Scan to send monetary gift
+                          Scan to send a monetary gift
                         </p>
                       </div>
                       <div className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 bg-white rounded-xl p-3 sm:p-4 shadow-lg border-2 border-[#800A06]/20">
                         <Image
-                          src="/QR/newQR.png"
-                          alt="QR Code"
+                          src="/QR/QR.png"
+                          alt="Wedding gift QR code"
                           fill
                           className="object-contain rounded-lg"
                         />

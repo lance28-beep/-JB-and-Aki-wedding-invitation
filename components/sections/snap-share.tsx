@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import { Section } from "@/components/section";
 import { QRCodeCanvas } from "qrcode.react";
+import { siteConfig } from "@/content/site";
 
 export function SnapShare() {
   const [copiedHashtag, setCopiedHashtag] = useState(false);
@@ -26,9 +27,9 @@ export function SnapShare() {
       ? window.location.href
       : "https://example.com";
   const driveLink =
-    "https://drive.google.com/drive/folders/18f_-4ZqeyIDZZ_5PR0raFGNRoPUmJCPg?usp=sharing";
-  const hashtags = ["#MarkJoeyAndDianaGrace"];  
-  const shareText = `Join us in celebrating Mark Joey & Diana Grace's special day! Check out their wedding website: ${websiteUrl} ${hashtags.join(" ")} 💕`;
+    "https://drive.google.com/drive/folders/1TEkYWb8WYF-uQMAPfkHTEitIsxoNsx25?usp=sharing";
+  const hashtags = [`#${siteConfig.couple.groomNickname}And${siteConfig.couple.brideNickname}SayIDo`];
+  const shareText = `Join us in celebrating ${siteConfig.couple.groomNickname} & ${siteConfig.couple.brideNickname}'s special day! Check out their wedding website: ${websiteUrl} ${hashtags.join(" ")} 💕`;
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -423,7 +424,7 @@ export function SnapShare() {
 
                   <div className="text-center">
                     <span className="block text-lg sm:text-xl md:text-2xl lg:text-3xl font-[family-name:var(--font-crimson)] text-[#800A06] font-semibold">
-                      – Mark Joey & Diana Grace –
+                      – {siteConfig.couple.groomNickname} & {siteConfig.couple.brideNickname} –
                     </span>
                   </div>
                 </div>

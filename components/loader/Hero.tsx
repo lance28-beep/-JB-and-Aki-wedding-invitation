@@ -1,92 +1,100 @@
-import React from 'react';
-import Image from 'next/image';
-import { FadeIn } from './FadeIn';
+import React, { useEffect, useMemo, useState } from 'react';
+import { Monogram } from '@/components/Monogram';
 
 interface HeroProps {
   onOpen: () => void;
   visible: boolean;
 }
 
-export const Hero: React.FC<HeroProps> = ({ onOpen, visible }) => {
-  return (
-    <div className={`fixed inset-0 z-[60] flex items-center justify-center overflow-hidden transition-all duration-1000 ${visible ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'}`}>
-      {/* Background Video */}
-      <div className="absolute inset-0 z-0 overflow-hidden">
-        <video
-          className="w-full h-full object-cover"
-          autoPlay
-          muted
-          loop
-          playsInline
-        >
-          <source src="/video/hero-loop.mp4" type="video/mp4" />
-        </video>
+const desktopImages: string[] = [
+  '/mobile-view/couple (1).webp',
+  '/mobile-view/couple (2).webp',
+  '/mobile-view/couple (3).webp',
+  '/mobile-view/couple (4).webp',
+  '/mobile-view/couple (5).webp',
+];
 
-        {/* Soft overlay tint */}
-        <div className="absolute inset-0 bg-[#EFCA93]/55 pointer-events-none" />
+const mobileImages: string[] = [
+  '/desktop-view/couple (1).webp',
+  '/desktop-view/couple (2).webp',
+  '/desktop-view/couple (3).webp',
+  '/desktop-view/couple (4).webp',
+  '/desktop-view/couple (5).webp',
+];
+
+export const Hero: React.FC<HeroProps> = ({ onOpen, visible }) => {
+  const [index, setIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+    if (typeof window === 'undefined') return;
+
+    const media = window.matchMedia('(max-width: 768px)');
+    const handleChange = () => setIsMobile(media.matches);
+    handleChange();
+    media.addEventListener('change', handleChange);
+    return () => media.removeEventListener('change', handleChange);
+  }, []);
+
+  useEffect(() => {
+    if (!mounted) return;
+    const timer = setInterval(() => {
+      setIndex((prev) => (prev + 1) % 5);
+    }, 5500);
+    return () => clearInterval(timer);
+  }, [mounted]);
+
+  const images = useMemo(() => (isMobile ? mobileImages : desktopImages), [isMobile]);
+
+  return (
+    <div className={`fixed inset-0 z-30 flex items-center justify-center overflow-hidden transition-opacity duration-500 ${visible ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'}`}>
+      {/* Background Image Carousel */}
+      <div className="absolute inset-0 z-0">
+        {images.map((src, i) => (
+          <img
+            key={`${src}-${i}`}
+            src={src}
+            alt="Couple"
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${i === index ? 'opacity-100' : 'opacity-0'}`}
+          />
+        ))}
+        
+        {/* Overlay */}
+        <div className="absolute inset-0 pointer-events-none bg-[#EFD2AA]/55" />
       </div>
 
       {/* Content Container */}
       <div className="relative z-10 flex flex-col items-center text-center p-6 w-full max-w-md mx-auto h-full">
         
         {/* Top Logo/Monogram */}
-        <FadeIn show={visible} delay={300} className="mb-auto mt-8">
-          <div className="w-20 h-24 border border-[#800A06]/40 rounded-[2rem] flex items-center justify-center backdrop-blur-sm bg-[#EFCA93]/90">
-            <div className="relative w-14 h-14">
-              <Image
-                src="/monogram/monogram-new.png"
-                alt="Mark Joey & Diana Grace Monogram"
-                fill
-                className="object-contain"
-                priority
-              />
+        <div className="mb-auto mt-8">
+          <div className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 flex items-center justify-center">
+            {/* Monogram Image */}
+            <div className="relative w-28 h-28 sm:w-36 sm:h-36 md:w-44 md:h-44">
+              <Monogram className="w-full h-full" label="Denmark & Rizchelle Monogram" />
             </div>
           </div>
-        </FadeIn>
+        </div>
 
         <div className="flex-1" />
 
         <div className="flex flex-col items-center justify-end w-full gap-4 pb-14 sm:pb-16 md:pb-20">
-          <FadeIn show={visible} delay={600}>
-            <h2
-              className="text-6xl md:text-8xl transform -rotate-6 drop-shadow-lg opacity-95 text-[#800A06]"
-              style={{
-                fontFamily: '"Great Vibes", cursive',
-                fontWeight: 400,
-                textShadow: '0 4px 14px rgba(0,0,0,0.25)',
-              }}
-            >
-              You are
-            </h2>
-          </FadeIn>
+          <h2 className="text-6xl md:text-8xl transform -rotate-6 font-[family-name:var(--font-serif)] font-normal text-[#800A06] drop-shadow-sm">
+            You are
+          </h2>
           
-          <FadeIn show={visible} delay={900}>
-            <h1
-              className="text-5xl md:text-7xl font-bold tracking-wider uppercase drop-shadow-[0_8px_20px_rgba(0,0,0,0.3)] text-[#800A06]"
-              style={{
-                fontFamily: '"Cinzel", serif',
-                fontWeight: 700,
-              }}
-            >
-              Invited!
-            </h1>
-          </FadeIn>
+          <h1 className="text-5xl md:text-7xl font-[family-name:var(--font-cinzel)] font-bold tracking-wider uppercase text-[#800A06] drop-shadow-sm">
+            Invited!
+          </h1>
 
-          <FadeIn show={visible} delay={1500}>
-            <button 
-              onClick={onOpen}
-              className="group relative px-10 py-4 bg-[#800A06] text-[#F9F8F4] font-serif text-sm tracking-[0.2em] uppercase transition-all duration-500 hover:bg-[#9F8650] shadow-lg hover:shadow-xl hover:-translate-y-1 active:translate-y-0 rounded-sm overflow-hidden"
-            >
-              <span
-                className="relative z-10 text-[#F9F8F4]"
-                style={{ fontFamily: '"Cinzel", serif', fontWeight: 400 }}
-              >
-                Open Invitation
-              </span>
-              {/* Button sheen effect */}
-              <div className="absolute top-0 left-[-100%] w-full h-full bg-white/10 skew-x-12 group-hover:animate-[shimmer_1s_infinite]" />
-            </button>
-          </FadeIn>
+          <button
+            onClick={onOpen}
+            className="px-10 py-4 font-[family-name:var(--font-cinzel)] text-sm tracking-[0.2em] uppercase rounded-sm border transition-all duration-300 bg-[#800A06] border-[#800A06] text-[#EFCA93] hover:bg-[#800A06]/90 hover:border-[#800A06]/80 hover:scale-[1.02] premium-shadow"
+          >
+            Open Invitation
+          </button>
         </div>
 
         {/* Bottom Spacer */}

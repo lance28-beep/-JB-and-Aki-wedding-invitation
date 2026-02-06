@@ -1,6 +1,6 @@
 "use client"
 
-import { Suspense, useState, useCallback } from "react"
+import { useState, useCallback } from "react"
 import dynamic from "next/dynamic"
 import { AudioProvider } from "@/contexts/audio-context"
 import { Hero as MainHero } from "@/components/sections/hero"
@@ -24,7 +24,6 @@ import { Navbar } from "@/components/navbar"
 import { AppState } from "@/components/types"
 import BackgroundMusic from "@/components/background-music"
 
-const Silk = dynamic(() => import("@/components/silk"), { ssr: false })
 const GuestList = dynamic(() => import("@/components/sections/guest-list").then(mod => ({ default: mod.GuestList })), { ssr: false })
 
 export default function Home() {
@@ -52,9 +51,19 @@ export default function Home() {
             {enableDecor && <BackgroundMusic />}
             {enableDecor && (
               <div className="fixed inset-0 z-0 pointer-events-none">
-                <Suspense fallback={<div className="w-full h-full bg-gradient-to-b from-primary/10 to-secondary/5" />}>
-                  <Silk speed={5} scale={1.1} color="#EFD2AA" noiseIntensity={0.8} rotation={0.3} />
-                </Suspense>
+                <video
+                  src="/video/hero-loop.mp4"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="absolute inset-0 w-full h-full object-cover"
+                  aria-hidden
+                />
+                <div
+                  className="absolute inset-0 w-full h-full bg-[#EFD2AA]/40"
+                  aria-hidden
+                />
               </div>
             )}
 
@@ -64,7 +73,7 @@ export default function Home() {
               <Welcome />
               {/* <CoupleVideo /> */}
               <Countdown />
-              {/* <Narrative /> */}
+              <Narrative />
               <Gallery />
               <Messages />
               <Details />

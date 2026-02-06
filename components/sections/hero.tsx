@@ -1,15 +1,19 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import Image from "next/image"
 import { Heart } from "lucide-react"
+import { siteConfig } from "@/content/site"
+import { Monogram } from "@/components/Monogram"
 
 export function Hero() {
   const [isVisible, setIsVisible] = useState(false)
-  const ceremonyVenue = "MATER DOLOROSA Parish in Capas"
-  const ceremonyAddress = "Capas, Tarlac"
-  const receptionVenue = "Cz Ranch"
-  const receptionAddress = "Capas, Tarlac"
+  const ceremonyVenue = siteConfig.ceremony.location
+  const ceremonyAddress = siteConfig.ceremony.address
+  const receptionVenue = siteConfig.reception.location
+  const receptionAddress = siteConfig.reception.address
+  const weddingDate = new Date("2026-05-23T13:30:00+08:00")
+  const dayNumber = String(weddingDate.getDate())
+  const yearNumber = String(weddingDate.getFullYear())
 
   useEffect(() => {
     setIsVisible(true)
@@ -17,56 +21,51 @@ export function Hero() {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Corner Decorations - All 4 Corners */}
-      <div className="absolute top-0 left-0 z-[1] pointer-events-none">
-        <img 
-          src="/decoration/top-right-corner-automleaves.png" 
-          alt="Autumn leaves decoration"
-          className="w-48 sm:w-56 md:w-64 lg:w-72 xl:w-80 2xl:w-96 h-auto opacity-80 scale-x-[-1]"
-        />
-      </div>
-      <div className="absolute top-0 right-0 z-[1] pointer-events-none">
-        <img 
-          src="/decoration/top-right-corner-automleaves.png" 
-          alt="Autumn leaves decoration"
-          className="w-48 sm:w-56 md:w-64 lg:w-72 xl:w-80 2xl:w-96 h-auto opacity-80"
-        />
-      </div>
-      <div className="absolute bottom-0 left-0 z-[1] pointer-events-none">
-        <img 
-          src="/decoration/top-right-corner-automleaves.png" 
-          alt="Autumn leaves decoration"
-          className="w-48 sm:w-56 md:w-64 lg:w-72 xl:w-80 2xl:w-96 h-auto opacity-80 scale-x-[-1] scale-y-[-1]"
-        />
-      </div>
-      <div className="absolute bottom-0 right-0 z-[1] pointer-events-none">
-        <img 
-          src="/decoration/top-right-corner-automleaves.png" 
-          alt="Autumn leaves decoration"
-          className="w-48 sm:w-56 md:w-64 lg:w-72 xl:w-80 2xl:w-96 h-auto opacity-80 scale-y-[-1]"
-        />
-      </div>
+      {/* Corner Decorations */}
+      {[
+        { key: "tl", className: "top-0 left-0 scale-x-[-1]" },
+        { key: "tr", className: "top-0 right-0" },
+        { key: "bl", className: "bottom-0 left-0 scale-x-[-1] scale-y-[-1]" },
+        { key: "br", className: "bottom-0 right-0 scale-y-[-1]" },
+      ].map((corner) => (
+        <div key={corner.key} className={`absolute ${corner.className} z-[1] pointer-events-none`}>
+          <img
+            src="/decoration/top-right-corner-automleaves.png"
+            alt=""
+            aria-hidden="true"
+            className="w-44 sm:w-52 md:w-60 lg:w-72 xl:w-80 2xl:w-96 h-auto opacity-80"
+          />
+        </div>
+      ))}
 
       <div className="relative z-10 w-full container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 flex flex-col items-center justify-center min-h-screen py-16 sm:py-20">
         {/* Elegant Card Container */}
-        <div className={`w-full max-w-4xl elegant-card rounded-lg p-8 sm:p-12 md:p-16 lg:p-20 text-center space-y-4 sm:space-y-6 md:space-y-8 lg:space-y-10 transition-all duration-1000 ease-out premium-shadow ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-        }`} style={{ backgroundColor: '#EFCA93' }}>
+        <div
+          className={[
+            "w-full max-w-3xl",
+            "rounded-xl sm:rounded-2xl",
+            "p-7 sm:p-10 md:p-12 lg:p-14",
+            "text-center",
+            "space-y-5 sm:space-y-7 md:space-y-9",
+            "transition-all duration-1000 ease-out",
+            "premium-shadow",
+            "border-2 border-[#800A06]/25",
+            "bg-[#EFCA93]",
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8",
+          ].join(" ")}
+        >
           
           {/* Monogram - Center */}
           <div className="flex justify-center mb-2 sm:mb-4">
             <div className="relative w-28 h-28 sm:w-36 sm:h-36 md:w-48 md:h-48 lg:w-56 lg:h-56">
-              <Image
-                src="/monogram/monogram-new.png"
-                alt="Mark Joey & Diana Grace Monogram"
-                fill
-                className="object-contain"
-                priority
+              <Monogram
+                className="w-full h-full"
+                label={`${siteConfig.couple.groomNickname} & ${siteConfig.couple.brideNickname} Monogram`}
               />
             </div>
           </div>
 
-          {/* Decorative line with earth tones */}
+          {/* Decorative line */}
           <div className="flex items-center justify-center gap-3">
             <div className="h-[1px] w-16 sm:w-24 bg-gradient-to-r from-transparent via-[#9F8650] to-transparent" />
           </div>
@@ -76,22 +75,20 @@ export function Hero() {
             Together with our families, we,
           </p>
 
-          {/* Groom Name */}
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-[family-name:var(--font-crimson)] font-normal text-[#9B4719] uppercase tracking-[0.12em] sm:tracking-[0.15em] leading-tight px-2 elegant-text-shadow">
-            MARK JOEY ULZAME
+          {/* Names (single H1 for better semantics) */}
+          <h1 className="px-2">
+            <span className="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-[family-name:var(--font-crimson)] font-normal text-[#9B4719] uppercase tracking-[0.12em] sm:tracking-[0.15em] leading-tight elegant-text-shadow">
+              {siteConfig.couple.groom.toUpperCase()}
+            </span>
+            <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-[family-name:var(--font-ephesis)] text-[#9F8650] my-3 sm:my-5 md:my-7">
+              and
+            </span>
+            <span className="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-[family-name:var(--font-crimson)] font-normal text-[#9B4719] uppercase tracking-[0.12em] sm:tracking-[0.15em] leading-tight elegant-text-shadow">
+              {siteConfig.couple.bride.toUpperCase()}
+            </span>
           </h1>
 
-          {/* And - Script Style with warm gold accent */}
-          <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-[family-name:var(--font-ephesis)] text-[#9F8650] my-4 sm:my-6 md:my-8">
-            and
-          </p>
-
-          {/* Bride Name */}
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-[family-name:var(--font-crimson)] font-normal text-[#9B4719] uppercase tracking-[0.12em] sm:tracking-[0.15em] leading-tight px-2 elegant-text-shadow">
-            DIANA GRACE VILLORENTE
-          </h1>
-
-          {/* Decorative line with earth tones */}
+          {/* Decorative line */}
           <div className="flex items-center justify-center gap-3">
             <div className="h-[1px] w-16 sm:w-24 bg-gradient-to-r from-transparent via-[#9F8650] to-transparent" />
           </div>
@@ -106,19 +103,19 @@ export function Hero() {
             <div className="flex items-center justify-center gap-3 sm:gap-4">
               <div className="h-[1px] w-12 sm:w-16 md:w-20 bg-gradient-to-r from-transparent via-[#9F8650] to-[#9F8650]" />
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-[family-name:var(--font-crimson)] font-semibold text-[#9F8650] tracking-wider">
-                February
+                May
               </p>
               <div className="h-[1px] w-12 sm:w-16 md:w-20 bg-gradient-to-l from-transparent via-[#9F8650] to-[#9F8650]" />
             </div>
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 md:gap-4 text-[#9B4719]">
-              <span className="text-xs sm:text-sm md:text-base font-[family-name:var(--font-crimson)] uppercase tracking-wider text-[#9F8650]">SUNDAY</span>
-              <span className="text-6xl sm:text-7xl md:text-8xl font-[family-name:var(--font-crimson)] font-light my-2 sm:my-0 elegant-text-shadow">8</span>
-              <span className="text-xs sm:text-sm md:text-base font-[family-name:var(--font-crimson)] uppercase tracking-wider text-[#9F8650]">1:30 PM</span>
+              <span className="text-xs sm:text-sm md:text-base font-[family-name:var(--font-crimson)] uppercase tracking-wider text-[#9F8650]">{siteConfig.ceremony.day.toUpperCase()}</span>
+              <span className="text-6xl sm:text-7xl md:text-8xl font-[family-name:var(--font-crimson)] font-light my-2 sm:my-0 elegant-text-shadow">{dayNumber}</span>
+              <span className="text-xs sm:text-sm md:text-base font-[family-name:var(--font-crimson)] uppercase tracking-wider text-[#9F8650]">{siteConfig.ceremony.time}</span>
             </div>
             
             <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-[family-name:var(--font-crimson)] font-light text-[#9B4719]">
-              2026
+              {yearNumber}
             </p>
           </div>
 
@@ -166,7 +163,7 @@ export function Hero() {
           <div className="pt-6 sm:pt-8">
             <a
               href="#guest-list"
-              className="inline-flex items-center gap-2 sm:gap-3 px-8 sm:px-10 md:px-12 lg:px-14 py-3 sm:py-3.5 md:py-4 lg:py-4.5 font-[family-name:var(--font-crimson)] font-semibold text-sm sm:text-base md:text-lg text-[#EFCA93] bg-[#6A1F08] hover:bg-[#6A1F08]/90 transition-all duration-300 tracking-wider uppercase border-2 border-[#6A1F08] hover:border-[#6A1F08]/80 hover:scale-105 hover:shadow-[0_10px_30px_rgba(106,31,8,0.4)] hover:brightness-110 active:scale-100 premium-shadow rounded-sm relative overflow-hidden group"
+              className="inline-flex items-center gap-2 sm:gap-3 px-8 sm:px-10 md:px-12 lg:px-14 py-3 sm:py-3.5 md:py-4 font-[family-name:var(--font-crimson)] font-semibold text-sm sm:text-base md:text-lg text-[#EFCA93] bg-[#6A1F08] hover:bg-[#6A1F08]/90 transition-all duration-300 tracking-wider uppercase border-2 border-[#6A1F08] hover:border-[#6A1F08]/80 hover:scale-[1.03] hover:shadow-[0_10px_30px_rgba(106,31,8,0.35)] active:scale-100 premium-shadow rounded-sm relative overflow-hidden group"
             >
               <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-in-out"></span>
               <Heart size={16} className="w-4 h-4 sm:w-5 sm:h-5 relative z-10 group-hover:scale-110 transition-transform duration-300" />
