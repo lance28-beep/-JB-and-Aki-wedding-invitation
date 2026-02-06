@@ -243,12 +243,20 @@ export function Details() {
             <div className="p-3 sm:p-5 md:p-7 lg:p-9">
               {/* Time */}
               <div className="text-center mb-5 sm:mb-8">
-                <p className="text-[10px] sm:text-xs md:text-sm font-[family-name:var(--font-crimson)] font-semibold text-[#800A06] uppercase tracking-[0.2em] mb-2 sm:mb-3">
-                  {siteConfig.reception.time === "After ceremony" ? "Starts" : "Starts at"}
-                </p>
-                <p className="text-sm sm:text-base md:text-lg lg:text-xl font-[family-name:var(--font-crimson)] font-semibold text-[#800A06] tracking-wide">
-                  {siteConfig.reception.time}
-                </p>
+                {siteConfig.reception.time === "To follow after the ceremony" ? (
+                  <p className="text-sm sm:text-base md:text-lg lg:text-xl font-[family-name:var(--font-crimson)] font-semibold text-[#800A06] tracking-wide">
+                    To follow after the ceremony
+                  </p>
+                ) : (
+                  <>
+                    <p className="text-[10px] sm:text-xs md:text-sm font-[family-name:var(--font-crimson)] font-semibold text-[#800A06] uppercase tracking-[0.2em] mb-2 sm:mb-3">
+                      {siteConfig.reception.time === "After ceremony" ? "Starts" : "Starts at"}
+                    </p>
+                    <p className="text-sm sm:text-base md:text-lg lg:text-xl font-[family-name:var(--font-crimson)] font-semibold text-[#800A06] tracking-wide">
+                      {siteConfig.reception.time}
+                    </p>
+                  </>
+                )}
               </div>
 
               {/* Location Details */}

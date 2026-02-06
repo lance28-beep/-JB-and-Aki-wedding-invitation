@@ -27,9 +27,9 @@ export const siteConfig = {
     }
   },
   ceremony: {
-    location: "MATER DOLOROSA Parish in Capas",
-    venue: "MATER DOLOROSA Parish in Capas",
-    address: "Capas, Tarlac",
+    location: "San Antonio de Padua Parish",
+    venue: "San Antonio de Padua Parish, Silang, Cavite",
+    address: "Silang, Cavite",
     date: "February 8, 2026",
     day: "Sunday",
     time: "1:30 PM",
@@ -37,11 +37,11 @@ export const siteConfig = {
     guestsTime: "1:00 PM",
   },
   reception: {
-    location: "Cz Ranch",
-    venue: "Cz Ranch",
-    address: "Capas, Tarlac",
+    location: "The Pulo Events Place",
+    venue: "The Pulo Events Place, Silang, Cavite",
+    address: "Silang, Cavite",
     date: "February 8, 2026",
-    time: "4:00 PM",
+    time: "To follow after the ceremony",
   },
   dressCode: {
     theme: "Elegant Wedding ✨",
