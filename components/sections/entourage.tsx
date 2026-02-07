@@ -250,7 +250,7 @@ export function Entourage() {
           {/* Subtle glow on hover */}
           <div className="absolute -inset-1 bg-gradient-to-br from-[#800A06]/20 to-[#800A06]/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-lg" />
 
-          <div className="relative bg-white backdrop-blur-sm rounded-xl sm:rounded-2xl border-2 border-[#800A06]/30 shadow-xl hover:shadow-2xl transition-all duration-300 hover:border-[#800A06]/50 overflow-hidden" style={{ backgroundColor: '#FFFFFF' }}>
+          <div className="relative bg-white backdrop-blur-sm rounded-xl sm:rounded-2xl border-4 border-[#9AAB89] shadow-xl hover:shadow-2xl transition-all duration-300 hover:border-[#9AAB89]/80 overflow-hidden" style={{ backgroundColor: '#FFFFFF' }}>
             {/* Card content */}
             <div className="relative p-4 sm:p-6 md:p-8 lg:p-10">
               {isLoading ? (

@@ -109,7 +109,7 @@ function MessageForm({ onSuccess, onMessageSent }: MessageFormProps) {
             <div className="relative inline-block mb-2 sm:mb-3">
               <div className="absolute inset-0 bg-[#800A06]/20 rounded-full blur-lg scale-150"></div>
               <div className="relative w-9 h-9 sm:w-12 sm:h-12 bg-[#EFCA93] rounded-full flex items-center justify-center mx-auto shadow-lg border-2 border-[#800A06]/20">
-                <MessageCircle className="h-4 w-4 sm:h-6 sm:w-6 text-[#800A06]" />
+                <MessageCircle className="h-4 w-4 sm:h-6 sm:w-6 text-[#9AAB89]" />
               </div>
             </div>
             <h3 className="text-sm sm:text-base md:text-lg font-[family-name:var(--font-crimson)] font-normal text-[#800A06] mb-1.5 sm:mb-2 uppercase tracking-[0.12em]">
@@ -190,8 +190,8 @@ function MessageForm({ onSuccess, onMessageSent }: MessageFormProps) {
             <Button
               type="submit"
               disabled={isSubmitting || !nameValue.trim() || !messageValue.trim()}
-              className="w-full bg-[#800A06] hover:bg-[#800A06]/90 active:bg-[#800A06]/95 text-[#EFCA93] py-2.5 sm:py-3 px-6 sm:px-8 text-xs sm:text-sm font-[family-name:var(--font-crimson)] font-semibold shadow-md transition-all duration-300 hover:scale-105 active:scale-100 disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none border border-[#800A06] tracking-wider uppercase"
-              style={{ backgroundColor: '#800A06', color: '#EFCA93', borderColor: '#800A06' }}
+              className="w-full bg-[#9AAB89] hover:bg-[#889977] active:bg-[#778866] text-white py-2.5 sm:py-3 px-6 sm:px-8 text-xs sm:text-sm font-[family-name:var(--font-crimson)] font-semibold shadow-md transition-all duration-300 hover:scale-105 active:scale-100 disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none border border-[#9AAB89] tracking-wider uppercase"
+              style={{ backgroundColor: '#9AAB89', color: '#FFFFFF', borderColor: '#9AAB89' }}
             >
               
               {isSubmitting ? (
@@ -204,7 +204,7 @@ function MessageForm({ onSuccess, onMessageSent }: MessageFormProps) {
                 </span>
               ) : (
                 <span className="flex items-center justify-center gap-2">
-                  <Heart className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-[#EFCA93]" fill="#EFCA93" />
+                  <Heart className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-white" fill="white" />
                   Send Message
                 </span>
               )}
@@ -324,8 +324,8 @@ export function Messages() {
           <div className="text-center mb-6 sm:mb-10 md:mb-14">
             <div className="relative inline-block mb-3 sm:mb-5">
               <div className="absolute inset-0 bg-[#800A06]/15 rounded-full blur-xl scale-150"></div>
-              <div className="relative w-10 h-10 sm:w-14 sm:h-14 bg-[#800A06] rounded-full flex items-center justify-center mx-auto shadow-lg">
-                <Heart className="h-5 w-5 sm:h-7 sm:w-7 text-[#F9F8F4]" />
+              <div className="relative w-10 h-10 sm:w-14 sm:h-14 bg-[#9AAB89] rounded-full flex items-center justify-center mx-auto shadow-lg">
+                <Heart className="h-5 w-5 sm:h-7 sm:w-7 text-white" />
               </div>
             </div>
             <h3 className="text-base sm:text-lg md:text-xl font-[family-name:var(--font-crimson)] text-white mb-2 sm:mb-3">

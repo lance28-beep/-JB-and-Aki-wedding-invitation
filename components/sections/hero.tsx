@@ -20,7 +20,7 @@ export function Hero() {
   }, [])
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden border-b border-[#9AAB89]">
       {/* Corner Decorations */}
       {[
         { key: "tl", className: "top-0 left-0 scale-x-[-1]" },
@@ -49,7 +49,7 @@ export function Hero() {
             "space-y-5 sm:space-y-7 md:space-y-9",
             "transition-all duration-1000 ease-out",
             "premium-shadow",
-            "border-2 border-[#800A06]/25",
+            "border-2 border-[#9AAB89]",
             "bg-[#EFCA93]",
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8",
           ].join(" ")}
@@ -59,7 +59,7 @@ export function Hero() {
           <div className="flex justify-center mb-2 sm:mb-4">
             <div className="relative w-28 h-28 sm:w-36 sm:h-36 md:w-48 md:h-48 lg:w-56 lg:h-56">
               <Monogram
-                className="w-full h-full"
+                className="w-full h-full !bg-[#9AAB89]"
                 label={`${siteConfig.couple.groomNickname} & ${siteConfig.couple.brideNickname} Monogram`}
               />
             </div>
@@ -110,7 +110,7 @@ export function Hero() {
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 md:gap-4 text-[#9B4719]">
               <span className="text-xs sm:text-sm md:text-base font-[family-name:var(--font-crimson)] uppercase tracking-wider text-[#9F8650]">{siteConfig.ceremony.day.toUpperCase()}</span>
-              <span className="text-6xl sm:text-7xl md:text-8xl font-[family-name:var(--font-crimson)] font-light my-2 sm:my-0 elegant-text-shadow">{dayNumber}</span>
+              <span className="text-6xl sm:text-7xl md:text-8xl font-[family-name:var(--font-crimson)] font-light my-2 sm:my-0 elegant-text-shadow text-[#9AAB89]">{dayNumber}</span>
               <span className="text-xs sm:text-sm md:text-base font-[family-name:var(--font-crimson)] uppercase tracking-wider text-[#9F8650]">{siteConfig.ceremony.time}</span>
             </div>
             
@@ -119,13 +119,13 @@ export function Hero() {
             </p>
           </div>
 
-          {/* Ceremony with warm gold accent */}
+          {/* Ceremony & Reception */}
           <div className="pt-4 sm:pt-6">
             <div className="flex items-center justify-center gap-3 mb-3">
               <div className="h-[1px] w-16 sm:w-24 bg-gradient-to-r from-transparent via-[#9F8650] to-transparent" />
             </div>
             <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-[family-name:var(--font-ephesis)] text-[#9F8650] px-4">
-              Ceremony
+              Ceremony &amp; Reception
             </p>
             <div className="flex items-center justify-center gap-3 mt-3">
               <div className="h-[1px] w-16 sm:w-24 bg-gradient-to-r from-transparent via-[#9F8650] to-transparent" />
@@ -133,29 +133,33 @@ export function Hero() {
           </div>
 
           {/* Venue Details */}
-          <div className="space-y-4 pb-4 sm:pb-6 px-4">
-            <div className="space-y-1.5">
-              <p className="text-sm sm:text-base md:text-lg lg:text-xl font-[family-name:var(--font-crimson)] font-semibold text-[#9F8650] uppercase tracking-wider">
-                {ceremonyVenue}
-              </p>
-              <p className="text-xs sm:text-sm md:text-base font-[family-name:var(--font-crimson)] font-normal text-[#9B4719]/80">
-                {ceremonyAddress}
-              </p>
-            </div>
+          <div className="pb-4 sm:pb-6 px-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* Ceremony card */}
+              <div className="space-y-1.5 text-center md:text-left">
+                <p className="text-xs sm:text-sm font-[family-name:var(--font-crimson)] uppercase tracking-[0.2em] text-[#9F8650]">
+                  Ceremony
+                </p>
+                <p className="text-sm sm:text-base md:text-lg lg:text-xl font-[family-name:var(--font-crimson)] font-semibold text-[#9F8650] uppercase tracking-wider">
+                  {ceremonyVenue}
+                </p>
+                <p className="text-xs sm:text-sm md:text-base font-[family-name:var(--font-crimson)] font-normal text-[#9B4719]/80">
+                  {ceremonyAddress}
+                </p>
+              </div>
 
-            <div className="flex items-center justify-center gap-2">
-              <span className="h-[1px] w-8 sm:w-12 bg-gradient-to-r from-transparent via-[#9F8650]/60 to-transparent" />
-              <span className="w-1 h-1 rounded-full bg-[#9F8650]/70" />
-              <span className="h-[1px] w-8 sm:w-12 bg-gradient-to-r from-transparent via-[#9F8650]/60 to-transparent" />
-            </div>
-
-            <div className="space-y-1.5">
-              <p className="text-sm sm:text-base md:text-lg lg:text-xl font-[family-name:var(--font-crimson)] font-semibold text-[#9B4719] uppercase tracking-wider">
-                {receptionVenue}
-              </p>
-              <p className="text-xs sm:text-sm md:text-base font-[family-name:var(--font-crimson)] font-normal text-[#9B4719]/80">
-                {receptionAddress}
-              </p>
+              {/* Reception card */}
+              <div className="space-y-1.5 text-center md:text-left">
+                <p className="text-xs sm:text-sm font-[family-name:var(--font-crimson)] uppercase tracking-[0.2em] text-[#9F8650]">
+                  Reception
+                </p>
+                <p className="text-sm sm:text-base md:text-lg lg:text-xl font-[family-name:var(--font-crimson)] font-semibold text-[#9B4719] uppercase tracking-wider">
+                  {receptionVenue}
+                </p>
+                <p className="text-xs sm:text-sm md:text-base font-[family-name:var(--font-crimson)] font-normal text-[#9B4719]/80">
+                  {receptionAddress}
+                </p>
+              </div>
             </div>
           </div>
 
@@ -163,7 +167,7 @@ export function Hero() {
           <div className="pt-6 sm:pt-8">
             <a
               href="#guest-list"
-              className="inline-flex items-center gap-2 sm:gap-3 px-8 sm:px-10 md:px-12 lg:px-14 py-3 sm:py-3.5 md:py-4 font-[family-name:var(--font-crimson)] font-semibold text-sm sm:text-base md:text-lg text-[#EFCA93] bg-[#6A1F08] hover:bg-[#6A1F08]/90 transition-all duration-300 tracking-wider uppercase border-2 border-[#6A1F08] hover:border-[#6A1F08]/80 hover:scale-[1.03] hover:shadow-[0_10px_30px_rgba(106,31,8,0.35)] active:scale-100 premium-shadow rounded-sm relative overflow-hidden group"
+              className="inline-flex items-center gap-2 sm:gap-3 px-8 sm:px-10 md:px-12 lg:px-14 py-3 sm:py-3.5 md:py-4 font-[family-name:var(--font-crimson)] font-semibold text-sm sm:text-base md:text-lg text-[#EFCA93] bg-[#9AAB89] hover:bg-[#9AAB89]/90 transition-all duration-300 tracking-wider uppercase border-2 border-[#9AAB89] hover:border-[#9AAB89]/80 hover:scale-[1.03] hover:shadow-[0_10px_30px_rgba(154,171,137,0.35)] active:scale-100 premium-shadow rounded-sm relative overflow-hidden group"
             >
               <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-in-out"></span>
               <Heart size={16} className="w-4 h-4 sm:w-5 sm:h-5 relative z-10 group-hover:scale-110 transition-transform duration-300" />

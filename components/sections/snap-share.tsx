@@ -179,14 +179,14 @@ export function SnapShare() {
               <div className="relative group">
                 <div className="absolute -inset-1 bg-gradient-to-br from-[#800A06]/20 to-[#800A06]/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-lg" />
 
-                <div className="relative bg-white backdrop-blur-sm rounded-xl sm:rounded-2xl border-2 border-[#800A06]/30 shadow-xl hover:shadow-2xl transition-all duration-300 hover:border-[#800A06]/50 overflow-hidden">
+                <div className="relative bg-white backdrop-blur-sm rounded-xl sm:rounded-2xl border-4 border-[#9AAB89] shadow-xl hover:shadow-2xl transition-all duration-300 hover:border-[#9AAB89]/80 overflow-hidden">
                   {/* Card content */}
                   <div className="relative p-4 sm:p-6 md:p-8 lg:p-10">
                     <div className="text-center space-y-4 sm:space-y-5 md:space-y-6">
                       {/* Camera Icon */}
                       <div className="relative inline-flex items-center justify-center">
                         <div className="absolute inset-0 bg-[#800A06]/10 rounded-full blur-xl scale-150 animate-pulse"></div>
-                        <div className="relative w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-[#800A06] rounded-full flex items-center justify-center shadow-lg">
+                        <div className="relative w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-[#9AAB89] rounded-full flex items-center justify-center shadow-lg">
                           <Camera className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 text-white" />
                         </div>
                       </div>
@@ -213,13 +213,13 @@ export function SnapShare() {
                             </span>
                             <button
                               onClick={() => copyToClipboard(hashtag)}
-                              className="p-1.5 sm:p-2 rounded-full bg-white hover:bg-[#800A06]/10 transition-colors duration-200 shadow-sm flex-shrink-0 border border-[#800A06]/20"
+                              className="p-1.5 sm:p-2 rounded-full bg-white hover:bg-[#9AAB89]/10 transition-colors duration-200 shadow-sm flex-shrink-0 border border-[#9AAB89]/20"
                               title="Copy hashtag"
                             >
                               {copiedHashtag ? (
-                                <Check className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 text-green-600" />
+                                <Check className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 text-[#9AAB89]" />
                               ) : (
-                                <Copy className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 text-[#800A06]" />
+                                <Copy className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 text-[#9AAB89]" />
                               )}
                             </button>
                           </div>
@@ -234,7 +234,7 @@ export function SnapShare() {
               <div className="relative group">
                 <div className="absolute -inset-1 bg-gradient-to-br from-[#800A06]/20 to-[#800A06]/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-lg" />
 
-                <div className="relative bg-white backdrop-blur-sm rounded-xl sm:rounded-2xl border-2 border-[#800A06]/30 shadow-xl hover:shadow-2xl transition-all duration-300 hover:border-[#800A06]/50 overflow-hidden">
+                <div className="relative bg-white backdrop-blur-sm rounded-xl sm:rounded-2xl border-4 border-[#9AAB89] shadow-xl hover:shadow-2xl transition-all duration-300 hover:border-[#9AAB89]/80 overflow-hidden">
                   {/* Card content */}
                   <div className="relative p-4 sm:p-6 md:p-8 lg:p-10">
                     <div className="text-center space-y-4 sm:space-y-5 md:space-y-6">
@@ -266,10 +266,10 @@ export function SnapShare() {
                         <div className="w-full flex flex-col sm:flex-row gap-2 sm:gap-3 md:gap-4">
                           <button
                             onClick={copyDriveLink}
-                            className="flex-1 inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-4 md:px-5 py-2 sm:py-2.5 md:py-3 bg-white border-2 border-[#800A06]/30 hover:border-[#800A06]/50 hover:bg-[#EFCA93]/40 rounded-lg text-[10px] sm:text-xs md:text-sm font-[family-name:var(--font-crimson)] font-semibold text-[#800A06] transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
+                            className="flex-1 inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-4 md:px-5 py-2 sm:py-2.5 md:py-3 bg-white border-2 border-[#9AAB89]/30 hover:border-[#9AAB89]/50 hover:bg-[#9AAB89]/10 rounded-lg text-[10px] sm:text-xs md:text-sm font-[family-name:var(--font-crimson)] font-semibold text-[#9AAB89] transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
                           >
                             {copiedDriveLink ? (
-                              <Check className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 text-green-600" />
+                              <Check className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 text-[#9AAB89]" />
                             ) : (
                               <Copy className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5" />
                             )}
@@ -278,7 +278,7 @@ export function SnapShare() {
 
                           <button
                             onClick={downloadDriveQRCode}
-                            className="flex-1 inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-4 md:px-5 py-2 sm:py-2.5 md:py-3 bg-[#800A06] hover:bg-[#800A06]/90 rounded-lg text-[10px] sm:text-xs md:text-sm font-[family-name:var(--font-crimson)] font-semibold text-white transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] shadow-md hover:shadow-lg"
+                            className="flex-1 inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-4 md:px-5 py-2 sm:py-2.5 md:py-3 bg-[#9AAB89] hover:bg-[#889977] rounded-lg text-[10px] sm:text-xs md:text-sm font-[family-name:var(--font-crimson)] font-semibold text-white transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] shadow-md hover:shadow-lg"
                           >
                             <Download className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5" />
                             <span>Download QR</span>
@@ -286,7 +286,7 @@ export function SnapShare() {
 
                           <button
                             onClick={openDrive}
-                            className="flex-1 inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-4 md:px-5 py-2 sm:py-2.5 md:py-3 bg-[#800A06] hover:bg-[#800A06]/90 rounded-lg text-[10px] sm:text-xs md:text-sm font-[family-name:var(--font-crimson)] font-semibold text-white transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] shadow-md hover:shadow-lg"
+                            className="flex-1 inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-4 md:px-5 py-2 sm:py-2.5 md:py-3 bg-[#9AAB89] hover:bg-[#889977] rounded-lg text-[10px] sm:text-xs md:text-sm font-[family-name:var(--font-crimson)] font-semibold text-white transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] shadow-md hover:shadow-lg"
                           >
                             <Share2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5" />
                             <span>Open Drive</span>
@@ -324,7 +324,7 @@ export function SnapShare() {
                       </div>
                       <button
                         onClick={downloadQRCode}
-                        className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-3 bg-[#800A06] hover:bg-[#800A06]/90 text-white rounded-lg transition-all duration-200 shadow-md hover:shadow-lg text-[10px] sm:text-xs md:text-sm font-[family-name:var(--font-crimson)] font-semibold"
+                        className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-3 bg-[#9AAB89] hover:bg-[#889977] text-white rounded-lg transition-all duration-200 shadow-md hover:shadow-lg text-[10px] sm:text-xs md:text-sm font-[family-name:var(--font-crimson)] font-semibold"
                       >
                         <Download className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white" />
                         <span>Download QR Code</span>
@@ -342,7 +342,7 @@ export function SnapShare() {
               <div className="relative group">
                 <div className="absolute -inset-1 bg-gradient-to-br from-[#800A06]/20 to-[#800A06]/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-lg" />
 
-                <div className="relative bg-white backdrop-blur-sm rounded-xl sm:rounded-2xl border-2 border-[#800A06]/30 shadow-xl hover:shadow-2xl transition-all duration-300 hover:border-[#800A06]/50 overflow-hidden">
+                <div className="relative bg-white backdrop-blur-sm rounded-xl sm:rounded-2xl border-4 border-[#9AAB89] shadow-xl hover:shadow-2xl transition-all duration-300 hover:border-[#9AAB89]/80 overflow-hidden">
                   {/* Card content */}
                   <div className="relative p-4 sm:p-6 md:p-8 lg:p-10">
                     <h5 className="text-base sm:text-lg md:text-xl font-[family-name:var(--font-crimson)] font-semibold text-[#800A06] mb-4 sm:mb-5 md:mb-6 text-center">

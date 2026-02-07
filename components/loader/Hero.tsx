@@ -91,7 +91,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpen, visible }) => {
 
           <button
             onClick={onOpen}
-            className="px-10 py-4 font-[family-name:var(--font-cinzel)] text-sm tracking-[0.2em] uppercase rounded-sm border transition-all duration-300 bg-[#800A06] border-[#800A06] text-[#EFCA93] hover:bg-[#800A06]/90 hover:border-[#800A06]/80 hover:scale-[1.02] premium-shadow"
+            className="px-10 py-4 font-[family-name:var(--font-cinzel)] text-sm tracking-[0.2em] uppercase rounded-sm border transition-all duration-300 bg-[#9AAB89] border-[#9AAB89] text-white hover:bg-[#889977] hover:border-[#889977] hover:scale-[1.02] premium-shadow"
           >
             Open Invitation
           </button>

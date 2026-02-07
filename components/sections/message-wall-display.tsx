@@ -97,8 +97,8 @@ export default function MessageWallDisplay({ messages, loading }: MessageWallDis
         <div className="relative z-10">
         <div className="relative inline-block mb-4 sm:mb-6">
           <div className="absolute inset-0 bg-[#800A06]/10 rounded-full blur-xl scale-150"></div>
-          <div className="relative w-10 h-10 sm:w-12 sm:h-12 bg-[#800A06] rounded-full flex items-center justify-center mx-auto shadow-lg">
-            <MessageCircle className="h-5 w-5 sm:h-6 sm:w-6 text-[#EFCA93]" />
+          <div className="relative w-10 h-10 sm:w-12 sm:h-12 bg-[#9AAB89] rounded-full flex items-center justify-center mx-auto shadow-lg">
+            <MessageCircle className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
           </div>
         </div>
         <h3 className="text-base sm:text-lg md:text-xl font-[family-name:var(--font-crimson)] font-normal text-white mb-2 sm:mb-3 uppercase tracking-wider">

@@ -11,14 +11,17 @@ export function Narrative() {
   return (
     <Section id="narrative" className="relative py-16 sm:py-20 md:py-24 lg:py-28 overflow-hidden">
       {/* Background aligned with Details and other sections */}
-      <div className="absolute inset-0 bg-[#EFCA93] backdrop-blur-sm pointer-events-none" />
+      <div className="absolute inset-0 bg-[#EFCA93]/80 backdrop-blur-sm pointer-events-none" />
+
+      {/* Decorative border bottom with accent color */}
+      <div className="absolute bottom-0 left-0 w-full h-px bg-[#9AAB89]/50" />
 
       {/* Header - same style as Event Details */}
       <div className="relative z-10 text-center mb-12 sm:mb-16 md:mb-20 px-4 sm:px-6">
         <div className="flex items-center justify-center gap-3 mb-6">
           <div className="h-[1px] w-16 sm:w-24 bg-gradient-to-r from-transparent via-[#9F8650] to-transparent" />
         </div>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-[family-name:var(--font-crimson)] font-normal text-[#800A06] mb-6 sm:mb-8 uppercase tracking-[0.12em] sm:tracking-[0.15em] elegant-text-shadow">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-[family-name:var(--font-crimson)] font-bold text-[#9AAB89] mb-6 sm:mb-8 uppercase tracking-[0.12em] sm:tracking-[0.15em] elegant-text-shadow">
           Love Story
         </h2>
         <div className="flex items-center justify-center gap-3 mb-6">
@@ -101,7 +104,7 @@ export function Narrative() {
           </div>
           <motion.a
             href="#guest-list"
-            className="px-8 sm:px-12 py-4 bg-[#800A06] text-white font-[family-name:var(--font-crimson)] font-semibold text-lg rounded-full border border-[#9F8650]/40 shadow-md hover:bg-[#6A1F08] hover:border-[#9F8650]/60 transition-all duration-300"
+            className="px-8 sm:px-12 py-4 bg-[#9AAB89] text-white font-[family-name:var(--font-crimson)] font-semibold text-lg rounded-full border border-[#9AAB89]/40 shadow-md hover:bg-[#889977] hover:border-[#9AAB89]/60 transition-all duration-300"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >

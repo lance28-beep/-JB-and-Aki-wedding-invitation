@@ -69,7 +69,7 @@ export function Countdown() {
               fontSize={28}
               padding={4}
               gap={2}
-              textColor="#800A06"
+              textColor="#9AAB89"
               fontWeight={700}
               borderRadius={6}
               horizontalPadding={3}
@@ -82,7 +82,7 @@ export function Countdown() {
       </div>
 
       {/* Compact label */}
-      <span className="text-[10px] sm:text-xs font-[family-name:var(--font-crimson)] font-semibold text-[#800A06] uppercase tracking-wide">
+      <span className="text-[10px] sm:text-xs font-[family-name:var(--font-crimson)] font-bold text-[#9AAB89] uppercase tracking-wide">
         {label}
       </span>
     </div>
@@ -95,13 +95,16 @@ export function Countdown() {
     >
       {/* Semi-transparent overlay for better text readability */}
       <div className="absolute inset-0 bg-[#EFCA93] backdrop-blur-sm pointer-events-none" />
+
+      {/* Decorative border bottom with accent color */}
+      <div className="absolute bottom-0 left-0 w-full h-px bg-[#9AAB89]/50" />
       
       {/* Header - More compact for mobile */}
       <div className="relative z-10 text-center mb-8 sm:mb-12 md:mb-16 px-4 sm:px-6">
         <div className="flex items-center justify-center gap-2 mb-4">
           <div className="h-[1px] w-12 sm:w-16 md:w-24 bg-gradient-to-r from-transparent via-[#9F8650] to-transparent" />
         </div>
-        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-[family-name:var(--font-crimson)] font-normal text-[#800A06] mb-4 sm:mb-6 uppercase tracking-[0.1em] sm:tracking-[0.12em] elegant-text-shadow">
+        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-[family-name:var(--font-crimson)] font-bold text-[#9AAB89] mb-4 sm:mb-6 uppercase tracking-[0.1em] sm:tracking-[0.12em] elegant-text-shadow">
           Countdown to Our Special Day
         </h2>
         <div className="flex items-center justify-center gap-2 mb-3 sm:mb-4">
@@ -158,7 +161,7 @@ export function Countdown() {
               {/* Day and Year - Horizontal layout with divider, more compact */}
               <div className="flex items-center justify-center gap-3 sm:gap-4 md:gap-5 mb-5 sm:mb-6">
                 {/* Day - Large and bold but scaled for mobile */}
-                <p className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-[family-name:var(--font-crimson)] font-normal text-[#800A06] leading-none elegant-text-shadow">
+                <p className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-[family-name:var(--font-crimson)] font-normal text-[#9AAB89] leading-none elegant-text-shadow">
                   23
                 </p>
                 
@@ -166,7 +169,7 @@ export function Countdown() {
                 <div className="h-10 sm:h-12 md:h-16 lg:h-20 w-[2px] bg-gradient-to-b from-[#9F8650] via-[#800A06] to-[#9F8650]" />
                 
                 {/* Year - Elegant and refined, smaller for mobile */}
-                <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-[family-name:var(--font-crimson)] font-normal text-[#800A06] leading-none">
+                <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-[family-name:var(--font-crimson)] font-bold text-[#9AAB89] leading-none">
                   2026
                 </p>
               </div>

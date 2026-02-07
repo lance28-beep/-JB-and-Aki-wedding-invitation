@@ -108,12 +108,15 @@ export function Gallery() {
       {/* Semi-transparent overlay for better text readability */}
       <div className="absolute inset-0 bg-[#EFCA93] backdrop-blur-sm pointer-events-none" />
 
+      {/* Decorative border bottom with accent color */}
+      <div className="absolute bottom-0 left-0 w-full h-px bg-[#9AAB89]/50" />
+
       {/* Header */}
       <div className="relative z-10 text-center mb-12 sm:mb-16 md:mb-20 px-4 sm:px-6">
         <div className="flex items-center justify-center gap-3 mb-6">
           <div className="h-[1px] w-16 sm:w-24 bg-gradient-to-r from-transparent via-[#9F8650] to-transparent" />
         </div>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-[family-name:var(--font-crimson)] font-normal text-[#800A06] mb-6 sm:mb-8 uppercase tracking-[0.12em] sm:tracking-[0.15em] elegant-text-shadow">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-[family-name:var(--font-crimson)] font-bold text-[#9AAB89] mb-6 sm:mb-8 uppercase tracking-[0.12em] sm:tracking-[0.15em] elegant-text-shadow">
           Our Moments
         </h2>
         <div className="flex items-center justify-center gap-3 mb-6">
@@ -226,7 +229,7 @@ export function Gallery() {
               <div className="mt-10 sm:mt-12 flex justify-center">
                 <Link
                   href="/gallery"
-                  className="inline-flex items-center justify-center rounded-full px-7 py-3 text-sm sm:text-base font-medium tracking-wide bg-white/80 backdrop-blur-sm border border-[#9F8650]/40 text-[#800A06] shadow-md hover:shadow-lg hover:bg-white/90 hover:border-[#9F8650]/60 transition-all duration-200"
+                  className="inline-flex items-center justify-center rounded-full px-7 py-3 text-sm sm:text-base font-medium tracking-wide bg-[#9AAB89] backdrop-blur-sm border border-[#9AAB89]/40 text-white shadow-md hover:shadow-lg hover:bg-[#889977] hover:border-[#9AAB89]/60 transition-all duration-200"
                 >
                   View more
                 </Link>

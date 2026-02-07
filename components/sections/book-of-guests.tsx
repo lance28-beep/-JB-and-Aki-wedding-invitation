@@ -90,14 +90,14 @@ export function BookOfGuests() {
   return (
     <Section id="guests" className="relative z-0 py-8 sm:py-12 md:py-16 lg:py-20">
       {/* Semi-transparent overlay for better text readability */}
-      <div className="absolute inset-0 bg-[#EFCA93] backdrop-blur-sm pointer-events-none" />
+      <div className="absolute inset-0 bg-[#EFCA93]/80 backdrop-blur-sm pointer-events-none" />
 
       {/* Header */}
       <div className="relative z-[1] text-center mb-6 sm:mb-10 md:mb-12 px-3 sm:px-4 md:px-6">
         <div className="flex items-center justify-center gap-2 sm:gap-3 mb-3 sm:mb-4">
           <div className="h-[1px] w-12 sm:w-16 md:w-24 bg-gradient-to-r from-transparent via-[#9F8650] to-transparent" />
         </div>
-        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-[family-name:var(--font-crimson)] font-normal text-[#800A06] mb-3 sm:mb-4 md:mb-6 uppercase tracking-[0.1em] sm:tracking-[0.12em] md:tracking-[0.15em] elegant-text-shadow">
+        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-[family-name:var(--font-crimson)] font-bold text-[#9AAB89] mb-3 sm:mb-4 md:mb-6 uppercase tracking-[0.1em] sm:tracking-[0.12em] md:tracking-[0.15em] elegant-text-shadow">
           Book of Guests
         </h2>
         <div className="flex items-center justify-center gap-2 sm:gap-3 mb-3 sm:mb-4">
@@ -119,8 +119,8 @@ export function BookOfGuests() {
               {/* Card content */}
               <div className="relative p-4 sm:p-6 md:p-8 lg:p-10">
                 <div className="flex items-center justify-center gap-2.5 sm:gap-3 md:gap-4 mb-3 sm:mb-4 md:mb-5">
-                  <div className="bg-[#800A06] p-1.5 sm:p-2 md:p-2.5 rounded-full shadow-lg">
-                    <Heart className="text-[#EFCA93] h-3.5 w-3.5 sm:h-4 sm:w-4 md:h-5 md:w-5" fill="#EFCA93" />
+                  <div className="bg-[#9AAB89] p-1.5 sm:p-2 md:p-2.5 rounded-full shadow-lg">
+                    <Heart className="text-white h-3.5 w-3.5 sm:h-4 sm:w-4 md:h-5 md:w-5" fill="white" />
                   </div>
                   <div className="flex flex-col items-center">
                     <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-[family-name:var(--font-crimson)] font-semibold text-[#800A06]">
@@ -171,8 +171,8 @@ export function BookOfGuests() {
               ) : guests.length === 0 ? (
                 <div className="flex items-center justify-center py-16 sm:py-20 md:py-24">
                   <div className="text-center">
-                    <div className="bg-[#800A06] w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
-                      <Heart className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 text-[#EFCA93]" fill="#EFCA93" />
+                    <div className="bg-[#9AAB89] w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                      <Heart className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 text-white" fill="white" />
                     </div>
                     <h3 className="text-lg sm:text-xl md:text-2xl font-[family-name:var(--font-crimson)] font-semibold text-[#800A06] mb-2">
                       No guests have RSVP'd yet
@@ -193,7 +193,7 @@ export function BookOfGuests() {
                       <div className="flex flex-col sm:flex-row gap-2.5 sm:gap-3 md:gap-4">
                         {/* Avatar */}
                         <div className="relative h-9 w-9 sm:h-11 sm:w-11 md:h-12 md:w-12 flex-shrink-0">
-                          <div className="h-full w-full rounded-full bg-[#800A06] text-[#EFCA93] flex items-center justify-center font-[family-name:var(--font-crimson)] font-semibold shadow-md ring-2 ring-white text-xs sm:text-sm md:text-base">
+                          <div className="h-full w-full rounded-full bg-[#9AAB89] text-white flex items-center justify-center font-[family-name:var(--font-crimson)] font-semibold shadow-md ring-2 ring-white text-xs sm:text-sm md:text-base">
                             {getInitials(guest.Name)}
                           </div>
                         </div>

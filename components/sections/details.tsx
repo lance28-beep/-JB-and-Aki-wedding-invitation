@@ -47,7 +47,7 @@ export function Details() {
   return (
     <Section id="details" className="relative py-16 sm:py-20 md:py-24 lg:py-28">
       {/* Semi-transparent overlay for better text readability */}
-      <div className="absolute inset-0 bg-[#EFCA93] backdrop-blur-sm pointer-events-none" />
+      <div className="absolute inset-0 bg-[#EFCA93]/80 backdrop-blur-sm pointer-events-none" />
 
       {/* Header */}
       <div className="relative z-10 text-center mb-12 sm:mb-16 md:mb-20 px-4 sm:px-6">
@@ -74,9 +74,9 @@ export function Details() {
           <div className="absolute -inset-1 bg-gradient-to-br from-[#9F8650]/20 to-[#800A06]/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-lg" />
           
           {/* Main card */}
-          <div className="relative elegant-card rounded-xl sm:rounded-2xl overflow-hidden border border-[#9F8650]/30 premium-shadow hover:border-[#9F8650]/50 transition-all duration-300">
+          <div className="relative elegant-card rounded-xl sm:rounded-2xl overflow-hidden border-4 border-[#9AAB89] premium-shadow hover:border-[#9AAB89]/80 transition-all duration-300">
             {/* Venue Image */}
-            <div className="relative w-full h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80 overflow-hidden">
+            <div className="relative w-full h-64 sm:h-72 md:h-80 lg:h-96 xl:h-[30rem] overflow-hidden">
               <Image
                 src="/Details/San Antonio de Padua Parish, Silang, Cavite.jpg"
                 alt={siteConfig.ceremony.venue}
@@ -142,7 +142,7 @@ export function Details() {
               </div>
 
               {/* Location Details */}
-              <div className="bg-gradient-to-br from-[#F9F8F4]/40 to-white rounded-xl p-3 sm:p-4 md:p-5 mb-4 sm:mb-6 border border-[#9F8650]/20">
+              <div className="bg-gradient-to-br from-[#F9F8F4]/40 to-white rounded-xl p-3 sm:p-4 md:p-5 mb-4 sm:mb-6 border-4 border-[#9AAB89]">
                 <div className="flex items-start gap-2 sm:gap-3 md:gap-4">
                   <MapPin className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-[#9F8650] mt-0.5 flex-shrink-0" />
                   <div className="flex-1 min-w-0">
@@ -184,7 +184,7 @@ export function Details() {
               <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 md:gap-4">
                 <button
                   onClick={() => openInMaps(ceremonyMapsLink)}
-                  className="flex-1 flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-5 py-2 sm:py-2.5 md:py-3 bg-gradient-to-r from-[#800A06] to-[#9B4719] hover:from-[#9B4719] hover:to-[#800A06] text-white rounded-lg font-[family-name:var(--font-crimson)] font-semibold text-xs sm:text-sm md:text-base transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] premium-shadow"
+                  className="flex-1 flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-5 py-2 sm:py-2.5 md:py-3 bg-[#9AAB89] hover:bg-[#889977] text-white rounded-lg font-[family-name:var(--font-crimson)] font-semibold text-xs sm:text-sm md:text-base transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] premium-shadow"
                   aria-label="Get directions to ceremony venue"
                 >
                   <Navigation className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 flex-shrink-0" />
@@ -213,9 +213,9 @@ export function Details() {
           <div className="absolute -inset-1 bg-gradient-to-br from-[#9F8650]/20 to-[#800A06]/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-lg" />
           
           {/* Main card */}
-          <div className="relative elegant-card rounded-xl sm:rounded-2xl overflow-hidden border border-[#9F8650]/30 premium-shadow hover:border-[#9F8650]/50 transition-all duration-300">
+          <div className="relative elegant-card rounded-xl sm:rounded-2xl overflow-hidden border-4 border-[#9AAB89] premium-shadow hover:border-[#9AAB89]/80 transition-all duration-300">
             {/* Venue Image */}
-            <div className="relative w-full h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80 overflow-hidden">
+            <div className="relative w-full h-64 sm:h-72 md:h-80 lg:h-96 xl:h-[30rem] overflow-hidden">
               <Image
                 src="/Details/The Pulo Events Place, Silang, Cavite.jpg"
                 alt={siteConfig.reception.venue}
@@ -260,7 +260,7 @@ export function Details() {
               </div>
 
               {/* Location Details */}
-              <div className="bg-gradient-to-br from-[#F9F8F4]/40 to-white rounded-xl p-3 sm:p-4 md:p-5 mb-4 sm:mb-6 border border-[#9F8650]/20">
+              <div className="bg-gradient-to-br from-[#F9F8F4]/40 to-white rounded-xl p-3 sm:p-4 md:p-5 mb-4 sm:mb-6 border-4 border-[#9AAB89]">
                 <div className="flex items-start gap-2 sm:gap-3 md:gap-4">
                   <MapPin className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-[#9F8650] mt-0.5 flex-shrink-0" />
                   <div className="flex-1 min-w-0">
@@ -302,7 +302,7 @@ export function Details() {
               <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 md:gap-4">
                 <button
                   onClick={() => openInMaps(receptionMapsLink)}
-                  className="flex-1 flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-5 py-2 sm:py-2.5 md:py-3 bg-gradient-to-r from-[#800A06] to-[#9B4719] hover:from-[#9B4719] hover:to-[#800A06] text-white rounded-lg font-[family-name:var(--font-crimson)] font-semibold text-xs sm:text-sm md:text-base transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] premium-shadow"
+                  className="flex-1 flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-5 py-2 sm:py-2.5 md:py-3 bg-[#9AAB89] hover:bg-[#889977] text-white rounded-lg font-[family-name:var(--font-crimson)] font-semibold text-xs sm:text-sm md:text-base transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] premium-shadow"
                   aria-label="Get directions to reception venue"
                 >
                   <Navigation className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 flex-shrink-0" />
@@ -349,7 +349,7 @@ export function Details() {
           <div className="relative group">
             <div className="absolute -inset-1 bg-gradient-to-br from-[#A69E89]/15 to-[#7C745F]/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-lg" />
             
-            <div className="relative bg-white backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-7 lg:p-9 border-2 border-[#A69E89]/40 shadow-lg hover:shadow-xl transition-all duration-300">
+            <div className="relative bg-white backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-7 lg:p-9 border-4 border-[#9AAB89] shadow-lg hover:shadow-xl transition-all duration-300">
               <h4 className="text-base sm:text-lg md:text-xl lg:text-2xl font-[family-name:var(--font-crimson)] font-semibold text-[#7C745F] mb-4 sm:mb-5 md:mb-6 uppercase tracking-[0.12em] text-center px-2">
                 Principal Sponsor Attire
               </h4>
@@ -398,7 +398,7 @@ export function Details() {
           <div className="relative group">
             <div className="absolute -inset-1 bg-gradient-to-br from-[#A69E89]/15 to-[#7C745F]/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-lg" />
             
-            <div className="relative bg-white backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-7 lg:p-9 border-2 border-[#A69E89]/40 shadow-lg hover:shadow-xl transition-all duration-300">
+            <div className="relative bg-white backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-7 lg:p-9 border-4 border-[#9AAB89] shadow-lg hover:shadow-xl transition-all duration-300">
               <h4 className="text-base sm:text-lg md:text-xl lg:text-2xl font-[family-name:var(--font-crimson)] font-semibold text-[#7C745F] mb-4 sm:mb-5 md:mb-6 uppercase tracking-[0.12em] text-center px-2">
                 Guest Attire
               </h4>
@@ -448,7 +448,7 @@ export function Details() {
         <div className="relative group mt-10 sm:mt-14 md:mt-16">
           <div className="absolute -inset-1 bg-gradient-to-br from-[#9F8650]/15 to-[#800A06]/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-lg" />
           
-          <div className="relative bg-white backdrop-blur-sm rounded-xl sm:rounded-2xl p-6 sm:p-7 md:p-9 border-2 border-[#9F8650]/30 shadow-lg hover:shadow-xl transition-all duration-300" style={{ backgroundColor: '#FFFFFF' }}>
+          <div className="relative bg-white backdrop-blur-sm rounded-xl sm:rounded-2xl p-6 sm:p-7 md:p-9 border-4 border-[#9AAB89] shadow-lg hover:shadow-xl transition-all duration-300" style={{ backgroundColor: '#FFFFFF' }}>
             <h4 className="text-lg sm:text-xl md:text-2xl font-[family-name:var(--font-crimson)] font-semibold text-[#800A06] mb-6 sm:mb-7 md:mb-8 uppercase tracking-[0.12em] text-center">
               Important Reminders
             </h4>

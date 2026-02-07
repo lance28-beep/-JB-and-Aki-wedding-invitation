@@ -66,7 +66,7 @@ export function Registry() {
                 <div className="relative inline-flex items-center justify-center">
                   <div className="absolute inset-0 bg-[#800A06]/10 rounded-full blur-xl scale-150 animate-pulse"></div>
                   <div className="relative w-14 h-14 sm:w-16 sm:h-16 bg-[#EFCA93] rounded-full flex items-center justify-center shadow-lg border-2 border-[#800A06]/20">
-                    <Heart className="h-7 w-7 sm:h-8 sm:w-8 text-[#800A06]" fill="#800A06" />
+                    <Heart className="h-7 w-7 sm:h-8 sm:w-8 text-[#9AAB89]" fill="#9AAB89" />
                   </div>
                 </div>
 

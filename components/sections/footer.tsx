@@ -103,7 +103,7 @@ export function Footer() {
               <div className="flex justify-center mb-4 sm:mb-6">
                 <div className="relative w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32">
                   <Monogram
-                    className="w-full h-full drop-shadow-lg"
+                    className="w-full h-full drop-shadow-lg !bg-[#9AAB89]"
                     label={`${siteConfig.couple.groomNickname} & ${siteConfig.couple.brideNickname} Monogram`}
                   />
                 </div>
@@ -129,7 +129,7 @@ export function Footer() {
             <div className="text-center mb-8 sm:mb-10 md:mb-12">
               {/* Month - Elegant script style with earth tones */}
               <div className="mb-4 sm:mb-5 md:mb-6">
-                <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-[family-name:var(--font-ephesis)] text-[#800A06] leading-none drop-shadow-lg font-semibold">
+                <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-[family-name:var(--font-ephesis)] text-[#9AAB89] leading-none drop-shadow-lg font-semibold">
                   May
                 </p>
               </div>
@@ -137,7 +137,7 @@ export function Footer() {
               {/* Day and Year - Horizontal layout with divider */}
               <div className="flex items-center justify-center gap-3 sm:gap-4 md:gap-6 mb-6 sm:mb-8">
                 {/* Day - Large and bold focal point with elegant color */}
-                <p className="text-7xl sm:text-8xl md:text-9xl lg:text-[10rem] xl:text-[12rem] font-[family-name:var(--font-crimson)] font-bold text-[#800A06] leading-none drop-shadow-lg">
+                <p className="text-7xl sm:text-8xl md:text-9xl lg:text-[10rem] xl:text-[12rem] font-[family-name:var(--font-crimson)] font-bold text-[#9AAB89] leading-none drop-shadow-lg">
                   23
                 </p>
 
@@ -145,7 +145,7 @@ export function Footer() {
                 <div className="h-16 sm:h-20 md:h-24 lg:h-28 w-px bg-gradient-to-b from-transparent via-[#9F8650] to-transparent" />
 
                 {/* Year - Elegant and refined */}
-                <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-[family-name:var(--font-crimson)] font-light text-[#800A06] leading-none drop-shadow-sm">
+                <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-[family-name:var(--font-crimson)] font-bold text-[#9AAB89] leading-none drop-shadow-sm">
                   2026
                 </p>
               </div>
@@ -188,11 +188,11 @@ export function Footer() {
               <div className="flex items-center gap-3 mb-6">
                 <div className="relative w-12 h-12 sm:w-14 sm:h-14 flex-shrink-0">
                   <Monogram
-                    className="w-full h-full"
+                    className="w-full h-full !bg-[#9AAB89]"
                     label={`${siteConfig.couple.groomNickname} & ${siteConfig.couple.brideNickname} Monogram`}
                   />
                 </div>
-                <h3 className="text-2xl sm:text-3xl md:text-4xl font-[family-name:var(--font-crimson)] font-semibold text-[#800A06] uppercase tracking-[0.15em] sm:tracking-[0.2em]">
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-[family-name:var(--font-crimson)] font-bold text-[#9AAB89] uppercase tracking-[0.15em] sm:tracking-[0.2em]">
                   {siteConfig.couple.groomNickname} & {siteConfig.couple.brideNickname}
                 </h3>
               </div>

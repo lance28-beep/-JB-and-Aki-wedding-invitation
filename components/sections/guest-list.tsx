@@ -336,8 +336,8 @@ export function GuestList() {
             <div className="relative p-6 sm:p-8 md:p-10 lg:p-12">
               <div className="relative z-10 space-y-6">
                 <div className="flex items-center gap-3">
-                  <div className="bg-[#800A06] p-2 rounded-xl shadow-lg">
-                    <Search className="h-5 w-5 text-[#EFCA93]" />
+                  <div className="bg-[#9AAB89] p-2 rounded-xl shadow-lg">
+                    <Search className="h-5 w-5 text-white" />
                   </div>
                   <div>
                     <label className="block text-base sm:text-lg font-semibold text-[#800A06] font-[family-name:var(--font-crimson)] mb-1">

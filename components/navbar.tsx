@@ -91,8 +91,8 @@ export function Navbar() {
       <nav
         className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ease-out ${
           isScrolled
-            ? "bg-[#FAAF38]/95 backdrop-blur-xl shadow-sm border-b border-[#6A1F08]/30 premium-shadow"
-            : "bg-[#FAAF38]/85 backdrop-blur-lg border-b border-[#6A1F08]/20"
+            ? "bg-[#FAAF38]/95 backdrop-blur-xl shadow-sm border-b border-[#9AAB89] premium-shadow"
+            : "bg-[#FAAF38]/85 backdrop-blur-lg border-b border-[#9AAB89]"
         }`}
       >
         <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 relative">

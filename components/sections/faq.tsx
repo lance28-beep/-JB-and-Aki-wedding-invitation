@@ -63,7 +63,7 @@ export function FAQ() {
         <div className="flex items-center justify-center gap-2 sm:gap-3 mb-3 sm:mb-4">
           <div className="h-[1px] w-12 sm:w-16 md:w-24 bg-gradient-to-r from-transparent via-[#9F8650] to-transparent" />
         </div>
-        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-[family-name:var(--font-crimson)] font-normal text-[#800A06] mb-3 sm:mb-4 md:mb-6 uppercase tracking-[0.1em] sm:tracking-[0.12em] md:tracking-[0.15em] elegant-text-shadow">
+        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-[family-name:var(--font-crimson)] font-bold text-[#9AAB89] mb-3 sm:mb-4 md:mb-6 uppercase tracking-[0.1em] sm:tracking-[0.12em] md:tracking-[0.15em] elegant-text-shadow">
           Frequently Asked Questions
         </h2>
         <div className="flex items-center justify-center gap-2 sm:gap-3 mb-3 sm:mb-4">
@@ -80,7 +80,7 @@ export function FAQ() {
         <div className="relative group">
           <div className="absolute -inset-1 bg-gradient-to-br from-[#9F8650]/20 to-[#800A06]/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-lg" />
 
-          <div className="relative elegant-card rounded-xl sm:rounded-2xl overflow-hidden border border-[#9F8650]/30 premium-shadow hover:border-[#9F8650]/50 transition-all duration-300">
+          <div className="relative elegant-card rounded-xl sm:rounded-2xl overflow-hidden border-4 border-[#9AAB89] premium-shadow hover:border-[#9AAB89]/80 transition-all duration-300">
             {/* Card content */}
             <div className="relative p-4 sm:p-6 md:p-8 lg:p-10">
               {/* FAQ items */}
