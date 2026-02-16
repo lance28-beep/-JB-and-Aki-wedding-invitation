@@ -444,61 +444,6 @@ export function Details() {
           </div>
         </div>
 
-        {/* Important Reminders Section */}
-        <div className="relative group mt-10 sm:mt-14 md:mt-16">
-          <div className="absolute -inset-1 bg-gradient-to-br from-[#9F8650]/15 to-[#800A06]/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-lg" />
-          
-          <div className="relative bg-white backdrop-blur-sm rounded-xl sm:rounded-2xl p-6 sm:p-7 md:p-9 border-4 border-[#9AAB89] shadow-lg hover:shadow-xl transition-all duration-300" style={{ backgroundColor: '#FFFFFF' }}>
-            <h4 className="text-lg sm:text-xl md:text-2xl font-[family-name:var(--font-crimson)] font-semibold text-[#800A06] mb-6 sm:mb-7 md:mb-8 uppercase tracking-[0.12em] text-center">
-              Important Reminders
-            </h4>
-            
-            {/* Reminders List */}
-            <div className="space-y-5 sm:space-y-6 md:space-y-7">
-              {/* Attendance Limited */}
-              <div className="bg-gradient-to-br from-[#F9F8F4]/30 via-[#F9F8F4]/20 to-white rounded-xl p-5 sm:p-6 md:p-7 border border-[#9F8650]/20">
-                <p className="text-sm sm:text-base md:text-lg font-[family-name:var(--font-crimson)] text-[#800A06] leading-relaxed">
-                  <span className="font-semibold">Invitation Only:</span> As we celebrate this moment with our closest loved ones, we kindly ask that attendance be limited to those named on the invitation.
-                </p>
-              </div>
-
-              {/* No Boxed Gifts */}
-              <div className="bg-gradient-to-br from-[#F9F8F4]/30 via-[#F9F8F4]/20 to-white rounded-xl p-5 sm:p-6 md:p-7 border border-[#9F8650]/20">
-                <p className="text-sm sm:text-base md:text-lg font-[family-name:var(--font-crimson)] text-[#800A06] leading-relaxed">
-                  <span className="font-semibold">Gift Policy:</span> We kindly ask for no boxed gifts. Monetary gifts are welcome but never expected.
-                </p>
-              </div>
-
-              {/* Adults Only */}
-              <div className="bg-gradient-to-br from-[#F9F8F4]/30 via-[#F9F8F4]/20 to-white rounded-xl p-5 sm:p-6 md:p-7 border border-[#9F8650]/20">
-                <p className="text-sm sm:text-base md:text-lg font-[family-name:var(--font-crimson)] text-[#800A06] leading-relaxed">
-                  <span className="font-semibold">Adults-Only Event:</span> We love your little ones, but to keep the celebration intimate, we kindly request an adults-only event. (Children in our family and the entourage are the exception)
-                </p>
-              </div>
-
-              {/* No Photos */}
-              <div className="bg-gradient-to-br from-[#F9F8F4]/30 via-[#F9F8F4]/20 to-white rounded-xl p-5 sm:p-6 md:p-7 border border-[#9F8650]/20">
-                <p className="text-sm sm:text-base md:text-lg font-[family-name:var(--font-crimson)] text-[#800A06] leading-relaxed">
-                  <span className="font-semibold">Photo Policy:</span> We'd love for everyone to be fully present. Please avoid posting photos during the celebration or ahead of time—our photographers will take care of the memories.
-                </p>
-              </div>
-
-              {/* RSVP Contact */}
-              <div className="bg-gradient-to-br from-[#F9F8F4]/30 via-[#F9F8F4]/20 to-white rounded-xl p-5 sm:p-6 md:p-7 border border-[#9F8650]/20">
-                <p className="text-sm sm:text-base md:text-lg font-[family-name:var(--font-crimson)] text-[#800A06] leading-relaxed">
-                  <span className="font-semibold">RSVP Contact:</span> Please reach out to {siteConfig.details.rsvp.names} (contact information to be updated)
-                </p>
-              </div>
-            </div>
-
-            {/* Thank You Note */}
-            <div className="mt-7 sm:mt-8 md:mt-9 pt-6 sm:pt-7 md:pt-8 border-t border-[#9F8650]/20">
-              <p className="text-sm sm:text-base md:text-lg font-[family-name:var(--font-crimson)] text-[#800A06] text-center leading-relaxed italic">
-                Thank you for your understanding and cooperation. We look forward to celebrating with you!
-              </p>
-            </div>
-          </div>
-        </div>
       </div>
     </Section>
   )

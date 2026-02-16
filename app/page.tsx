@@ -81,9 +81,10 @@ export default function Home() {
               <Entourage />
               <PrincipalSponsors />
               <GuestList />
-              <BookOfGuests />
-              <Registry />
+              {/* <BookOfGuests /> */}
               <FAQ />
+              <Registry />
+   
               <SnapShare />
               <Footer />
             </div>

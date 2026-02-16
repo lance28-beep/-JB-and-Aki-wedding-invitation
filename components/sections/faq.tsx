@@ -53,7 +53,7 @@ export function FAQ() {
   return (
     <Section
       id="faq"
-      className="relative py-8 sm:py-12 md:py-16 lg:py-20 overflow-hidden"
+      className="relative z-0 py-8 sm:py-12 md:py-16 lg:py-20 overflow-hidden"
     >
       {/* Semi-transparent overlay for better text readability */}
       <div className="absolute inset-0 bg-[#EFCA93] backdrop-blur-sm pointer-events-none" />

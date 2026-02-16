@@ -28,7 +28,7 @@ export function SnapShare() {
       : "https://example.com";
   const driveLink =
     "https://drive.google.com/drive/folders/1TEkYWb8WYF-uQMAPfkHTEitIsxoNsx25?usp=sharing";
-  const hashtags = [`#${siteConfig.couple.groomNickname}And${siteConfig.couple.brideNickname}SayIDo`];
+  const hashtags = ["#JBestDayEverWithAKI"];
   const shareText = `Join us in celebrating ${siteConfig.couple.groomNickname} & ${siteConfig.couple.brideNickname}'s special day! Check out their wedding website: ${websiteUrl} ${hashtags.join(" ")} 💕`;
 
   useEffect(() => {
@@ -96,13 +96,9 @@ export function SnapShare() {
   };
 
   const downloadDriveQRCode = () => {
-    const canvas = document.getElementById(
-      "drive-qr",
-    ) as HTMLCanvasElement | null;
-    if (!canvas) return;
     const link = document.createElement("a");
-    link.download = "wedding-drive-qr.png";
-    link.href = canvas.toDataURL("image/png");
+    link.download = "scantoupload.png";
+    link.href = "/QR/scantoupload.png";
     link.click();
   };
 
@@ -250,12 +246,12 @@ export function SnapShare() {
                       <div className="flex flex-col items-center gap-3 sm:gap-4">
                         <div className="inline-flex flex-col items-center bg-[#EFCA93]/20 p-3 sm:p-4 md:p-5 rounded-lg sm:rounded-xl border border-[#800A06]/20">
                           <div className="mb-3 sm:mb-4 p-2 sm:p-3 rounded-lg sm:rounded-xl bg-white shadow-md border border-[#800A06]/10">
-                            <QRCodeCanvas
-                              id="drive-qr"
-                              value={driveLink}
-                              size={isMobile ? 112 : 160}
-                              includeMargin
-                              className="bg-white"
+                            <img
+                              src="/QR/scantoupload.png"
+                              alt="Scan to upload photos"
+                              width={isMobile ? 112 : 160}
+                              height={isMobile ? 112 : 160}
+                              className="bg-white object-contain"
                             />
                           </div>
                           <p className="text-[10px] sm:text-xs md:text-sm font-[family-name:var(--font-crimson)] text-[#800A06]/70">
@@ -263,33 +259,13 @@ export function SnapShare() {
                           </p>
                         </div>
 
-                        <div className="w-full flex flex-col sm:flex-row gap-2 sm:gap-3 md:gap-4">
-                          <button
-                            onClick={copyDriveLink}
-                            className="flex-1 inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-4 md:px-5 py-2 sm:py-2.5 md:py-3 bg-white border-2 border-[#9AAB89]/30 hover:border-[#9AAB89]/50 hover:bg-[#9AAB89]/10 rounded-lg text-[10px] sm:text-xs md:text-sm font-[family-name:var(--font-crimson)] font-semibold text-[#9AAB89] transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
-                          >
-                            {copiedDriveLink ? (
-                              <Check className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 text-[#9AAB89]" />
-                            ) : (
-                              <Copy className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5" />
-                            )}
-                            <span>{copiedDriveLink ? "Copied!" : "Copy Link"}</span>
-                          </button>
-
+                        <div className="w-full flex justify-center">
                           <button
                             onClick={downloadDriveQRCode}
-                            className="flex-1 inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-4 md:px-5 py-2 sm:py-2.5 md:py-3 bg-[#9AAB89] hover:bg-[#889977] rounded-lg text-[10px] sm:text-xs md:text-sm font-[family-name:var(--font-crimson)] font-semibold text-white transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] shadow-md hover:shadow-lg"
+                            className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-6 sm:px-8 py-2 sm:py-2.5 md:py-3 bg-[#9AAB89] hover:bg-[#889977] rounded-lg text-sm sm:text-base font-[family-name:var(--font-crimson)] font-semibold text-white transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] shadow-md hover:shadow-lg"
                           >
-                            <Download className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5" />
+                            <Download className="w-4 h-4 sm:w-5 sm:h-5" />
                             <span>Download QR</span>
-                          </button>
-
-                          <button
-                            onClick={openDrive}
-                            className="flex-1 inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-4 md:px-5 py-2 sm:py-2.5 md:py-3 bg-[#9AAB89] hover:bg-[#889977] rounded-lg text-[10px] sm:text-xs md:text-sm font-[family-name:var(--font-crimson)] font-semibold text-white transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] shadow-md hover:shadow-lg"
-                          >
-                            <Share2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5" />
-                            <span>Open Drive</span>
                           </button>
                         </div>
                       </div>
