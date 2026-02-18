@@ -89,7 +89,7 @@ export function Details() {
               
               {/* Venue name overlay with warm gold accent */}
               <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 md:bottom-6 md:left-6 right-3 sm:right-4 md:right-6">
-                <p className="text-sm sm:text-base md:text-lg font-[family-name:var(--font-ephesis)] text-[#9F8650] mb-1 sm:mb-2 drop-shadow-lg">
+                {/* <p className="text-sm sm:text-base md:text-lg font-[family-name:var(--font-ephesis)] text-[#9F8650] mb-1 sm:mb-2 drop-shadow-lg">
                   Ceremony
                 </p>
                 <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-[family-name:var(--font-crimson)] font-normal text-white mb-0.5 sm:mb-1 drop-shadow-lg uppercase tracking-[0.1em] leading-tight">
@@ -97,7 +97,7 @@ export function Details() {
                 </h3>
                 <p className="text-xs sm:text-sm md:text-base font-[family-name:var(--font-crimson)] text-white/95 drop-shadow-md tracking-wide">
                   {siteConfig.ceremony.address}
-                </p>
+                </p> */}
               </div>
             </div>
 
@@ -227,7 +227,7 @@ export function Details() {
               
               {/* Venue name overlay with warm gold accent */}
               <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 md:bottom-6 md:left-6 right-3 sm:right-4 md:right-6">
-                <p className="text-sm sm:text-base md:text-lg font-[family-name:var(--font-ephesis)] text-[#9F8650] mb-1 sm:mb-2 drop-shadow-lg">
+                {/* <p className="text-sm sm:text-base md:text-lg font-[family-name:var(--font-ephesis)] text-[#9F8650] mb-1 sm:mb-2 drop-shadow-lg">
                   Reception
                 </p>
                 <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-[family-name:var(--font-crimson)] font-normal text-white mb-0.5 sm:mb-1 drop-shadow-lg uppercase tracking-[0.1em] leading-tight">
@@ -235,7 +235,7 @@ export function Details() {
                 </h3>
                 <p className="text-xs sm:text-sm md:text-base font-[family-name:var(--font-crimson)] text-white/95 drop-shadow-md tracking-wide">
                   {siteConfig.reception.address}
-                </p>
+                </p> */}
               </div>
             </div>
 
@@ -362,7 +362,7 @@ export function Details() {
               {/* Principal sponsor attire image */}
               <div className="relative w-full aspect-[4/3] sm:aspect-[3/2] max-w-2xl mx-auto rounded-lg sm:rounded-xl overflow-hidden border border-[#A69E89]/30 mb-4 sm:mb-6 md:mb-8">
                 <Image
-                  src="/Details/Principalsponsor.png"
+                  src="/Details/newsponsorattire.png"
                   alt="Principal sponsor attire — follow the color palette"
                   fill
                   className="object-contain bg-[#F9F8F4]/50 p-2 sm:p-3"
@@ -388,7 +388,7 @@ export function Details() {
                   <span className="font-semibold">Ninangs:</span> Long gowns in autumn tones or any color from our palette
                 </p>
                 <p className="text-sm sm:text-base md:text-lg lg:text-xl font-[family-name:var(--font-crimson)] text-[#7C745F] leading-relaxed">
-                  <span className="font-semibold">Ninongs:</span> Barong Tagalog with black slacks, or formal suits in black or palette colors
+                  <span className="font-semibold">Ninongs:</span> Barong Tagalog with sage green slacks
                 </p>
               </div>
             </div>
@@ -437,7 +437,8 @@ export function Details() {
                   <span className="font-semibold">Ladies:</span> Formal or Semi-Formal attire in colors from our palette
                 </p>
                 <p className="text-sm sm:text-base md:text-lg lg:text-xl font-[family-name:var(--font-crimson)] text-[#7C745F] leading-relaxed">
-                  <span className="font-semibold">Gentlemen:</span> Formal or Semi-Formal attire in colors from our palette
+                  <span className="font-semibold">Gentlemen:</span> Formal or Semi-Formal attire in colors from our palette (avoid wearing white/jeans)
+
                 </p>
               </div>
             </div>

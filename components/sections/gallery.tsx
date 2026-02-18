@@ -7,21 +7,16 @@ import { Section } from "@/components/section"
 // Removed circular gallery in favor of a responsive masonry layout
 
 const galleryItems = [
-  { image: "/desktop-view/couple (1).webp", text: " " },   
-  { image: "/desktop-view/couple (2).webp", text: " " },
-  { image: "/desktop-view/couple (3).webp", text: " " },
-  { image: "/desktop-view/couple (4).webp", text: " " },
-  { image: "/desktop-view/couple (5).webp", text: " " },
-  { image: "/desktop-view/couple (6).webp", text: " " },
-  { image: "/desktop-view/couple (7).webp", text: " " },
-  { image: "/desktop-view/couple (8).webp", text: " " },
-  { image: "/desktop-view/couple (9).webp", text: " " },
-  { image: "/desktop-view/couple (10).webp", text: " " },
-  { image: "/desktop-view/couple (11).webp", text: " " },
-  { image: "/desktop-view/couple (12).webp", text: " " },
-  { image: "/desktop-view/couple (13).webp", text: " " },
-  { image: "/desktop-view/couple (14).webp", text: " " },
-  { image: "/desktop-view/couple (15).webp", text: " " },
+  { image: "/oldPhotosandProposal/img (1).jpg", text: " " },   
+  { image: "/oldPhotosandProposal/img (2).jpg", text: " " },
+  { image: "/oldPhotosandProposal/img (3).jpg", text: " " },
+  { image: "/oldPhotosandProposal/img (4).jpg", text: " " },
+  { image: "/oldPhotosandProposal/img (5).jpg", text: " " },
+  { image: "/oldPhotosandProposal/img (6).jpg", text: " " },
+  { image: "/oldPhotosandProposal/img (7).jpg", text: " " },
+  { image: "/oldPhotosandProposal/img (8).jpg", text: " " },
+  { image: "/oldPhotosandProposal/img (9).jpg", text: " " },
+
 
 
 ]
@@ -123,7 +118,7 @@ export function Gallery() {
           <div className="h-[1px] w-16 sm:w-24 bg-gradient-to-r from-transparent via-[#9F8650] to-transparent" />
         </div>
         <p className="text-base sm:text-lg md:text-xl font-[family-name:var(--font-crimson)] text-[#800A06]/80 font-light max-w-xl mx-auto leading-relaxed tracking-wide px-4">
-          Every moment, a treasured memory made eternal
+        We found love, now we found forever.
         </p>
       </div>
 

@@ -236,10 +236,10 @@ export function SnapShare() {
                     <div className="text-center space-y-4 sm:space-y-5 md:space-y-6">
                       <div>
                         <h3 className="text-lg sm:text-xl md:text-2xl font-[family-name:var(--font-crimson)] font-semibold text-[#800A06] mb-2 sm:mb-3">
-                          Upload Your Photos & Videos
+                        CAPTURE THE MOMENT
                         </h3>
                         <p className="text-xs sm:text-sm md:text-base font-[family-name:var(--font-crimson)] text-[#800A06]/70">
-                          Help us capture our special day! Scan the QR or use the actions below to drop your clips into our shared Drive.
+                        Please share with us the photos you capture during our event by scanning this QR code, including your selfies, candid moments and favorite memories from the celebration. We would love to see the day through your eyes 😊
                         </p>
                       </div>
 

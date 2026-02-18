@@ -3,7 +3,7 @@ export const siteConfig = {
     bride: "Maria Katrina Panganiban",
     brideNickname: "Aki",
     groom: "Jon Bret Bantula",
-    groomNickname: "JB",
+    groomNickname: "Jayvee",
   },
   wedding: {
     date: "May 23, 2026",

@@ -23,6 +23,7 @@ import { LoadingScreen } from "@/components/loader/LoadingScreen"
 import { Navbar } from "@/components/navbar"
 import { AppState } from "@/components/types"
 import BackgroundMusic from "@/components/background-music"
+import { LoveStory } from "@/components/sections/love-story"
 
 const GuestList = dynamic(() => import("@/components/sections/guest-list").then(mod => ({ default: mod.GuestList })), { ssr: false })
 
@@ -74,6 +75,7 @@ export default function Home() {
               {/* <CoupleVideo /> */}
               <Countdown />
               <Narrative />
+              <LoveStory />
               <Gallery />
               <Messages />
               <Details />
